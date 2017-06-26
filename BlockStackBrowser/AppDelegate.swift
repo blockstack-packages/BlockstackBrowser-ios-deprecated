@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        //handle authorization requests from 3rd party apps
         if let scheme = url.scheme, scheme == "blockstack", let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
         {
             let appId = queryItems.filter({ $0.name == "id"}).first?.value
@@ -41,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     })
                 }))
                 topVC.present(alert, animated: true, completion: nil)
-                
                 return true
             }
         }
