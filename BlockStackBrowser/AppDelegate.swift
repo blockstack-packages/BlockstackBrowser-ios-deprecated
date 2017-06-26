@@ -18,6 +18,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        if let scheme = url.scheme, scheme == "blockstack", let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
+        {
+            let appId = queryItems.filter({ $0.name == "id"}).first?.value
+            let name = queryItems.filter({ $0.name == "name"}).first?.value
+            
+            if let topVC = topViewController(), let appId = appId, let name = name
+            {
+                let alert = UIAlertController(title: "Authorization Request", message: "\(name) would like access to your Blockstack profile", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Authorize", style: .default, handler: { (action) in
+                    let url = URL(string: "bs\(appId)://token?token=12341234")!
+                    UIApplication.shared.open(url, options: [:], completionHandler: { (result) in
+                        
+                    })
+                }))
+                alert.addAction(UIAlertAction(title: "Decline", style: .destructive, handler: { (action) in
+                    let url = URL(string: "bs\(appId)://token?result=denied")!
+                    UIApplication.shared.open(url, options: [:], completionHandler: { (result) in
+                        
+                    })
+                }))
+                topVC.present(alert, animated: true, completion: nil)
+                
+                return true
+            }
+        }
+        return false
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -40,7 +69,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func topViewController() -> UIViewController?
+    {
+        if let nav = window?.rootViewController as? UINavigationController
+        {
+            return nav.topViewController
+        }
+        return nil
+    }
 
 }
 
