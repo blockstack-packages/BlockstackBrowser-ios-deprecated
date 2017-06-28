@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlockStackBrowser/ViewControllers/ProfileSearchController.swift"
+            timestampString = "520358109.174646"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "searchPressed()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlockStackBrowser.ProfileSearchController.searchPressed() -&gt; ()"
+                  moduleName = "BlockStackBrowser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/applem/Dropbox/bedkin/BlockStackBrowser/BlockStackBrowser/ViewControllers/ProfileSearchController.swift"
+                  timestampString = "520357265.321931"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "442">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;BlockstackCoreApi_iOS.BSSearchResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BlockStackBrowser.ProfileSearchController.searchPressed() -&gt; ()"
+                  moduleName = "BlockStackBrowser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/applem/Dropbox/bedkin/BlockStackBrowser/BlockStackBrowser/ViewControllers/ProfileSearchController.swift"
+                  timestampString = "520357265.326587"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

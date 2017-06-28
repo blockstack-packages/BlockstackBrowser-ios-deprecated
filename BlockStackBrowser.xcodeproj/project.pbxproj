@@ -15,6 +15,12 @@
 		0053ED151F014FD900E039E1 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053ED141F014FD900E039E1 /* ImageCollectionViewCell.swift */; };
 		005C5D281F01890200EC6808 /* ProfilesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C5D271F01890200EC6808 /* ProfilesController.swift */; };
 		005C5D2A1F01892C00EC6808 /* ProfileSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C5D291F01892C00EC6808 /* ProfileSearchController.swift */; };
+		008A133F1F03FB3600C46D5F /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A133E1F03FB3600C46D5F /* StorageController.swift */; };
+		008A13411F03FB4900C46D5F /* WalletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A13401F03FB4900C46D5F /* WalletController.swift */; };
+		008A13431F03FB5600C46D5F /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A13421F03FB5600C46D5F /* AccountController.swift */; };
+		008A13461F03FEA800C46D5F /* bs-background-blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 008A13441F03FEA800C46D5F /* bs-background-blur.png */; };
+		008A13471F03FEA800C46D5F /* bs-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 008A13451F03FEA800C46D5F /* bs-background.png */; };
+		AEEEAA625D77C88C068897C4 /* Pods_BlockStackBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1217A6583C6326E661BEE6F1 /* Pods_BlockStackBrowser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,15 @@
 		0053ED141F014FD900E039E1 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		005C5D271F01890200EC6808 /* ProfilesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesController.swift; sourceTree = "<group>"; };
 		005C5D291F01892C00EC6808 /* ProfileSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSearchController.swift; sourceTree = "<group>"; };
+		008A133E1F03FB3600C46D5F /* StorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
+		008A13401F03FB4900C46D5F /* WalletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletController.swift; sourceTree = "<group>"; };
+		008A13421F03FB5600C46D5F /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		008A13441F03FEA800C46D5F /* bs-background-blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bs-background-blur.png"; sourceTree = "<group>"; };
+		008A13451F03FEA800C46D5F /* bs-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bs-background.png"; sourceTree = "<group>"; };
+		009DC0D61F03F99D001A4D8F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		1217A6583C6326E661BEE6F1 /* Pods_BlockStackBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockStackBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C7F31D8D8587F1085E619C /* Pods-BlockStackBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockStackBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockStackBrowser/Pods-BlockStackBrowser.debug.xcconfig"; sourceTree = "<group>"; };
+		7A682251494778717BD68561 /* Pods-BlockStackBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockStackBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockStackBrowser/Pods-BlockStackBrowser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEEEAA625D77C88C068897C4 /* Pods_BlockStackBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +62,8 @@
 			children = (
 				0053ECFF1F014F6D00E039E1 /* BlockStackBrowser */,
 				0053ECFE1F014F6D00E039E1 /* Products */,
+				5531B6054DA68060EB2BFC7B /* Pods */,
+				6A48487DB4278D2FDA69D1C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,9 +82,10 @@
 				005C5D251F0188CB00EC6808 /* ViewControllers */,
 				0053ED001F014F6D00E039E1 /* AppDelegate.swift */,
 				0053ED041F014F6D00E039E1 /* Main.storyboard */,
-				0053ED071F014F6D00E039E1 /* Assets.xcassets */,
 				0053ED091F014F6D00E039E1 /* LaunchScreen.storyboard */,
+				008A13481F03FEB200C46D5F /* Resources */,
 				0053ED0C1F014F6D00E039E1 /* Info.plist */,
+				009DC0D61F03F99D001A4D8F /* Podfile */,
 			);
 			path = BlockStackBrowser;
 			sourceTree = "<group>";
@@ -75,8 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				0053ED121F014FA100E039E1 /* DashboardController.swift */,
+				008A13401F03FB4900C46D5F /* WalletController.swift */,
 				005C5D271F01890200EC6808 /* ProfilesController.swift */,
 				005C5D291F01892C00EC6808 /* ProfileSearchController.swift */,
+				008A133E1F03FB3600C46D5F /* StorageController.swift */,
+				008A13421F03FB5600C46D5F /* AccountController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -89,6 +111,41 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		008A13481F03FEB200C46D5F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				008A13491F03FEBB00C46D5F /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		008A13491F03FEBB00C46D5F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0053ED071F014F6D00E039E1 /* Assets.xcassets */,
+				008A13451F03FEA800C46D5F /* bs-background.png */,
+				008A13441F03FEA800C46D5F /* bs-background-blur.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		5531B6054DA68060EB2BFC7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29C7F31D8D8587F1085E619C /* Pods-BlockStackBrowser.debug.xcconfig */,
+				7A682251494778717BD68561 /* Pods-BlockStackBrowser.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6A48487DB4278D2FDA69D1C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1217A6583C6326E661BEE6F1 /* Pods_BlockStackBrowser.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +153,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0053ED0F1F014F6D00E039E1 /* Build configuration list for PBXNativeTarget "BlockStackBrowser" */;
 			buildPhases = (
+				CBAE5CA1298FC7CD855D5ADB /* [CP] Check Pods Manifest.lock */,
 				0053ECF91F014F6D00E039E1 /* Sources */,
 				0053ECFA1F014F6D00E039E1 /* Frameworks */,
 				0053ECFB1F014F6D00E039E1 /* Resources */,
+				3B2E3CC4F24B13201E70D28C /* [CP] Embed Pods Frameworks */,
+				40CEE295E9923321002CF966 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -150,12 +210,68 @@
 			buildActionMask = 2147483647;
 			files = (
 				0053ED0B1F014F6D00E039E1 /* LaunchScreen.storyboard in Resources */,
+				008A13471F03FEA800C46D5F /* bs-background.png in Resources */,
+				008A13461F03FEA800C46D5F /* bs-background-blur.png in Resources */,
 				0053ED081F014F6D00E039E1 /* Assets.xcassets in Resources */,
 				0053ED061F014F6D00E039E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B2E3CC4F24B13201E70D28C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BlockStackBrowser/Pods-BlockStackBrowser-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BlockstackCoreApi-iOS/BlockstackCoreApi_iOS.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlockstackCoreApi_iOS.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlockStackBrowser/Pods-BlockStackBrowser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40CEE295E9923321002CF966 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlockStackBrowser/Pods-BlockStackBrowser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBAE5CA1298FC7CD855D5ADB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlockStackBrowser-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0053ECF91F014F6D00E039E1 /* Sources */ = {
@@ -165,8 +281,11 @@
 				0053ED131F014FA100E039E1 /* DashboardController.swift in Sources */,
 				0053ED151F014FD900E039E1 /* ImageCollectionViewCell.swift in Sources */,
 				005C5D2A1F01892C00EC6808 /* ProfileSearchController.swift in Sources */,
+				008A13431F03FB5600C46D5F /* AccountController.swift in Sources */,
 				0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */,
+				008A13411F03FB4900C46D5F /* WalletController.swift in Sources */,
 				005C5D281F01890200EC6808 /* ProfilesController.swift in Sources */,
+				008A133F1F03FB3600C46D5F /* StorageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +422,7 @@
 		};
 		0053ED101F014F6D00E039E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29C7F31D8D8587F1085E619C /* Pods-BlockStackBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E22X358GZ2;
@@ -316,6 +436,7 @@
 		};
 		0053ED111F014F6D00E039E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A682251494778717BD68561 /* Pods-BlockStackBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E22X358GZ2;
