@@ -40,6 +40,7 @@
 		008A13441F03FEA800C46D5F /* bs-background-blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bs-background-blur.png"; sourceTree = "<group>"; };
 		008A13451F03FEA800C46D5F /* bs-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bs-background.png"; sourceTree = "<group>"; };
 		009DC0D61F03F99D001A4D8F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		00D02E561F040A9300DC7599 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		1217A6583C6326E661BEE6F1 /* Pods_BlockStackBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockStackBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C7F31D8D8587F1085E619C /* Pods-BlockStackBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockStackBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockStackBrowser/Pods-BlockStackBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		7A682251494778717BD68561 /* Pods-BlockStackBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockStackBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockStackBrowser/Pods-BlockStackBrowser.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 				008A13481F03FEB200C46D5F /* Resources */,
 				0053ED0C1F014F6D00E039E1 /* Info.plist */,
 				009DC0D61F03F99D001A4D8F /* Podfile */,
+				00D02E561F040A9300DC7599 /* README.md */,
 			);
 			path = BlockStackBrowser;
 			sourceTree = "<group>";
