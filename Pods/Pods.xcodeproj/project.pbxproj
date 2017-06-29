@@ -36,7 +36,7 @@
 		12F190C014D92167E6D627B32966888E /* BlockstackCoreApi-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BlockstackCoreApi-iOS-dummy.m"; sourceTree = "<group>"; };
 		2E6E5DA5B714DFD92A0EC0FFF619C26D /* BSConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSConstants.swift; path = BlockstackCoreApi/Classes/BSConstants.swift; sourceTree = "<group>"; };
 		34B78864D77307BAA26DBF46C5EEFE89 /* Pods-BlockStackBrowser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlockStackBrowser-umbrella.h"; sourceTree = "<group>"; };
-		39C011A9292888BE6971AB717A285463 /* Pods_BlockStackBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockStackBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39C011A9292888BE6971AB717A285463 /* Pods_BlockStackBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlockStackBrowser.framework; path = "Pods-BlockStackBrowser.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5634B0830361D196A0344FEA2889C8 /* Pods-BlockStackBrowser-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlockStackBrowser-acknowledgements.plist"; sourceTree = "<group>"; };
 		442F3BEAD3EBA6BED87A3AA08FCC698C /* Pods-BlockStackBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockStackBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		45790A7FBBC1BEBAA95B1B087F5EB528 /* Pods-BlockStackBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockStackBrowser.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,16 +48,16 @@
 		7958E7F38615BD97BB455982234A0EAB /* BSURLHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSURLHelpers.swift; path = BlockstackCoreApi/Classes/BSURLHelpers.swift; sourceTree = "<group>"; };
 		7D8F33349B83EBA06E7F2D9CD4A0CC59 /* Pods-BlockStackBrowser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlockStackBrowser-dummy.m"; sourceTree = "<group>"; };
 		83437A3F6CBF8B83DDC6CCC38C05EB27 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; };
-		A1A069ED5BFDB651DD4F2A141FCE49C1 /* BlockstackCoreApi_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockstackCoreApi_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A1A069ED5BFDB651DD4F2A141FCE49C1 /* BlockstackCoreApi_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BlockstackCoreApi_iOS.framework; path = "BlockstackCoreApi-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DAEC1408C8FD0D8431FFAF19AA31F8 /* BlockstackCoreApi-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "BlockstackCoreApi-iOS.xcconfig"; sourceTree = "<group>"; };
 		CC17561FCF0A99B28B50291E983A66A6 /* BlockstackCoreApi-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BlockstackCoreApi-iOS-umbrella.h"; sourceTree = "<group>"; };
 		DBCC6FD4BB2C335C0582633BCC0850E3 /* BSBrowserAuth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSBrowserAuth.swift; path = BlockstackCoreApi/Classes/BSBrowserAuth.swift; sourceTree = "<group>"; };
 		DC0B7FFD4BD3E76F381292380014C604 /* Pods-BlockStackBrowser-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockStackBrowser-resources.sh"; sourceTree = "<group>"; };
-		E94B1B0A9AC98E4EC46093E852E79D45 /* BlockstackCoreApi-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "BlockstackCoreApi-iOS.modulemap"; sourceTree = "<group>"; };
+		E94B1B0A9AC98E4EC46093E852E79D45 /* BlockstackCoreApi-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "BlockstackCoreApi-iOS.modulemap"; sourceTree = "<group>"; };
 		EDBC708A922AA39AD0A77E1C9DC607AA /* BSEndpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSEndpoint.swift; path = BlockstackCoreApi/Classes/BSEndpoint.swift; sourceTree = "<group>"; };
 		F922CBA1AAA566B76EF637EB3EBBB648 /* BSCoreApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSCoreApi.swift; path = BlockstackCoreApi/Classes/BSCoreApi.swift; sourceTree = "<group>"; };
-		FCBE3586C602CD3C467DE660FF135A66 /* Pods-BlockStackBrowser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlockStackBrowser.modulemap"; sourceTree = "<group>"; };
+		FCBE3586C602CD3C467DE660FF135A66 /* Pods-BlockStackBrowser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlockStackBrowser.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +116,7 @@
 				7958E7F38615BD97BB455982234A0EAB /* BSURLHelpers.swift */,
 				B5493C30E7A5DA53588426AC30AD6486 /* Support Files */,
 			);
+			name = "BlockstackCoreApi-iOS";
 			path = "BlockstackCoreApi-iOS";
 			sourceTree = "<group>";
 		};

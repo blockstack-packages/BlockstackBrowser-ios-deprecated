@@ -13,7 +13,7 @@ class ProfileSearchController: UIViewController {
     
     @IBOutlet var tableView : UITableView!
     @IBOutlet var searchText : UITextField!
-    var results : [BSSearchResponse.BSSearchResult] = []
+    var results : [BSSearchResponse.BSOneNameSearchResult] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ extension ProfileSearchController : UITableViewDelegate, UITableViewDataSource
         // Configure the cell...
         if indexPath.row < results.count
         {
-            cell.textLabel?.text = results[indexPath.row].profile.description
+            cell.textLabel?.text = results[indexPath.row].username ?? "?"
         }else{
             if let query = searchText.text, query.count > 0{
                 cell.textLabel?.text = "No Results Found For '\(query)'"
