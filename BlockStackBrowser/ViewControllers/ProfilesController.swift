@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import BlockstackCoreApi_iOS
 
 class ProfilesController: UIViewController {
     
+
     @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
@@ -20,40 +22,43 @@ class ProfilesController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ProfilesController : UITableViewDelegate, UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 2
     }
     
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
- 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        if indexPath.row == 0
+        {
+            cell.textLabel?.text = "Create New Profile"
+            cell.imageView?.image = #imageLiteral(resourceName: "ic_add_circle_outline_black_24px")
+        }
+        else{
+            // Configure the cell...
+            cell.textLabel?.text = "1M7j2EUFjz3hkfEwNTWKGWA7KJ8BLeJ5ur"
+            cell.imageView?.image = nil
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0
+        {
+            
+        }else{
+            performSegue(withIdentifier: "showProfile", sender: tableView)
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 }

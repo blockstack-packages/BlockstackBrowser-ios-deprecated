@@ -9,10 +9,15 @@
 import UIKit
 
 class WalletController: UIViewController {
-
+    
+    @IBOutlet var sendView: UIView!
+    @IBOutlet var receiveView : UIView!
+    @IBOutlet var segment : UISegmentedControl!
+    @IBOutlet var sendToCode : UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        sendToCode.image = "23r1234jklasjf".toQRCode()
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +26,17 @@ class WalletController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func segmentPressed()
+    {
+        if(segment.selectedSegmentIndex == 0)
+        {
+            sendView.isHidden = true
+            receiveView.isHidden = false
+        }else{
+            sendView.isHidden = false
+            receiveView.isHidden = true
+        }
+    }
 
     /*
     // MARK: - Navigation

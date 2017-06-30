@@ -37,7 +37,13 @@ class ProfileSearchController: UIViewController {
             }
         }
     }
-
+    
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        if let index = tableView.indexPathForSelectedRow
+        {
+            tableView.deselectRow(at: index, animated: false)
+        }
+    }
 }
 
 extension ProfileSearchController : UITableViewDelegate, UITableViewDataSource
@@ -72,5 +78,4 @@ extension ProfileSearchController : UITableViewDelegate, UITableViewDataSource
         
         return cell
     }
-    
 }

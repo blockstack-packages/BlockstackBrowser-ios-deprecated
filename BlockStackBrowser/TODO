@@ -1,0 +1,7 @@
+Pass profile object to profile screen.
+Show fake profile on profiles controller
+Add new fake profile on create
+switch between send / receive on payments
+convert between btc and usd
+show a barcode on send link
+
