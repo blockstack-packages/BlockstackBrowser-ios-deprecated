@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockStackBrowser/AppDelegate.swift"
-            timestampString = "520185263.954505"
+            timestampString = "521656933.602867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "application(_:open:options:)"
             landmarkType = "7">
          </BreakpointContent>

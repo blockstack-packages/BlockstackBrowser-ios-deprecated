@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BlockstackCoreApi_iOS
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,22 +23,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
         //handle authorization requests from 3rd party apps
-        if let scheme = url.scheme, scheme == "blockstack", let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
+        if let scheme = url.scheme, scheme == "blockstack",
+            let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems,
+            let requestToken = queryItems.filter({ $0.name == "authRequest"}).first?.value,
+            let decodedToken = TokenSigner.decode(responseData: requestToken),
+            let redirectUri = decodedToken["redirect_uri"] as? String
         {
-            let appId = queryItems.filter({ $0.name == "id"}).first?.value
-            let name = queryItems.filter({ $0.name == "name"}).first?.value
+            let response = ["username" : "testguy"]
+            //TODO Load values from the supplied app manifest
             
-            if let topVC = topViewController(), let appId = appId, let name = name
+            if let signedResponse = TokenSigner.sign(requestData: response), let topVC = topViewController()
             {
-                let alert = UIAlertController(title: "Authorization Request", message: "\(name) would like access to your Blockstack profile", preferredStyle: .actionSheet)
+                let alert = UIAlertController(title: "Authorization Request", message: "An App would like access to your Blockstack profile", preferredStyle: .actionSheet)
                 alert.addAction(UIAlertAction(title: "Authorize", style: .default, handler: { (action) in
-                    let url = URL(string: "bs\(appId)://token?token=12341234")!
+                    let url = URL(string: "\(redirectUri)?authResponse=\(signedResponse)")!
                     UIApplication.shared.open(url, options: [:], completionHandler: { (result) in
                         
                     })
                 }))
                 alert.addAction(UIAlertAction(title: "Decline", style: .destructive, handler: { (action) in
-                    let url = URL(string: "bs\(appId)://token?result=denied")!
+                    let url = URL(string: "\(redirectUri)?result=denied")!
                     UIApplication.shared.open(url, options: [:], completionHandler: { (result) in
                         
                     })

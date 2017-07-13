@@ -13,7 +13,7 @@ class ProfileSearchController: UIViewController {
     
     @IBOutlet var tableView : UITableView!
     @IBOutlet var searchText : UITextField!
-    var results : [BSSearchResponse.BSOneNameSearchResult] = []
+    var results : [SearchResponse.SearchResult] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class ProfileSearchController: UIViewController {
     {
         if let query = searchText.text
         {
-            BSCoreApi.search(query: query) { (response, error) in
+            CoreApi.search(query: query) { (response, error) in
                 print(response ?? (error ?? "No response"))
                 if let results = response?.results{
                     self.results = results
@@ -67,7 +67,7 @@ extension ProfileSearchController : UITableViewDelegate, UITableViewDataSource
         // Configure the cell...
         if indexPath.row < results.count
         {
-            cell.textLabel?.text = results[indexPath.row].username ?? "?"
+            cell.textLabel?.text = results[indexPath.row].profile.description
         }else{
             if let query = searchText.text, query.count > 0{
                 cell.textLabel?.text = "No Results Found For '\(query)'"

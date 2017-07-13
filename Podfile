@@ -6,6 +6,7 @@ target 'BlockStackBrowser' do
   use_frameworks!
 
   # Pods for BlockStackBrowser
-  pod "BlockstackCoreApi-iOS"
+    pod "BlockstackCoreApi-iOS"
+#pod 'BlockstackCoreApi-iOS', :path => '../BlockstackCoreApi'
 
 end
