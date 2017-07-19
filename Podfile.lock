@@ -1,11 +1,11 @@
 PODS:
-  - BlockstackCoreApi-iOS (0.1.15)
+  - BlockstackCoreApi-iOS (0.1.18)
 
 DEPENDENCIES:
   - BlockstackCoreApi-iOS
 
 SPEC CHECKSUMS:
-  BlockstackCoreApi-iOS: 20cdba1ce093cb0c1fd6957338e89dc9702eaa10
+  BlockstackCoreApi-iOS: 00aee20163c30a8ea145ad57e1fed19c6af94a8d
 
 PODFILE CHECKSUM: e595197822756d8fbe6dbc83a88d073378779a6a
 

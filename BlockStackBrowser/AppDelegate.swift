@@ -26,13 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let scheme = url.scheme, scheme == "blockstack",
             let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems,
             let requestToken = queryItems.filter({ $0.name == "authRequest"}).first?.value,
-            let decodedToken = TokenSigner.decode(responseData: requestToken),
+            let decodedToken = TokenSigner.decodeUnsecured(responseData: requestToken),
             let redirectUri = decodedToken["redirect_uri"] as? String
         {
             let response = ["username" : "testguy"]
             //TODO Load values from the supplied app manifest
             
-            if let signedResponse = TokenSigner.sign(requestData: response), let topVC = topViewController()
+            if let signedResponse = TokenSigner.signUnsecured(requestData: response), let topVC = topViewController()
             {
                 let alert = UIAlertController(title: "Authorization Request", message: "An App would like access to your Blockstack profile", preferredStyle: .actionSheet)
                 alert.addAction(UIAlertAction(title: "Authorize", style: .default, handler: { (action) in

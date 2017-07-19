@@ -201,7 +201,7 @@
 					0053ECFC1F014F6D00E039E1 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = E22X358GZ2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -447,11 +447,15 @@
 			baseConfigurationReference = 29C7F31D8D8587F1085E619C /* Pods-BlockStackBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = E22X358GZ2;
 				INFOPLIST_FILE = BlockStackBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.blockstack.BlockStackBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bedkin.BlockstackBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "45cdbb66-626c-431b-9a01-b4154d9d2d6b";
+				PROVISIONING_PROFILE_SPECIFIER = "bedkin wildcard dev";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -461,11 +465,15 @@
 			baseConfigurationReference = 7A682251494778717BD68561 /* Pods-BlockStackBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bedkin, Inc (E22X358GZ2)";
 				DEVELOPMENT_TEAM = E22X358GZ2;
 				INFOPLIST_FILE = BlockStackBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.blockstack.BlockStackBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bedkin.BlockstackBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8957bcee-1d6a-45f9-a3cf-847e3d5bd63e";
+				PROVISIONING_PROFILE_SPECIFIER = "bedkin wildcard adhoc";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
