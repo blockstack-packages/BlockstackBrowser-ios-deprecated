@@ -9,4 +9,7 @@ target 'BlockStackBrowser' do
     pod "BlockstackCoreApi-iOS"
 #pod 'BlockstackCoreApi-iOS', :path => '../BlockstackCoreApi'
 
+    pod 'CDZQRScanningViewController'
+    pod 'QwikHttp'
+
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CDZQRScanningViewController
 
 class WalletController: UIViewController {
     
@@ -14,10 +15,22 @@ class WalletController: UIViewController {
     @IBOutlet var receiveView : UIView!
     @IBOutlet var segment : UISegmentedControl!
     @IBOutlet var sendToCode : UIImageView!
+    @IBOutlet var codeText : UITextField!
+    @IBOutlet var usdValueLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sendToCode.image = "23r1234jklasjf".toQRCode()
+        
+        //calculate and display the value of USD
+        self.usdValueLabel.text = ""
+        BitcoinPriceService.currentBitcoinPrice { (price) -> (Void) in
+            if let price = price
+            {
+                self.usdValueLabel.text = "= $" + String(describing: price)
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -37,7 +50,26 @@ class WalletController: UIViewController {
             receiveView.isHidden = true
         }
     }
-
+    
+    @IBAction func scanCode()
+    {
+        let scanVC = CDZQRScanningViewController()!
+        let nav = UINavigationController(rootViewController: scanVC)
+        scanVC.resultBlock = {(result) in
+            if let result = result{
+                self.codeText.text = result
+            }
+            nav.dismiss(animated: true, completion: nil)
+        }
+        scanVC.errorBlock = {(error) in
+            nav.dismiss(animated: true, completion: nil)
+        }
+        scanVC.cancelBlock = {
+            nav.dismiss(animated: true, completion: nil)
+        }
+        present(nav, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

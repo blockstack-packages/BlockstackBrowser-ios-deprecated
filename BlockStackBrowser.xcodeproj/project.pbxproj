@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004D475D1F21431800263866 /* BitcoinPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D475C1F21431800263866 /* BitcoinPriceService.swift */; };
 		0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053ED001F014F6D00E039E1 /* AppDelegate.swift */; };
 		0053ED061F014F6D00E039E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0053ED041F014F6D00E039E1 /* Main.storyboard */; };
 		0053ED081F014F6D00E039E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0053ED071F014F6D00E039E1 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		004D475C1F21431800263866 /* BitcoinPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceService.swift; sourceTree = "<group>"; };
 		0053ECFD1F014F6D00E039E1 /* BlockStackBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockStackBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0053ED001F014F6D00E039E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0053ED051F014F6D00E039E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		004D475B1F21430000263866 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				004D475C1F21431800263866 /* BitcoinPriceService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		0053ECF41F014F6D00E039E1 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		0053ECFF1F014F6D00E039E1 /* BlockStackBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				004D475B1F21430000263866 /* Service */,
 				00EC5FB31F06A198002D1950 /* Helpers */,
 				005C5D261F0188D900EC6808 /* Cells */,
 				005C5D251F0188CB00EC6808 /* ViewControllers */,
@@ -248,10 +259,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BlockStackBrowser/Pods-BlockStackBrowser-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BlockstackCoreApi-iOS/BlockstackCoreApi_iOS.framework",
+				"${BUILT_PRODUCTS_DIR}/CDZQRScanningViewController/CDZQRScanningViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/QwikHttp/QwikHttp.framework",
+				"${BUILT_PRODUCTS_DIR}/QwikJson/QwikJson.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlockstackCoreApi_iOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CDZQRScanningViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QwikHttp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QwikJson.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -299,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0053ED131F014FA100E039E1 /* DashboardController.swift in Sources */,
+				004D475D1F21431800263866 /* BitcoinPriceService.swift in Sources */,
 				0053ED151F014FD900E039E1 /* ImageCollectionViewCell.swift in Sources */,
 				005C5D2A1F01892C00EC6808 /* ProfileSearchController.swift in Sources */,
 				008A13431F03FB5600C46D5F /* AccountController.swift in Sources */,
