@@ -11,5 +11,9 @@ target 'BlockStackBrowser' do
 
     pod 'CDZQRScanningViewController'
     pod 'QwikHttp'
-
+    
+    #Using pre-release version of dropbox SDK for xcode 9. remove :git => ... after xcode 9 out of beta
+    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'dev'
+    pod 'SwiftyDropbox', :git => 'https://github.com/dropbox/SwiftyDropbox.git'
+    
 end

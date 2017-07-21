@@ -23,6 +23,8 @@
 		008A13431F03FB5600C46D5F /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A13421F03FB5600C46D5F /* AccountController.swift */; };
 		008A13461F03FEA800C46D5F /* bs-background-blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 008A13441F03FEA800C46D5F /* bs-background-blur.png */; };
 		008A13471F03FEA800C46D5F /* bs-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 008A13451F03FEA800C46D5F /* bs-background.png */; };
+		0097B5721F2237FA005A2E24 /* DropboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097B5711F2237FA005A2E24 /* DropboxService.swift */; };
+		0097B5741F225395005A2E24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097B5731F225395005A2E24 /* Constants.swift */; };
 		00EC5FB51F06A1B7002D1950 /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EC5FB41F06A1B7002D1950 /* String+QRCode.swift */; };
 		AEEEAA625D77C88C068897C4 /* Pods_BlockStackBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1217A6583C6326E661BEE6F1 /* Pods_BlockStackBrowser.framework */; };
 /* End PBXBuildFile section */
@@ -46,7 +48,9 @@
 		008A13421F03FB5600C46D5F /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		008A13441F03FEA800C46D5F /* bs-background-blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bs-background-blur.png"; sourceTree = "<group>"; };
 		008A13451F03FEA800C46D5F /* bs-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bs-background.png"; sourceTree = "<group>"; };
-		009DC0D61F03F99D001A4D8F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		0097B5711F2237FA005A2E24 /* DropboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropboxService.swift; sourceTree = "<group>"; };
+		0097B5731F225395005A2E24 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		009DC0D61F03F99D001A4D8F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		00D02E561F040A9300DC7599 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		00EC5FB41F06A1B7002D1950 /* String+QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
 		1217A6583C6326E661BEE6F1 /* Pods_BlockStackBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockStackBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				004D475C1F21431800263866 /* BitcoinPriceService.swift */,
+				0097B5711F2237FA005A2E24 /* DropboxService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 				009DC0D61F03F99D001A4D8F /* Podfile */,
 				00D02E561F040A9300DC7599 /* README.md */,
 				006D02F01F069B450098F069 /* TODO */,
+				0097B5731F225395005A2E24 /* Constants.swift */,
 			);
 			path = BlockStackBrowser;
 			sourceTree = "<group>";
@@ -258,17 +264,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BlockStackBrowser/Pods-BlockStackBrowser-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BlockstackCoreApi-iOS/BlockstackCoreApi_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/CDZQRScanningViewController/CDZQRScanningViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/QwikHttp/QwikHttp.framework",
 				"${BUILT_PRODUCTS_DIR}/QwikJson/QwikJson.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyDropbox/SwiftyDropbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlockstackCoreApi_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CDZQRScanningViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QwikHttp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QwikJson.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyDropbox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -321,6 +331,8 @@
 				005C5D2A1F01892C00EC6808 /* ProfileSearchController.swift in Sources */,
 				008A13431F03FB5600C46D5F /* AccountController.swift in Sources */,
 				0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */,
+				0097B5721F2237FA005A2E24 /* DropboxService.swift in Sources */,
+				0097B5741F225395005A2E24 /* Constants.swift in Sources */,
 				008A13411F03FB4900C46D5F /* WalletController.swift in Sources */,
 				00EC5FB51F06A1B7002D1950 /* String+QRCode.swift in Sources */,
 				006D02EF1F057D030098F069 /* ProfileViewController.swift in Sources */,

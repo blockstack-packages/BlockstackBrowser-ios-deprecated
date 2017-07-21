@@ -8,6 +8,7 @@
 
 import UIKit
 import BlockstackCoreApi_iOS
+import SwiftyDropbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        DropboxService.shared().setup()
+        
         // Override point for customization after application launch.
         return true
     }
@@ -51,6 +55,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return true
             }
         }
+        
+        else if let authResult = DropboxClientsManager.handleRedirectURL(url) {
+            switch authResult {
+            case .success:
+                print("Success! User is logged into Dropbox.")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.Notifications.dropboxStatusChanged), object: nil)
+            case .cancel:
+                print("Authorization flow was manually canceled by user!")
+            case .error(_, let description):
+                print("Error: \(description)")
+            }
+            return true
+        }
+        
         return false
     }
 
