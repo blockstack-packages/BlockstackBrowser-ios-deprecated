@@ -256,6 +256,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Copy Address"/>
+                                        <connections>
+                                            <action selector="copyCode" destination="OqE-AG-i9u" eventType="touchUpInside" id="VCl-ka-b6Z"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdI-0d-kTH">
                                         <rect key="frame" x="0.0" y="176" width="240" height="208"/>
@@ -269,6 +272,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Wallet" id="lm9-tc-bMf"/>
                     <connections>
+                        <outlet property="codeLabel" destination="Pbe-6h-ibi" id="Qu0-oC-bjT"/>
                         <outlet property="codeText" destination="aEV-Wc-zOG" id="dnU-82-n1r"/>
                         <outlet property="receiveView" destination="V6g-DB-dH1" id="vpG-B5-OyJ"/>
                         <outlet property="segment" destination="nbV-DG-PnL" id="YrM-Du-uaS"/>

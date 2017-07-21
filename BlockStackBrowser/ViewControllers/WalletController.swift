@@ -17,6 +17,7 @@ class WalletController: UIViewController {
     @IBOutlet var sendToCode : UIImageView!
     @IBOutlet var codeText : UITextField!
     @IBOutlet var usdValueLabel : UILabel!
+    @IBOutlet var codeLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,11 @@ class WalletController: UIViewController {
             nav.dismiss(animated: true, completion: nil)
         }
         present(nav, animated: true, completion: nil)
+    }
+    
+    @IBAction func copyCode()
+    {
+        UIPasteboard.general.string = codeLabel.text
     }
     
     /*
