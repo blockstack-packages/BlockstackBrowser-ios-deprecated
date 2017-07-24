@@ -21,6 +21,8 @@ target 'BlockStackBrowser' do
     
     #storage apis
     pod 'SwiftyDropbox', :git => 'https://github.com/dropbox/SwiftyDropbox.git'
+    pod 'Google/SignIn'
+    pod 'GoogleAPIClientForREST/Drive', '~> 1.2.1'
     
     #Helper functions and methods--- stuff like rounded network image views
     pod 'SeaseAssist'

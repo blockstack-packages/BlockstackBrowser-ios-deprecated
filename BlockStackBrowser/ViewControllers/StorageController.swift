@@ -12,7 +12,7 @@ import SwiftyDropbox
 class StorageController: UIViewController {
     
     enum StorageMethodRows : Int{
-        case dropbox = 0
+        case dropbox = 0, google, amazon, microsoft
     }
     
     @IBOutlet var tableView : UITableView!
@@ -41,7 +41,7 @@ extension StorageController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     
@@ -51,7 +51,26 @@ extension StorageController : UITableViewDelegate, UITableViewDataSource
         if(indexPath.row == StorageMethodRows.dropbox.rawValue)
         {
             cell.textLabel?.text = "Dropbox"
-            cell.accessoryType = DropboxService.shared().isAuthorized() ? .checkmark : .disclosureIndicator
+            
+        }
+        else if(indexPath.row == StorageMethodRows.google.rawValue)
+        {
+            cell.textLabel?.text = "Google Drive"
+        }
+        else if(indexPath.row == StorageMethodRows.amazon.rawValue)
+        {
+            cell.textLabel?.text = "Amazon Cloud Drive"
+            
+        }
+        else if(indexPath.row == StorageMethodRows.microsoft.rawValue)
+        {
+            cell.textLabel?.text = "Microsoft OneDrive"
+        }
+        
+        cell.accessoryType = .none
+        if let service = provider(for: indexPath)
+        {
+            cell.accessoryType = service.isAuthorized() ? .checkmark : .disclosureIndicator
         }
         
         return cell
@@ -61,11 +80,29 @@ extension StorageController : UITableViewDelegate, UITableViewDataSource
         
         tableView.deselectRow(at: indexPath, animated: false)
         
-        if(DropboxService.shared().isAuthorized())
+        if let storageProvider = provider(for: indexPath)
         {
-            DropboxService.shared().logout()
-        }else{
-            DropboxService.shared().logIn(from: self)
+            if storageProvider.isAuthorized()
+            {
+                storageProvider.logout()
+            }else{
+                storageProvider.logIn(from: self)
+            }
         }
+    }
+    
+    func provider(for indexPath: IndexPath) -> StorageProvider?
+    {
+        if indexPath.row == StorageMethodRows.dropbox.rawValue
+        {
+            return DropboxService.shared()
+        }
+        
+        if indexPath.row == StorageMethodRows.google.rawValue
+        {
+            return GoogleDriveService.shared()
+        }
+        
+        return nil
     }
 }

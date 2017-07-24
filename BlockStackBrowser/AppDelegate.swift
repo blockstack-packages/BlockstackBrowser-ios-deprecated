@@ -9,6 +9,8 @@
 import UIKit
 import BlockstackCoreApi_iOS
 import SwiftyDropbox
+import Google
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         DropboxService.shared().setup()
+        GoogleDriveService.shared().setup()
         
         // Override point for customization after application launch.
         return true
@@ -67,6 +70,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Error: \(description)")
             }
             return true
+        }
+        else if let scheme = url.scheme, scheme.contains("com.googleusercontent.apps") {
+            let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
+            let annotation = options[UIApplicationOpenURLOptionsKey.annotation]
+            return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: sourceApplication,
+                                                 annotation: annotation)
         }
         
         return false

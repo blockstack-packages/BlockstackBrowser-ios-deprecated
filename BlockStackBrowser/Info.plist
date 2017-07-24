@@ -23,18 +23,18 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-                <string>db-xjqmf5zd9q87dpf</string>
+				<string>com.googleusercontent.apps.1098865906916-lo3glar3gp09dglcgf47i3r0pq8lqinj</string>
+				<string>db-xjqmf5zd9q87dpf</string>
 			</array>
-            <key>CFBundleURLName</key>
-            <string>blockstack</string>
+			<key>CFBundleURLName</key>
+			<string>blockstack</string>
 		</dict>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>dbapi-8-emm</string>
-        <string>dbapi-2</string>
-    </array>
-    
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>dbapi-8-emm</string>
+		<string>dbapi-2</string>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

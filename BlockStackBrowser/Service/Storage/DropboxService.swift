@@ -9,13 +9,12 @@
 import Foundation
 import SwiftyDropbox
 
-class DropboxService
+class DropboxService : StorageProvider
 {
-    
     static let DropboxKey = "xjqmf5zd9q87dpf"
     
     // shared instance
-    class func shared() -> DropboxService {
+    class func shared() -> StorageProvider {
         struct Singleton {
             static let instance = DropboxService()
         }
@@ -49,5 +48,4 @@ class DropboxService
         DropboxClientsManager.unlinkClients()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.Notifications.dropboxStatusChanged), object: nil)
     }
-    
 }
