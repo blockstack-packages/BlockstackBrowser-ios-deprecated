@@ -34,15 +34,6 @@ class WalletController: UIViewController {
             }
         }
         
-        receiveView.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.8)
-        receiveView.layer.borderColor = UIColor.lightGray.cgColor
-        receiveView.layer.borderWidth = 1
-        receiveView.layer.cornerRadius = 6
-        
-        sendView.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.8)
-        sendView.layer.borderColor = UIColor.lightGray.cgColor
-        sendView.layer.borderWidth = 1
-        sendView.layer.cornerRadius = 6
     }
 
     override func didReceiveMemoryWarning() {

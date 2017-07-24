@@ -8,6 +8,7 @@
 
 import UIKit
 import BlockstackCoreApi_iOS
+import SeaseAssist
 
 class ProfileSearchController: UIViewController {
     
@@ -70,10 +71,14 @@ extension ProfileSearchController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        cell.imageView?.image = nil
+        
         // Configure the cell...
         if indexPath.row < results.count
         {
-            cell.textLabel?.text = results[indexPath.row].username
+            let result = results[indexPath.row]
+            cell.textLabel?.text = result.username
+            cell.imageView?.setImageFromUrl(result.profile.image?.first?.contentUrl, withDefault: UIImage(named: "avatar.png"), rounding: true, completion: { (loaded) in })
         }else{
             if let query = searchText.text, query.count > 0{
                 cell.textLabel?.text = "No Results Found For '\(query)'"

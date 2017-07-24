@@ -20,6 +20,13 @@ class ProfileViewController: UIViewController {
     @IBOutlet var imageView : UIImageView!
     @IBOutlet var userNameButton : UIButton!
     @IBOutlet var detailsLabel : UILabel!
+    @IBOutlet var editButton : UIButton!
+    @IBOutlet var userImage : UIImageView!
+    @IBOutlet var addressContainer : UIView!
+    @IBOutlet var linkContainer : UIView!
+    @IBOutlet var fbButton : UIButton!
+    @IBOutlet var twitterButton : UIButton!
+    @IBOutlet var githubButton : UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +34,21 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
         showProfile()
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
+    @IBAction func dismiss()
+    {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: Profile display
+extension ProfileViewController
+{
     func showProfile()
     {
         addressLabel.text = profile.bitcoinAddress()
@@ -41,6 +62,7 @@ class ProfileViewController: UIViewController {
         if isOwned == false
         {
             userNameButton.isHidden = true
+            editButton.isHidden = true
         }
         
         var details = ""
@@ -59,7 +81,10 @@ class ProfileViewController: UIViewController {
         }
         detailsLabel.text = details
         
+        userImage.setImageFromUrl(profile.image?.first?.contentUrl, withDefault: UIImage(named: "avatar.png"), rounding: true, completion: { (loaded) in })
+        
         showQRCode()
+        showAccounts()
     }
     
     func showQRCode()
@@ -69,15 +94,44 @@ class ProfileViewController: UIViewController {
             imageView.image = addressLabel.text?.toQRCode()
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    @IBAction func dismiss()
+    func showAccounts()
     {
-        dismiss(animated: true, completion: nil)
+        if let _ = profile.account.filter({$0.service == Account.ServiceType.facebook.rawValue}).first
+        {
+            fbButton.isHidden = false
+            linkContainer.isHidden = false
+        }
+        
+        if let _ = profile.account.filter({$0.service == Account.ServiceType.twitter.rawValue}).first
+        {
+            twitterButton.isHidden = false
+            linkContainer.isHidden = false
+        }
+        
+        if let _ = profile.account.filter({$0.service == Account.ServiceType.github.rawValue}).first
+        {
+            githubButton.isHidden = false
+            linkContainer.isHidden = false
+        }
+    }
+}
+
+//MARK: Actions
+extension ProfileViewController
+{
+    @IBAction func fbPressed()
+    {
+        
     }
     
+    @IBAction func twitterPressed()
+    {
+        
+    }
+    
+    @IBAction func githubPressed()
+    {
+        
+    }
 }

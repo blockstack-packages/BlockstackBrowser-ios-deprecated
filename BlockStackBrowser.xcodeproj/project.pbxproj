@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		004A455E1F26376300244E43 /* String+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A455D1F26376300244E43 /* String+Subscript.swift */; };
+		004A45601F26403900244E43 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 004A455F1F26403900244E43 /* avatar.png */; };
+		004A45641F26461A00244E43 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = 004A45611F26461A00244E43 /* github.png */; };
+		004A45651F26461A00244E43 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 004A45621F26461A00244E43 /* twitter.png */; };
+		004A45661F26461A00244E43 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 004A45631F26461A00244E43 /* fb.png */; };
+		004A45681F2646CD00244E43 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A45671F2646CD00244E43 /* RoundedView.swift */; };
 		004D475D1F21431800263866 /* BitcoinPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D475C1F21431800263866 /* BitcoinPriceService.swift */; };
 		0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053ED001F014F6D00E039E1 /* AppDelegate.swift */; };
 		0053ED061F014F6D00E039E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0053ED041F014F6D00E039E1 /* Main.storyboard */; };
@@ -32,6 +37,11 @@
 
 /* Begin PBXFileReference section */
 		004A455D1F26376300244E43 /* String+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Subscript.swift"; sourceTree = "<group>"; };
+		004A455F1F26403900244E43 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = ../../../../../../Desktop/avatar.png; sourceTree = "<group>"; };
+		004A45611F26461A00244E43 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
+		004A45621F26461A00244E43 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		004A45631F26461A00244E43 /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
+		004A45671F2646CD00244E43 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		004D475C1F21431800263866 /* BitcoinPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceService.swift; sourceTree = "<group>"; };
 		0053ECFD1F014F6D00E039E1 /* BlockStackBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockStackBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0053ED001F014F6D00E039E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +162,10 @@
 		008A13491F03FEBB00C46D5F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				004A45611F26461A00244E43 /* github.png */,
+				004A45621F26461A00244E43 /* twitter.png */,
+				004A45631F26461A00244E43 /* fb.png */,
+				004A455F1F26403900244E43 /* avatar.png */,
 				0053ED071F014F6D00E039E1 /* Assets.xcassets */,
 				008A13451F03FEA800C46D5F /* bs-background.png */,
 				008A13441F03FEA800C46D5F /* bs-background-blur.png */,
@@ -164,6 +178,7 @@
 			children = (
 				00EC5FB41F06A1B7002D1950 /* String+QRCode.swift */,
 				004A455D1F26376300244E43 /* String+Subscript.swift */,
+				004A45671F2646CD00244E43 /* RoundedView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -248,10 +263,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004A45641F26461A00244E43 /* github.png in Resources */,
 				006D02F11F069B450098F069 /* TODO in Resources */,
+				004A45601F26403900244E43 /* avatar.png in Resources */,
 				0053ED0B1F014F6D00E039E1 /* LaunchScreen.storyboard in Resources */,
 				008A13471F03FEA800C46D5F /* bs-background.png in Resources */,
+				004A45661F26461A00244E43 /* fb.png in Resources */,
 				008A13461F03FEA800C46D5F /* bs-background-blur.png in Resources */,
+				004A45651F26461A00244E43 /* twitter.png in Resources */,
 				0053ED081F014F6D00E039E1 /* Assets.xcassets in Resources */,
 				0053ED061F014F6D00E039E1 /* Main.storyboard in Resources */,
 			);
@@ -272,6 +291,7 @@
 				"${BUILT_PRODUCTS_DIR}/CDZQRScanningViewController/CDZQRScanningViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/QwikHttp/QwikHttp.framework",
 				"${BUILT_PRODUCTS_DIR}/QwikJson/QwikJson.framework",
+				"${BUILT_PRODUCTS_DIR}/SeaseAssist/SeaseAssist.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyDropbox/SwiftyDropbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -281,6 +301,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CDZQRScanningViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QwikHttp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QwikJson.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SeaseAssist.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyDropbox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +357,7 @@
 				0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */,
 				0097B5721F2237FA005A2E24 /* DropboxService.swift in Sources */,
 				0097B5741F225395005A2E24 /* Constants.swift in Sources */,
+				004A45681F2646CD00244E43 /* RoundedView.swift in Sources */,
 				008A13411F03FB4900C46D5F /* WalletController.swift in Sources */,
 				00EC5FB51F06A1B7002D1950 /* String+QRCode.swift in Sources */,
 				006D02EF1F057D030098F069 /* ProfileViewController.swift in Sources */,
