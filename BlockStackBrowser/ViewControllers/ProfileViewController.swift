@@ -122,16 +122,28 @@ extension ProfileViewController
 {
     @IBAction func fbPressed()
     {
-        
+        if let identifier = profile.account.filter({$0.service == Account.ServiceType.facebook.rawValue}).first?.identifier
+        {
+            let url = URL(string: "https://facebook.com/\(identifier)")!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     @IBAction func twitterPressed()
     {
-        
+        if let identifier = profile.account.filter({$0.service == Account.ServiceType.twitter.rawValue}).first?.identifier
+        {
+            let url = URL(string: "https://twitter.com/\(identifier)")!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     @IBAction func githubPressed()
     {
-        
+        if let identifier = profile.account.filter({$0.service == Account.ServiceType.github.rawValue}).first?.identifier
+        {
+            let url = URL(string: "https://github.com/\(identifier)")!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
