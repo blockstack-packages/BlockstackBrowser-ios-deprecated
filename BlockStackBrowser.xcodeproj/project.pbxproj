@@ -60,6 +60,10 @@
 		005C5D291F01892C00EC6808 /* ProfileSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSearchController.swift; sourceTree = "<group>"; };
 		006D02EE1F057D030098F069 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		006D02F01F069B450098F069 /* TODO */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		00756F711F26B8340052EE4D /* ACDSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ACDSKit.framework; sourceTree = "<group>"; };
+		00756F721F26B8650052EE4D /* LoginWithAmazon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LoginWithAmazon.framework; sourceTree = "<group>"; };
+		00756F731F26B8B10052EE4D /* AmazonCloudDriveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmazonCloudDriveService.swift; sourceTree = "<group>"; };
+		00756F741F26B8B10052EE4D /* MicrosoftOneDriveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftOneDriveService.swift; sourceTree = "<group>"; };
 		008A133E1F03FB3600C46D5F /* StorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
 		008A13401F03FB4900C46D5F /* WalletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletController.swift; sourceTree = "<group>"; };
 		008A13421F03FB5600C46D5F /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		004A45691F266B2300244E43 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				00756F731F26B8B10052EE4D /* AmazonCloudDriveService.swift */,
+				00756F741F26B8B10052EE4D /* MicrosoftOneDriveService.swift */,
 				004A456D1F26A83000244E43 /* DropboxService.swift */,
 				0097B5711F2237FA005A2E24 /* GoogleDriveService.swift */,
 				004A456A1F266C3300244E43 /* StorageProvider.swift */,
@@ -211,6 +217,8 @@
 		6A48487DB4278D2FDA69D1C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00756F721F26B8650052EE4D /* LoginWithAmazon.framework */,
+				00756F711F26B8340052EE4D /* ACDSKit.framework */,
 				1217A6583C6326E661BEE6F1 /* Pods_BlockStackBrowser.framework */,
 			);
 			name = Frameworks;
