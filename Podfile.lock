@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
-  - BlockstackCoreApi-iOS (0.1.18)
+  - BlockstackCoreApi-iOS (0.1.20)
   - CDZQRScanningViewController (1.0.7)
   - QwikHttp (1.7.11.3):
     - QwikJson
@@ -9,28 +9,35 @@ PODS:
     - Alamofire (~> 4.4.0)
 
 DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift4`)
   - BlockstackCoreApi-iOS
   - CDZQRScanningViewController
   - QwikHttp
   - SwiftyDropbox (from `https://github.com/dropbox/SwiftyDropbox.git`)
 
 EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift4
+    :git: https://github.com/Alamofire/Alamofire.git
   SwiftyDropbox:
     :git: https://github.com/dropbox/SwiftyDropbox.git
 
 CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 9d6d16316edfb8ece47abebe1621d05ee6b0e6ed
+    :git: https://github.com/Alamofire/Alamofire.git
   SwiftyDropbox:
     :commit: f0cdded352417682c13655fdba631ccbf51ce3e6
     :git: https://github.com/dropbox/SwiftyDropbox.git
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  BlockstackCoreApi-iOS: 00aee20163c30a8ea145ad57e1fed19c6af94a8d
+  Alamofire: 4c2bf7fa03c4a626163606de0a417568c270575e
+  BlockstackCoreApi-iOS: dc6def1ab412c222ae1d84ac6b7d18baeb65a1d8
   CDZQRScanningViewController: bec2f94f0378876e44a64db156d92f11d2825d95
   QwikHttp: 5596cc1a1e7e5f54ac44c6bdb8876ba7fc8b20ea
   QwikJson: 4da1128475b28e3c57a3e35baf9c3435f9d2b059
   SwiftyDropbox: 11faf37e3429e46f01a6c17683a38bb15b066a2f
 
-PODFILE CHECKSUM: c4081a9e8b4f9bad16cedc47814a3533e8180641
+PODFILE CHECKSUM: 0fbcca6975758d71cb8180b59610a7e6fa0c63b4
 
 COCOAPODS: 1.3.0.beta.2
