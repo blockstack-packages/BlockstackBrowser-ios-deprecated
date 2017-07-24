@@ -38,10 +38,16 @@ class ProfileSearchController: UIViewController {
         }
     }
     
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let index = tableView.indexPathForSelectedRow
         {
             tableView.deselectRow(at: index, animated: false)
+            
+            if let vc = segue.destination as? ProfileViewController
+            {
+                vc.profile = results[index.row].profile
+                vc.username = results[index.row].username
+            }
         }
     }
 }

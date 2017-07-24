@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004A455E1F26376300244E43 /* String+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A455D1F26376300244E43 /* String+Subscript.swift */; };
 		004D475D1F21431800263866 /* BitcoinPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D475C1F21431800263866 /* BitcoinPriceService.swift */; };
 		0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053ED001F014F6D00E039E1 /* AppDelegate.swift */; };
 		0053ED061F014F6D00E039E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0053ED041F014F6D00E039E1 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		004A455D1F26376300244E43 /* String+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Subscript.swift"; sourceTree = "<group>"; };
 		004D475C1F21431800263866 /* BitcoinPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceService.swift; sourceTree = "<group>"; };
 		0053ECFD1F014F6D00E039E1 /* BlockStackBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockStackBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0053ED001F014F6D00E039E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				00EC5FB41F06A1B7002D1950 /* String+QRCode.swift */,
+				004A455D1F26376300244E43 /* String+Subscript.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				00EC5FB51F06A1B7002D1950 /* String+QRCode.swift in Sources */,
 				006D02EF1F057D030098F069 /* ProfileViewController.swift in Sources */,
 				005C5D281F01890200EC6808 /* ProfilesController.swift in Sources */,
+				004A455E1F26376300244E43 /* String+Subscript.swift in Sources */,
 				008A133F1F03FB3600C46D5F /* StorageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

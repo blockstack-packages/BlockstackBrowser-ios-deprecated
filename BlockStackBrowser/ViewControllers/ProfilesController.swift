@@ -11,6 +11,7 @@ import BlockstackCoreApi_iOS
 
 class ProfilesController: UIViewController {
     
+    var profiles : [Profile] = [ProfilesController.randomProfile()]
 
     @IBOutlet var tableView : UITableView!
     
@@ -22,6 +23,14 @@ class ProfilesController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ProfileViewController, let index = tableView.indexPathForSelectedRow
+        {
+            vc.profile = profiles[index.row - 1]
+            vc.isOwned = true
+        }
+    }
 }
 
 extension ProfilesController : UITableViewDelegate, UITableViewDataSource
@@ -31,7 +40,7 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return profiles.count + 1
     }
     
     
@@ -45,7 +54,8 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
         }
         else{
             // Configure the cell...
-            cell.textLabel?.text = "1M7j2EUFjz3hkfEwNTWKGWA7KJ8BLeJ5ur"
+            let profile = profiles[indexPath.row - 1]
+            cell.textLabel?.text = profile.bitcoinAddress() ?? "?"
             cell.imageView?.image = nil
         }
         
@@ -55,10 +65,27 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0
         {
-            
+            profiles.append(ProfilesController.randomProfile())
+            tableView.reloadData()
         }else{
             performSegue(withIdentifier: "showProfile", sender: tableView)
         }
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+}
+
+//MARK: Prototype Helpers
+extension ProfilesController
+{
+    static func randomProfile() -> Profile
+    {
+        var profile = Profile()
+        var btcAccount = Account()
+        btcAccount.service = Account.ServiceType.bitcoin.rawValue
+        btcAccount.identifier = UUID.init().uuidString[0...24]
+        profile.account = [btcAccount]
+        profile.name = "Test User"
+        return profile
     }
 }

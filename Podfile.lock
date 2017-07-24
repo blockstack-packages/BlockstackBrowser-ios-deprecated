@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
-  - BlockstackCoreApi-iOS (0.1.20)
+  - BlockstackCoreApi-iOS (0.1.22)
   - CDZQRScanningViewController (1.0.7)
   - QwikHttp (1.7.11.3):
     - QwikJson
@@ -32,7 +32,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 4c2bf7fa03c4a626163606de0a417568c270575e
-  BlockstackCoreApi-iOS: dc6def1ab412c222ae1d84ac6b7d18baeb65a1d8
+  BlockstackCoreApi-iOS: 37f8a71d1a70299aa8c733efa667e32c69c60af4
   CDZQRScanningViewController: bec2f94f0378876e44a64db156d92f11d2825d95
   QwikHttp: 5596cc1a1e7e5f54ac44c6bdb8876ba7fc8b20ea
   QwikJson: 4da1128475b28e3c57a3e35baf9c3435f9d2b059
