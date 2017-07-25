@@ -78,7 +78,13 @@ extension ProfileSearchController : UITableViewDelegate, UITableViewDataSource
         {
             let result = results[indexPath.row]
             cell.textLabel?.text = result.username
-            cell.imageView?.setImageFromUrl(result.profile.image?.first?.contentUrl, withDefault: UIImage(named: "avatar.png"), rounding: true, completion: { (loaded) in })
+            cell.imageView?.bounds = CGRect(x: 0, y: 0, width: 25, height: 25)
+            cell.imageView?.setImageFromUrl(result.profile.image?.first?.contentUrl, withDefault: UIImage(named: "avatar.png"), rounding: true, completion: { (loaded) in
+                if let image = cell.imageView?.image
+                {
+                    cell.imageView?.image = image.scalingProportionally(to: CGSize(width: 25, height: 25))
+                }
+            })
         }else{
             if let query = searchText.text, query.count > 0{
                 cell.textLabel?.text = "No Results Found For '\(query)'"

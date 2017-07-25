@@ -8,6 +8,7 @@
 
 import UIKit
 import BlockstackCoreApi_iOS
+import SeaseAssist
 
 class ProfilesController: UIViewController {
     
@@ -50,7 +51,7 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
         if indexPath.row == 0
         {
             cell.textLabel?.text = "Create New Profile"
-            cell.imageView?.image = #imageLiteral(resourceName: "ic_add_circle_outline_black_24px")
+            cell.imageView?.image = #imageLiteral(resourceName: "ic_add_circle_outline_black_24px").scalingProportionally(to: CGSize(width: 25, height: 25))
         }
         else{
             // Configure the cell...

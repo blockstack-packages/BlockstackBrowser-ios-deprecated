@@ -50,7 +50,7 @@
 		004A456C1F26A6D700244E43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		004A456D1F26A83000244E43 /* DropboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropboxService.swift; sourceTree = "<group>"; };
 		004D475C1F21431800263866 /* BitcoinPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceService.swift; sourceTree = "<group>"; };
-		0053ECFD1F014F6D00E039E1 /* BlockStackBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockStackBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0053ECFD1F014F6D00E039E1 /* Blockstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0053ED001F014F6D00E039E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0053ED051F014F6D00E039E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0053ED071F014F6D00E039E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		0053ECFE1F014F6D00E039E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0053ECFD1F014F6D00E039E1 /* BlockStackBrowser.app */,
+				0053ECFD1F014F6D00E039E1 /* Blockstack.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 			);
 			name = BlockStackBrowser;
 			productName = BlockStackBrowser;
-			productReference = 0053ECFD1F014F6D00E039E1 /* BlockStackBrowser.app */;
+			productReference = 0053ECFD1F014F6D00E039E1 /* Blockstack.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -557,7 +557,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bedkin.BlockstackBrowser;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Blockstack;
 				PROVISIONING_PROFILE = "45cdbb66-626c-431b-9a01-b4154d9d2d6b";
 				PROVISIONING_PROFILE_SPECIFIER = "bedkin wildcard dev";
 				SWIFT_OBJC_BRIDGING_HEADER = BlockstackBrowser/BridgingHeader.h;
@@ -581,7 +581,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bedkin.BlockstackBrowser;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Blockstack;
 				PROVISIONING_PROFILE = "8957bcee-1d6a-45f9-a3cf-847e3d5bd63e";
 				PROVISIONING_PROFILE_SPECIFIER = "bedkin wildcard adhoc";
 				SWIFT_OBJC_BRIDGING_HEADER = BlockstackBrowser/BridgingHeader.h;

@@ -25,6 +25,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>blockstack</string>
 				<string>amzn-com.bedkin.BlockstackBrowser</string>
 				<string>com.googleusercontent.apps.1098865906916-lo3glar3gp09dglcgf47i3r0pq8lqinj</string>
 				<string>db-xjqmf5zd9q87dpf</string>

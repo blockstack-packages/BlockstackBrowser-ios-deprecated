@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let decodedToken = TokenSigner.decodeUnsecured(responseData: requestToken),
             let redirectUri = decodedToken["redirect_uri"] as? String
         {
-            let response = ["username" : "testguy"]
+            let response = ["token" : UUID.init().uuidString[0...20]]
             //TODO Load values from the supplied app manifest
             
             if let signedResponse = TokenSigner.signUnsecured(requestData: response), let topVC = topViewController()
