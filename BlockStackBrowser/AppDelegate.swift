@@ -79,6 +79,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                  annotation: annotation)
         }
         
+        else if let scheme = url.scheme, scheme.contains("amzn") {
+            let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
+            return AIMobileLib.handleOpen(url, sourceApplication: sourceApplication)
+        }
+        
         return false
     }
 

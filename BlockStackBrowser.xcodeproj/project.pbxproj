@@ -33,6 +33,8 @@
 		008A13471F03FEA800C46D5F /* bs-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 008A13451F03FEA800C46D5F /* bs-background.png */; };
 		0097B5721F2237FA005A2E24 /* GoogleDriveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097B5711F2237FA005A2E24 /* GoogleDriveService.swift */; };
 		0097B5741F225395005A2E24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097B5731F225395005A2E24 /* Constants.swift */; };
+		00B4189C1F27A93900F0032A /* AmazonCloudDriveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00756F731F26B8B10052EE4D /* AmazonCloudDriveService.swift */; };
+		00B4189D1F27A97C00F0032A /* LoginWithAmazon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00756F721F26B8650052EE4D /* LoginWithAmazon.framework */; };
 		00EC5FB51F06A1B7002D1950 /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EC5FB41F06A1B7002D1950 /* String+QRCode.swift */; };
 		AEEEAA625D77C88C068897C4 /* Pods_BlockStackBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1217A6583C6326E661BEE6F1 /* Pods_BlockStackBrowser.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,7 @@
 		0097B5711F2237FA005A2E24 /* GoogleDriveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDriveService.swift; sourceTree = "<group>"; };
 		0097B5731F225395005A2E24 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		009DC0D61F03F99D001A4D8F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		00B4189E1F27ABE700F0032A /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		00D02E561F040A9300DC7599 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		00EC5FB41F06A1B7002D1950 /* String+QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
 		1217A6583C6326E661BEE6F1 /* Pods_BlockStackBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockStackBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B4189D1F27A97C00F0032A /* LoginWithAmazon.framework in Frameworks */,
 				AEEEAA625D77C88C068897C4 /* Pods_BlockStackBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +151,7 @@
 				006D02F01F069B450098F069 /* TODO */,
 				0097B5731F225395005A2E24 /* Constants.swift */,
 				004A456C1F26A6D700244E43 /* GoogleService-Info.plist */,
+				00B4189E1F27ABE700F0032A /* BridgingHeader.h */,
 			);
 			path = BlockStackBrowser;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				0053ED151F014FD900E039E1 /* ImageCollectionViewCell.swift in Sources */,
 				005C5D2A1F01892C00EC6808 /* ProfileSearchController.swift in Sources */,
 				008A13431F03FB5600C46D5F /* AccountController.swift in Sources */,
+				00B4189C1F27A93900F0032A /* AmazonCloudDriveService.swift in Sources */,
 				0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */,
 				0097B5721F2237FA005A2E24 /* GoogleDriveService.swift in Sources */,
 				0097B5741F225395005A2E24 /* Constants.swift in Sources */,
@@ -541,7 +547,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E22X358GZ2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BlockStackBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -549,6 +560,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "45cdbb66-626c-431b-9a01-b4154d9d2d6b";
 				PROVISIONING_PROFILE_SPECIFIER = "bedkin wildcard dev";
+				SWIFT_OBJC_BRIDGING_HEADER = BlockstackBrowser/BridgingHeader.h;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -559,7 +571,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bedkin, Inc (E22X358GZ2)";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E22X358GZ2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BlockStackBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -567,6 +584,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8957bcee-1d6a-45f9-a3cf-847e3d5bd63e";
 				PROVISIONING_PROFILE_SPECIFIER = "bedkin wildcard adhoc";
+				SWIFT_OBJC_BRIDGING_HEADER = BlockstackBrowser/BridgingHeader.h;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

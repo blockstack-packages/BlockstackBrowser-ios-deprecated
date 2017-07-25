@@ -7,45 +7,69 @@
 //
 
 import Foundation
-import SwiftyDropbox
+import UIKit
 
-class AmazonCloudDriveService : StorageProvider
+class AmazonCloudDriveService : NSObject, StorageProvider
 {
-    static let DropboxKey = "xjqmf5zd9q87dpf"
+    static let AppId = "amzn1.application.12365f40f02c429c946d51cbfa71de0a"
+    static let Scopes = ["profile"]
+    
+    var accessToken : String?
     
     // shared instance
     class func shared() -> StorageProvider {
         struct Singleton {
-            static let instance = DropboxService()
+            static let instance = AmazonCloudDriveService()
         }
         return Singleton.instance
     }
     
     func setup()
     {
-        DropboxClientsManager.setupWithAppKey(DropboxService.DropboxKey)
+        AIMobileLib.getAccessToken(forScopes: AmazonCloudDriveService.Scopes, withOverrideParams: [:], delegate: self)
     }
     
     func isAuthorized() -> Bool{
-        if let _ = DropboxClientsManager.authorizedClient
-        {
-            return true
-        }
-        return false
+        return accessToken != nil
     }
     
     func logIn(from controller: UIViewController)
     {
-        DropboxClientsManager.authorizeFromController(UIApplication.shared,
-                                                      controller: controller,
-                                                      openURL: { (url: URL) -> Void in
-                                                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        })
+        _ = AIMobileLib.authorizeUser(forScopes: AmazonCloudDriveService.Scopes, delegate: self)
     }
     
     func logout()
     {
-        DropboxClientsManager.unlinkClients()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.Notifications.dropboxStatusChanged), object: nil)
+        accessToken = nil
+        AIMobileLib.clearAuthorizationState(self)
+    }
+}
+
+extension AmazonCloudDriveService : AIAuthenticationDelegate
+{
+    func requestDidSucceed(_ apiResult: APIResult!) {
+        if apiResult.api == API.getAccessToken, let tokenString = apiResult.result as? String
+        {
+            accessToken = tokenString
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.Notifications.dropboxStatusChanged), object: nil)
+        }
+        
+        else if apiResult.api == API.clearAuthorizationState
+        {
+            accessToken = nil
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.Notifications.dropboxStatusChanged), object: nil)
+        }
+        
+        else if apiResult.api == API.authorizeUser
+        {
+            AIMobileLib.getAccessToken(forScopes: AmazonCloudDriveService.Scopes, withOverrideParams: [:], delegate: self)
+        }
+        
+    }
+    
+    func requestDidFail(_ errorResponse: APIError!) {
+        
     }
 }

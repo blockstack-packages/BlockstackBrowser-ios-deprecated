@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyDropbox
 import Google
 import GoogleSignIn
 
@@ -17,7 +16,6 @@ class GoogleDriveService : NSObject, StorageProvider
     static let loginKey = "AIzaSyAoM7lFizJFMF_B2k7WJJtXwqHrpEhGdag"
     
     private let scopes = ["https://www.googleapis.com/auth/drive.file"]
-    //private let service = GTLRDriveService()
     
     weak var callingController : UIViewController?
     

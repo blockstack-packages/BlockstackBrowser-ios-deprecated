@@ -41,7 +41,7 @@ extension StorageController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     
@@ -101,6 +101,11 @@ extension StorageController : UITableViewDelegate, UITableViewDataSource
         if indexPath.row == StorageMethodRows.google.rawValue
         {
             return GoogleDriveService.shared()
+        }
+        
+        if indexPath.row == StorageMethodRows.amazon.rawValue
+        {
+            return AmazonCloudDriveService.shared()
         }
         
         return nil

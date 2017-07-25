@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>APIKey</key>
+	<string>eyJhbGciOiJSU0EtU0hBMjU2IiwidmVyIjoiMSJ9.eyJ2ZXIiOiIzIiwiZW5kcG9pbnRzIjp7ImF1dGh6IjoiaHR0cHM6Ly93d3cuYW1hem9uLmNvbS9hcC9vYSIsInRva2VuRXhjaGFuZ2UiOiJodHRwczovL2FwaS5hbWF6b24uY29tL2F1dGgvbzIvdG9rZW4ifSwiY2xpZW50SWQiOiJhbXpuMS5hcHBsaWNhdGlvbi1vYTItY2xpZW50LjMzYmI1YjUyMGE0MjRkYjM4NWRiNTgxM2QwZDY1NDc3IiwiYXBwRmFtaWx5SWQiOiJhbXpuMS5hcHBsaWNhdGlvbi4xMjM2NWY0MGYwMmM0MjljOTQ2ZDUxY2JmYTcxZGUwYSIsImJ1bmRsZVNlZWRJZCI6ImNvbS5iZWRraW4uQmxvY2tzdGFja0Jyb3dzZXIiLCJidW5kbGVJZCI6ImNvbS5iZWRraW4uQmxvY2tzdGFja0Jyb3dzZXIiLCJpc3MiOiJBbWF6b24iLCJ0eXBlIjoiQVBJS2V5IiwiYXBwVmFyaWFudElkIjoiYW16bjEuYXBwbGljYXRpb24tY2xpZW50Ljg2YWFjYTVmNGFlYjQwZmRiODljNDBjYzY4NjY5ZmJhIiwidHJ1c3RQb29sIjpudWxsLCJhcHBJZCI6ImFtem4xLmFwcGxpY2F0aW9uLWNsaWVudC44NmFhY2E1ZjRhZWI0MGZkYjg5YzQwY2M2ODY2OWZiYSIsImlkIjoiY2Y5MWQ0YTctNzE1MS0xMWU3LWJhZmYtOTU0MzM3OTc2MzZhIiwiaWF0IjoiMTUwMDk5ODE4NDcwMCJ9.FPbdRp2xzQ25N+nFZQOq0f4SVDZ8nbIdqUbDMO1qjm+SGAx6/YOyvsGe1UqJmiAw499y1PfXrum42q0sNGb1l0DxKs61SIFHPhTQ9jfm24dNgBj89IdwFAiiKxMeRx4gs874s3fRfkHbYpwxVC0Pfoq8qEk60tQ+HY3a5qgTkBKRxuZb+l77DwekOv96kirLwVbp86ja5UGcKDD7qjMHGrpXX+DylcQBPzmjw1sP/KoGcyJidRFPMK6q8Xk4G91NLyOap/TUL+HVrWfMxHtZEhxD2mHKN4lcObqm/45q3Ex2p2eDOzr4/dQghD0CQjpnnG6H2YlDBosO2Tw+C0sJ1g==</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Scanning QR Codes</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -23,11 +25,12 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>amzn-com.bedkin.BlockstackBrowser</string>
 				<string>com.googleusercontent.apps.1098865906916-lo3glar3gp09dglcgf47i3r0pq8lqinj</string>
 				<string>db-xjqmf5zd9q87dpf</string>
 			</array>
 			<key>CFBundleURLName</key>
-			<string>blockstack</string>
+			<string>com.bedkin.BlockstackBrowser</string>
 		</dict>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
