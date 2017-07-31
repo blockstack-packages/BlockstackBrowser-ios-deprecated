@@ -32,13 +32,18 @@ class ExteralAuthorizationService
             return
         }
         
+        //read our manifest
+        let manifest = AppManifest.deserialize(from: (decodedToken["manifest"] as? String)?.data(using: .utf8)) ?? AppManifest()
+        
         //TODO: Create a full response
         let response = createAuthResponse()
         
         //TODO Load values from the supplied app manifest to display app info
         if let signedResponse = TokenSigner.signUnsecured(requestData: response), let topVC = UIViewController.top()
         {
-            let alert = UIAlertController(title: "Authorization Request", message: "An App would like access to your Blockstack profile", preferredStyle: .actionSheet)
+            let shortTitle = manifest.shortName ?? "An App"
+            let longTitle = manifest.name ?? "Authorization Request"
+            let alert = UIAlertController(title: longTitle, message: "\(shortTitle) would like access to your Blockstack profile", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Authorize", style: .default, handler: { (action) in
                 let url = URL(string: "\(redirectUri)?authResponse=\(signedResponse)")!
                 UIApplication.shared.open(url, options: [:], completionHandler: { (result) in
