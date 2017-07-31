@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DropboxService.shared().setup()
         GoogleDriveService.shared().setup()
+        AmazonCloudDriveService.shared().setup()
         
         // Override point for customization after application launch.
         return true
@@ -32,33 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //handle authorization requests from 3rd party apps
         if let scheme = url.scheme, scheme == "blockstack",
             let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems,
-            let requestToken = queryItems.filter({ $0.name == "authRequest"}).first?.value,
-            let decodedToken = TokenSigner.decodeUnsecured(responseData: requestToken),
-            let redirectUri = decodedToken["redirect_uri"] as? String
+            let requestToken = queryItems.filter({ $0.name == "authRequest"}).first?.value
         {
-            let response = ["token" : UUID.init().uuidString[0...20]]
-            //TODO Load values from the supplied app manifest
-            
-            if let signedResponse = TokenSigner.signUnsecured(requestData: response), let topVC = topViewController()
-            {
-                let alert = UIAlertController(title: "Authorization Request", message: "An App would like access to your Blockstack profile", preferredStyle: .actionSheet)
-                alert.addAction(UIAlertAction(title: "Authorize", style: .default, handler: { (action) in
-                    let url = URL(string: "\(redirectUri)?authResponse=\(signedResponse)")!
-                    UIApplication.shared.open(url, options: [:], completionHandler: { (result) in
-                        
-                    })
-                }))
-                alert.addAction(UIAlertAction(title: "Decline", style: .destructive, handler: { (action) in
-                    let url = URL(string: "\(redirectUri)?result=denied")!
-                    UIApplication.shared.open(url, options: [:], completionHandler: { (result) in
-                        
-                    })
-                }))
-                topVC.present(alert, animated: true, completion: nil)
-                return true
-            }
+            ExteralAuthorizationService.shared().processAuthorization(with: requestToken)
+            return true
         }
-        
+            
+        //handle dropbox auth
         else if let authResult = DropboxClientsManager.handleRedirectURL(url) {
             switch authResult {
             case .success:
@@ -71,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             return true
         }
+            
+        //google drive auth
         else if let scheme = url.scheme, scheme.contains("com.googleusercontent.apps") {
             let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
             let annotation = options[UIApplicationOpenURLOptionsKey.annotation]
@@ -78,7 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                  sourceApplication: sourceApplication,
                                                  annotation: annotation)
         }
-        
+            
+        //amazon auth
         else if let scheme = url.scheme, scheme.contains("amzn") {
             let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
             return AIMobileLib.handleOpen(url, sourceApplication: sourceApplication)
@@ -109,14 +93,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func topViewController() -> UIViewController?
-    {
-        if let nav = window?.rootViewController as? UINavigationController
-        {
-            return nav.topViewController
-        }
-        return nil
-    }
-
 }
 

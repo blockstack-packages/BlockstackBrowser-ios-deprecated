@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0053ECFC1F014F6D00E039E1"
-               BuildableName = "BlockStackBrowser.app"
+               BuildableName = "Blockstack.app"
                BlueprintName = "BlockStackBrowser"
                ReferencedContainer = "container:BlockStackBrowser.xcodeproj">
             </BuildableReference>
@@ -34,7 +34,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0053ECFC1F014F6D00E039E1"
-            BuildableName = "BlockStackBrowser.app"
+            BuildableName = "Blockstack.app"
             BlueprintName = "BlockStackBrowser"
             ReferencedContainer = "container:BlockStackBrowser.xcodeproj">
          </BuildableReference>
@@ -58,7 +58,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0053ECFC1F014F6D00E039E1"
-            BuildableName = "BlockStackBrowser.app"
+            BuildableName = "Blockstack.app"
             BlueprintName = "BlockStackBrowser"
             ReferencedContainer = "container:BlockStackBrowser.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0053ECFC1F014F6D00E039E1"
-            BuildableName = "BlockStackBrowser.app"
+            BuildableName = "Blockstack.app"
             BlueprintName = "BlockStackBrowser"
             ReferencedContainer = "container:BlockStackBrowser.xcodeproj">
          </BuildableReference>

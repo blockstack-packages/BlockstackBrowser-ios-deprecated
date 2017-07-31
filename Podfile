@@ -5,9 +5,13 @@ target 'BlockStackBrowser' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for BlockStackBrowser
-    pod "BlockstackCoreApi-iOS"
-    #pod 'BlockstackCoreApi-iOS', :path => '../BlockstackCoreApi'
+  # Pods for BlockStackBrowser.
+  
+    #build from the public version
+    #pod "BlockstackCoreApi-iOS"
+    
+    #OR build with your local pod during development
+    pod 'BlockstackCoreApi-iOS', :path => '../BlockstackCoreApi'
 
     #QR Code scanner
     pod 'CDZQRScanningViewController'
