@@ -26,20 +26,21 @@ class ExteralAuthorizationService
     
     public func processAuthorization(with requestToken : String)
     {
-        guard let decodedToken = TokenSigner.decodeUnsecured(responseData: requestToken),
-            let redirectUri = decodedToken["redirect_uri"] as? String else
+        guard let decodedData = TokenSigner.decodeToDataUnsecured(responseData: requestToken),
+            let request = AuthRequest.deserialize(from: decodedData),
+            let redirectUri = request.redirect_uri else
         {
             return
         }
         
         //read our manifest
-        let manifest = AppManifest.deserialize(from: (decodedToken["manifest"] as? String)?.data(using: .utf8)) ?? AppManifest()
+        let manifest = request.manifest ?? AppManifest()
         
         //TODO: Create a full response
         let response = createAuthResponse()
         
         //TODO Load values from the supplied app manifest to display app info
-        if let signedResponse = TokenSigner.signUnsecured(requestData: response), let topVC = UIViewController.top()
+        if let signedResponse = TokenSigner.signUnsecuredData(requestData: response.serialize()!), let topVC = UIViewController.top()
         {
             let shortTitle = manifest.shortName ?? "An App"
             let longTitle = manifest.name ?? "Authorization Request"
@@ -60,9 +61,20 @@ class ExteralAuthorizationService
         }
     }
     
-    private func createAuthResponse() -> [String : Any]
+    private func createAuthResponse() -> AuthResponse
     {
-       return  ["token" : UUID.init().uuidString[0...20] as Any]
+        var profile = AuthResponse.Profile()
+        var response = AuthResponse()
+        response.profile = profile
+        profile.givenName = "Test"
+        profile.familyName = "User"
+        profile.description = "This is my test profile"
+        response.authResponseToken = UUID.init().uuidString.substring(to: 16)
+        response.appPrivateKey = UUID.init().uuidString.substring(to: 16)
+        response.coreSessionToken = UUID.init().uuidString.substring(to: 16)
+        response.username = "TestUser2017"
+        
+        return response
     }
 }
     
