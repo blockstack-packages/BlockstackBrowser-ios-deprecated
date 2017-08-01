@@ -63,12 +63,8 @@ class ExteralAuthorizationService
     
     private func createAuthResponse() -> AuthResponse
     {
-        var profile = AuthResponse.Profile()
         var response = AuthResponse()
-        response.profile = profile
-        profile.givenName = "Test"
-        profile.familyName = "User"
-        profile.description = "This is my test profile"
+        response.profile = UserDataService.shared().getPrimaryUserProfile()
         response.authResponseToken = UUID.init().uuidString.substring(to: 16)
         response.appPrivateKey = UUID.init().uuidString.substring(to: 16)
         response.coreSessionToken = UUID.init().uuidString.substring(to: 16)

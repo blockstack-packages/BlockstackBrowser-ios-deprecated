@@ -12,7 +12,7 @@ import SeaseAssist
 
 class ProfilesController: UIViewController {
     
-    var profiles : [Profile] = [ProfilesController.randomProfile()]
+    var profiles : [Profile] = UserDataService.shared().getUserProfiles()
 
     @IBOutlet var tableView : UITableView!
     
@@ -66,7 +66,9 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0
         {
-            profiles.append(ProfilesController.randomProfile())
+            let profile = UserDataService.emptyProfile()
+            profiles.append(profile)
+            UserDataService.shared().addProfile(profile)
             tableView.reloadData()
         }else{
             performSegue(withIdentifier: "showProfile", sender: tableView)
@@ -76,17 +78,3 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
     
 }
 
-//MARK: Prototype Helpers
-extension ProfilesController
-{
-    static func randomProfile() -> Profile
-    {
-        var profile = Profile()
-        var btcAccount = Account()
-        btcAccount.service = Account.ServiceType.bitcoin.rawValue
-        btcAccount.identifier = UUID.init().uuidString[0...24]
-        profile.account = [btcAccount]
-        profile.name = "Test User"
-        return profile
-    }
-}

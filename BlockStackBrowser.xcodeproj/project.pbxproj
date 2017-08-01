@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		000F5ABC1F2FBACD00D6807A /* ExternalAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F5ABB1F2FBACD00D6807A /* ExternalAuthorizationService.swift */; };
+		000F5ABE1F30F21400D6807A /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F5ABD1F30F21400D6807A /* UserDataService.swift */; };
 		004A455E1F26376300244E43 /* String+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A455D1F26376300244E43 /* String+Subscript.swift */; };
 		004A45641F26461A00244E43 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = 004A45611F26461A00244E43 /* github.png */; };
 		004A45651F26461A00244E43 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 004A45621F26461A00244E43 /* twitter.png */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		000F5ABA1F2FB9F100D6807A /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		000F5ABB1F2FBACD00D6807A /* ExternalAuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalAuthorizationService.swift; sourceTree = "<group>"; };
+		000F5ABD1F30F21400D6807A /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		004A455D1F26376300244E43 /* String+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Subscript.swift"; sourceTree = "<group>"; };
 		004A45611F26461A00244E43 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
 		004A45621F26461A00244E43 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				004A45691F266B2300244E43 /* Storage */,
 				004D475C1F21431800263866 /* BitcoinPriceService.swift */,
 				000F5ABB1F2FBACD00D6807A /* ExternalAuthorizationService.swift */,
+				000F5ABD1F30F21400D6807A /* UserDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				0053ED151F014FD900E039E1 /* ImageCollectionViewCell.swift in Sources */,
 				005C5D2A1F01892C00EC6808 /* ProfileSearchController.swift in Sources */,
 				008A13431F03FB5600C46D5F /* AccountController.swift in Sources */,
+				000F5ABE1F30F21400D6807A /* UserDataService.swift in Sources */,
 				00B4189C1F27A93900F0032A /* AmazonCloudDriveService.swift in Sources */,
 				0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */,
 				000F5ABC1F2FBACD00D6807A /* ExternalAuthorizationService.swift in Sources */,
