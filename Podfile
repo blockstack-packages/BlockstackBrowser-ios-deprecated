@@ -8,10 +8,10 @@ target 'BlockStackBrowser' do
   # Pods for BlockStackBrowser.
   
     #build from the public version
-    #pod "BlockstackCoreApi-iOS"
+    pod "BlockstackCoreApi-iOS"
     
     #OR build with your local pod during development
-    pod 'BlockstackCoreApi-iOS', :path => '../BlockstackCoreApi'
+    #pod 'BlockstackCoreApi-iOS', :path => '../BlockstackCoreApi'
 
     #QR Code scanner
     pod 'CDZQRScanningViewController'
