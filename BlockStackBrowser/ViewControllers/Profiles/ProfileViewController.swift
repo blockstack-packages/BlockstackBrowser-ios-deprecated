@@ -86,8 +86,13 @@ extension ProfileViewController
         
         if isOwned == false
         {
-            userNameButton.isHidden = true
+            userNameButton.isHidden = (username != nil)
             editButton.isHidden = true
+        } else if let username = username
+        {
+            //if we already have a username then show it and disallow the add button
+            userNameButton.setTitle(username)
+            userNameButton.isUserInteractionEnabled = false
         }
         
         var details = ""
