@@ -44,6 +44,24 @@ class ProfileViewController: UIViewController {
     {
         dismiss(animated: true, completion: nil)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ProfileEditController
+        {
+            vc.profile = profile
+        }
+    }
+    
 }
 
 //MARK: Profile display
@@ -146,4 +164,6 @@ extension ProfileViewController
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+    
+    
 }

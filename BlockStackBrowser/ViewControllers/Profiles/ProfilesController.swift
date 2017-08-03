@@ -26,7 +26,7 @@ class ProfilesController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? ProfileViewController, let index = tableView.indexPathForSelectedRow
+        if let nav = segue.destination as? UINavigationController, let vc = nav.topViewController as? ProfileViewController, let index = tableView.indexPathForSelectedRow
         {
             vc.profile = profiles[index.row - 1]
             vc.isOwned = true

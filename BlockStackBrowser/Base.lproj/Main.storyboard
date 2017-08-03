@@ -13,7 +13,7 @@
         <!--Dashboard-->
         <scene sceneID="M7F-fD-MmC">
             <objects>
-                <collectionViewController id="m3v-cV-vOu" customClass="DashboardController" customModule="BlockStackBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="m3v-cV-vOu" customClass="DashboardController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="g6z-Y3-GmA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="xe2-Qa-9Fw" customClass="ImageCollectionViewCell" customModule="BlockStackBrowser" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="xe2-Qa-9Fw" customClass="ImageCollectionViewCell" customModule="Blockstack" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="175" height="199"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -73,7 +73,7 @@
         <!--Storage-->
         <scene sceneID="TTg-Z9-kSO">
             <objects>
-                <viewController storyboardIdentifier="StorageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uzg-YZ-Xeq" customClass="StorageController" customModule="BlockStackBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StorageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uzg-YZ-Xeq" customClass="StorageController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tiP-PT-JFJ"/>
                         <viewControllerLayoutGuide type="bottom" id="6N4-uM-Dpd"/>
@@ -130,7 +130,7 @@
         <!--Wallet-->
         <scene sceneID="jQN-eD-iZC">
             <objects>
-                <viewController storyboardIdentifier="WalletController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OqE-AG-i9u" customClass="WalletController" customModule="BlockStackBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OqE-AG-i9u" customClass="WalletController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="snP-U8-foX"/>
                         <viewControllerLayoutGuide type="bottom" id="Ckw-KM-X5i"/>
@@ -171,7 +171,7 @@
                                     <action selector="segmentPressed" destination="OqE-AG-i9u" eventType="valueChanged" id="REt-lr-5kD"/>
                                 </connections>
                             </segmentedControl>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nx-HW-eel" customClass="RoundedView" customModule="BlockStackBrowser" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nx-HW-eel" customClass="RoundedView" customModule="Blockstack" customModuleProvider="target">
                                 <rect key="frame" x="69" y="220" width="240" height="296"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -233,7 +233,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6g-DB-dH1" customClass="RoundedView" customModule="BlockStackBrowser" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6g-DB-dH1" customClass="RoundedView" customModule="Blockstack" customModuleProvider="target">
                                 <rect key="frame" x="68" y="226" width="240" height="384"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -288,7 +288,7 @@
         <!--Account-->
         <scene sceneID="g6M-Ia-fx6">
             <objects>
-                <viewController storyboardIdentifier="AccountController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vrK-fa-TM7" customClass="AccountController" customModule="BlockStackBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vrK-fa-TM7" customClass="AccountController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YuT-Ic-rOT"/>
                         <viewControllerLayoutGuide type="bottom" id="fEO-Gi-zxI"/>
@@ -340,7 +340,7 @@
         <!--Profiles-->
         <scene sceneID="Pc3-or-I0f">
             <objects>
-                <viewController storyboardIdentifier="ProfilesController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O7n-0q-Pk3" customClass="ProfilesController" customModule="BlockStackBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfilesController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O7n-0q-Pk3" customClass="ProfilesController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hF2-F1-4aG"/>
                         <viewControllerLayoutGuide type="bottom" id="bGO-MA-Xps"/>
@@ -394,7 +394,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7fn-aN-0gE" id="K0I-uw-OWs"/>
-                        <segue destination="NLY-VE-flh" kind="showDetail" identifier="showProfile" id="C5y-kH-Wly"/>
+                        <segue destination="8a3-5H-faW" kind="showDetail" identifier="showProfile" id="C5y-kH-Wly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVX-yI-vF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,7 +404,7 @@
         <!--Profile View Controller-->
         <scene sceneID="L0d-W1-rdT">
             <objects>
-                <viewController id="NLY-VE-flh" customClass="ProfileViewController" customModule="BlockStackBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NLY-VE-flh" customClass="ProfileViewController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jq4-H1-8h5"/>
                         <viewControllerLayoutGuide type="bottom" id="cHY-eu-oeZ"/>
@@ -414,7 +414,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myf-6Z-UTx">
-                                <rect key="frame" x="285" y="28" width="84" height="30"/>
+                                <rect key="frame" x="285" y="72" width="84" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="POI-Sz-JqX"/>
                                     <constraint firstAttribute="width" constant="84" id="ufK-19-rRv"/>
@@ -432,6 +432,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipn-Yh-i2a">
                                 <rect key="frame" x="150" y="591" width="75" height="30"/>
                                 <state key="normal" title="Edit Profile"/>
+                                <connections>
+                                    <segue destination="W4k-Ro-v6R" kind="show" identifier="editProfile" id="mTb-To-nHC"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4C-9l-fRH">
                                 <rect key="frame" x="42" y="204.5" width="291" height="258"/>
@@ -470,20 +473,20 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj7-z2-acg">
-                                <rect key="frame" x="16" y="139" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="183" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="wb5-eh-Ms6">
-                                <rect key="frame" x="162.5" y="28" width="50" height="50"/>
+                                <rect key="frame" x="162.5" y="72" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="O0L-np-JK8"/>
                                     <constraint firstAttribute="height" constant="50" id="e8U-Qe-Wc8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logan Sease" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ7-gK-eOB">
-                                <rect key="frame" x="127" y="94" width="121" height="24"/>
+                                <rect key="frame" x="127" y="138" width="121" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -565,6 +568,8 @@
                             <constraint firstItem="kj7-z2-acg" firstAttribute="top" secondItem="FQ7-gK-eOB" secondAttribute="bottom" constant="21" id="zbb-9r-JQM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="o0L-PP-TE2"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addressContainer" destination="M4C-9l-fRH" id="7ds-Af-egR"/>
                         <outlet property="addressLabel" destination="TjN-xS-xvJ" id="Utw-OX-kUo"/>
@@ -582,12 +587,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK1-P4-XKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4261.6000000000004" y="-1671.8140929535234"/>
+            <point key="canvasLocation" x="5033" y="-1673"/>
         </scene>
         <!--Search-->
         <scene sceneID="2Rw-iD-GIp">
             <objects>
-                <viewController id="ANp-x5-vuB" customClass="ProfileSearchController" customModule="BlockStackBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ANp-x5-vuB" customClass="ProfileSearchController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IsW-oF-NlZ"/>
                         <viewControllerLayoutGuide type="bottom" id="wcR-MM-hlF"/>
@@ -617,7 +622,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="NLY-VE-flh" kind="showDetail" id="Pnm-b9-34i"/>
+                                            <segue destination="8a3-5H-faW" kind="showDetail" id="Pnm-b9-34i"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -657,6 +662,67 @@
             </objects>
             <point key="canvasLocation" x="3493.5999999999999" y="-892.80359820089961"/>
         </scene>
+        <!--Edit Profile-->
+        <scene sceneID="RDG-2F-KRa">
+            <objects>
+                <viewController storyboardIdentifier="ProfileEditController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W4k-Ro-v6R" customClass="ProfileEditController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JZa-AS-cA4"/>
+                        <viewControllerLayoutGuide type="bottom" id="eCf-Nf-H7g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YoW-WC-32C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q01-30-zHV">
+                                <rect key="frame" x="139" y="144" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-Uj-KMN">
+                                <rect key="frame" x="25" y="100" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0D-eu-xdb">
+                                <rect key="frame" x="25" y="147" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnK-Dz-zg0">
+                                <rect key="frame" x="139" y="96" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="lPl-Tt-PEU">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="FfN-Yb-Y0k">
+                            <connections>
+                                <action selector="save" destination="W4k-Ro-v6R" id="U1V-lx-wp3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="firstName" destination="MnK-Dz-zg0" id="zkf-FO-NI5"/>
+                        <outlet property="lastName" destination="q01-30-zHV" id="Zbz-P3-Do4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x9b-LG-jN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5032.8000000000002" y="-921.58920539730138"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Wt-y2-QWE">
             <objects>
@@ -674,6 +740,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTT-Vn-Tb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4" y="76.911544227886068"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4dd-Td-zg9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8a3-5H-faW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t80-Rt-1VQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NLY-VE-flh" kind="relationship" relationship="rootViewController" id="e8D-nJ-Spl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Te4-Yr-tp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4260.8000000000002" y="-1672.2638680659672"/>
         </scene>
     </scenes>
     <resources>

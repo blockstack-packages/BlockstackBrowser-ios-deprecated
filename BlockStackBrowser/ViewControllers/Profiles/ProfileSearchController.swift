@@ -44,7 +44,7 @@ class ProfileSearchController: UIViewController {
         {
             tableView.deselectRow(at: index, animated: false)
             
-            if let vc = segue.destination as? ProfileViewController
+            if let nav = segue.destination as? UINavigationController, let vc = nav.topViewController as? ProfileViewController
             {
                 vc.profile = results[index.row].profile
                 vc.username = results[index.row].username
