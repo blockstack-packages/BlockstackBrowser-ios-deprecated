@@ -54,7 +54,7 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
         else{
             // Configure the cell...
             let profile = UserDataService.shared().userProfiles[indexPath.row - 1]
-            cell.textLabel?.text = profile.bitcoinAddress() ?? "?"
+            cell.textLabel?.text = profile.bitcoinAddress() ?? "Unregistered Address"
             cell.imageView?.image = nil
         }
         
