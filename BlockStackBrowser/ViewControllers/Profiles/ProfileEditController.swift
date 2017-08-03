@@ -10,14 +10,25 @@ import Foundation
 import UIKit
 import BlockstackCoreApi_iOS
 
+protocol ProfileEditDelegate
+{
+    func saveProfile(_ profile : Profile)
+}
+
 class ProfileEditController : UIViewController
 {
     @IBOutlet var firstName : UITextField!
     @IBOutlet var lastName : UITextField!
-    var profile : Profile!
+    
+    var profileIndex : Int = 0
+    var delegate : ProfileEditDelegate?
+    
+    private var profile : Profile!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profile = UserDataService.shared().userProfiles[profileIndex]
         
         //parse name fields
         if let name = profile.givenName
@@ -62,9 +73,8 @@ class ProfileEditController : UIViewController
         }
         profile.name = fullName
         
-        //save our changes
-        //TODO: This doesn't actually persist, do better.
-        UserDataService.shared().saveProfiles()
+        UserDataService.shared().userProfiles[profileIndex] = profile
+        delegate?.saveProfile(profile)
         
         navigationController?.popViewController(animated: true)
     }

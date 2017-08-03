@@ -11,10 +11,14 @@ import BlockstackCoreApi_iOS
 
 class ProfileViewController: UIViewController {
     
-    var profile : Profile!
+    //params
+    var profileIndex : Int = 0
     var username : String?
-    
     var isOwned = false
+    
+    private var profile : Profile!
+    
+    //outlets
     @IBOutlet var nameLabel : UILabel!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var imageView : UIImageView!
@@ -58,7 +62,8 @@ class ProfileViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ProfileEditController
         {
-            vc.profile = profile
+            vc.delegate = self
+            vc.profileIndex = profileIndex
         }
     }
     
@@ -69,6 +74,8 @@ extension ProfileViewController
 {
     func showProfile()
     {
+        profile = UserDataService.shared().userProfiles[profileIndex]
+        
         addressLabel.text = profile.bitcoinAddress()
         nameLabel.text = profile.name
         
@@ -164,6 +171,13 @@ extension ProfileViewController
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-    
-    
+}
+
+//MARK: Profile Save
+extension ProfileViewController : ProfileEditDelegate
+{
+    func saveProfile(_ profile : Profile)
+    {
+        showProfile()
+    }
 }

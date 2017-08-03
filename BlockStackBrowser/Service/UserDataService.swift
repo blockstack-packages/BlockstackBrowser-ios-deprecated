@@ -14,7 +14,7 @@ public typealias GenericCompletionHandler<T> = (_ object: T?, _ error: Error?) -
 class UserDataService
 {
     //a temporary static variable until actual persistence exists
-    private var userProfiles : [Profile] = []
+    public var userProfiles : [Profile] = []
     
     // shared instance
     class func shared() -> UserDataService {
@@ -42,11 +42,6 @@ class UserDataService
             
             saveProfiles()
         }
-    }
-    
-    public func getUserProfiles() -> [Profile]
-    {
-        return userProfiles
     }
     
     public func getPrimaryUserProfile() -> Profile?

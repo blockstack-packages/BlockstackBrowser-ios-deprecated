@@ -46,7 +46,7 @@ class ProfileSearchController: UIViewController {
             
             if let nav = segue.destination as? UINavigationController, let vc = nav.topViewController as? ProfileViewController
             {
-                vc.profile = results[index.row].profile
+                vc.profileIndex = index.row
                 vc.username = results[index.row].username
             }
         }

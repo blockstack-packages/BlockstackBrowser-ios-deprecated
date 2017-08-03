@@ -12,8 +12,6 @@ import SeaseAssist
 
 class ProfilesController: UIViewController {
     
-    var profiles : [Profile] = UserDataService.shared().getUserProfiles()
-
     @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
@@ -28,7 +26,7 @@ class ProfilesController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nav = segue.destination as? UINavigationController, let vc = nav.topViewController as? ProfileViewController, let index = tableView.indexPathForSelectedRow
         {
-            vc.profile = profiles[index.row - 1]
+            vc.profileIndex = index.row - 1
             vc.isOwned = true
         }
     }
@@ -41,7 +39,7 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profiles.count + 1
+        return UserDataService.shared().userProfiles.count + 1
     }
     
     
@@ -55,7 +53,7 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
         }
         else{
             // Configure the cell...
-            let profile = profiles[indexPath.row - 1]
+            let profile = UserDataService.shared().userProfiles[indexPath.row - 1]
             cell.textLabel?.text = profile.bitcoinAddress() ?? "?"
             cell.imageView?.image = nil
         }
@@ -67,8 +65,7 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
         if indexPath.row == 0
         {
             let profile = UserDataService.emptyProfile()
-            profiles.append(profile)
-            UserDataService.shared().addProfile(profile)
+            UserDataService.shared().userProfiles.append(profile)
             tableView.reloadData()
         }else{
             performSegue(withIdentifier: "showProfile", sender: tableView)
