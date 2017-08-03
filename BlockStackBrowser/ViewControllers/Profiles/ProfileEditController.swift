@@ -19,6 +19,7 @@ class ProfileEditController : UIViewController
 {
     @IBOutlet var firstName : UITextField!
     @IBOutlet var lastName : UITextField!
+    @IBOutlet var bioField : UITextView!
     
     var profileIndex : Int = 0
     var delegate : ProfileEditDelegate?
@@ -50,6 +51,8 @@ class ProfileEditController : UIViewController
                 lastName.text = nameSlices.last
             }
         }
+        
+        bioField.text = profile.description
     }
     
     @IBAction func save()
@@ -72,6 +75,8 @@ class ProfileEditController : UIViewController
             fullName.append(last)
         }
         profile.name = fullName
+        
+        profile.description = bioField.text
         
         UserDataService.shared().userProfiles[profileIndex] = profile
         delegate?.saveProfile(profile)
