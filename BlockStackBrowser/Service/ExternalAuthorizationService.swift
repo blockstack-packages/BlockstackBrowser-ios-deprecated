@@ -26,8 +26,9 @@ class ExteralAuthorizationService
     
     public func processAuthorization(with requestToken : String)
     {
-        guard let decodedData = TokenSigner.decodeToDataUnsecured(responseData: requestToken),
-            let request = AuthRequest.deserialize(from: decodedData),
+        guard let fullRequest = TokenSigner.shared().decodeToken(requestToken),
+            let payload = fullRequest["payload"] as? [AnyHashable : Any],
+            let request = AuthRequest.fromDictionary(payload),
             let redirectUri = request.redirect_uri else
         {
             return
@@ -36,11 +37,12 @@ class ExteralAuthorizationService
         //read our manifest
         let manifest = request.manifest ?? AppManifest()
         
-        //TODO: Create a full response
+        //Create a full response
         let response = createAuthResponse()
         
-        //TODO Load values from the supplied app manifest to display app info
-        if let signedResponse = TokenSigner.signUnsecuredData(requestData: response.serialize()!), let topVC = UIViewController.top()
+        //Load values from the supplied app manifest to display app info
+        if let signedResponse = TokenSigner.shared().createUnsecuredToken(tokenPayload: response.toDictionary()!),
+            let topVC = UIViewController.top()
         {
             let shortTitle = manifest.shortName ?? "An App"
             let longTitle = manifest.name ?? "Authorization Request"

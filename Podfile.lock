@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
-  - BlockstackCoreApi-iOS (0.1.23)
+  - BlockstackCoreApi-iOS (0.1.24)
   - CDZQRScanningViewController (1.0.7)
   - FirebaseAnalytics (3.9.0):
     - FirebaseCore (~> 3.6)
@@ -78,7 +78,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 4c2bf7fa03c4a626163606de0a417568c270575e
-  BlockstackCoreApi-iOS: 92f31957673595e360b8648a3579cff8e583f00a
+  BlockstackCoreApi-iOS: c49df6d14e83a207fed26888dab7577b7e0b1f53
   CDZQRScanningViewController: bec2f94f0378876e44a64db156d92f11d2825d95
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
