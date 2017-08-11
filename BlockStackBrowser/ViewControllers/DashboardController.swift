@@ -20,7 +20,11 @@ class DashboardController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //if we have no private key, launch onboarding
+        if UserDataService.shared().privateKey == nil
+        {
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

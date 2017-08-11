@@ -13,8 +13,13 @@ public typealias GenericCompletionHandler<T> = (_ object: T?, _ error: Error?) -
 
 class UserDataService
 {
+    private static let UserProfilesKey = "USER_PROFILES"
+    private static let PrivateKey = "BSK_PRIVATE_KEY"
+    
     //a temporary static variable until actual persistence exists
     public var userProfiles : [Profile] = []
+    
+    public var privateKey : String?
     
     // shared instance
     class func shared() -> UserDataService {
@@ -26,9 +31,51 @@ class UserDataService
     
     init()
     {
+        loadPrivateKey()
         loadProfiles()
     }
     
+}
+
+//MARK: Private / Public Keys
+//TODO: Implement methods
+extension UserDataService
+{
+    private func loadPrivateKey()
+    {
+        
+    }
+    
+    public func generateAndSavePrivateKey(password: String)
+    {
+        
+    }
+    
+    public func passphraseFromPrivateKey(_ pk : String) -> String
+    {
+        return pk
+    }
+    
+    public func publicKeyFromPrivateKey(_ pk : String) -> String
+    {
+        return pk
+    }
+    
+    public func privateKeyFromPassphrase(_ phrase : String) -> String
+    {
+        return phrase
+    }
+    
+    public func publicKey() -> String?
+    {
+        return nil
+    }
+}
+
+
+//MARK: Profiles
+extension UserDataService
+{
     //MARK: Profile methods
     private func loadProfiles()
     {
@@ -65,9 +112,9 @@ class UserDataService
         userProfiles.append(profile)
         saveProfiles()
     }
-    
 }
 
+//MARK: Test Data methods
 extension UserDataService
 {
     static func emptyProfile() -> Profile
