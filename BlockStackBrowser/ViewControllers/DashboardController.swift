@@ -20,6 +20,11 @@ class DashboardController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        checkForOnboarding()
+    }
+    
+    func checkForOnboarding()
+    {
         //if we have no private key, launch onboarding
         if UserDataService.shared().privateKey == nil
         {

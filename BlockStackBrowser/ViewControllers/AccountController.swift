@@ -10,6 +10,11 @@ import UIKit
 
 class AccountController: UIViewController {
     
+    enum AccountRows : Int
+    {
+        case password = 0, logout
+    }
+    
      @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
@@ -32,18 +37,36 @@ extension AccountController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        if indexPath.row == AccountRows.password.rawValue
+        {
+            cell.textLabel?.text = "Change Password"
+        }else if indexPath.row == AccountRows.logout.rawValue
+        {
+            cell.textLabel?.text = "Log Out"
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
+        //on logout clear all data and show the onboarding VC
+        if(indexPath.row == AccountRows.logout.rawValue)
+        {
+            UserDataService.shared().logout()
+            
+            let dashboard = navigationController!.viewControllers.first as! DashboardController
+            navigationController!.popToRootViewController(animated: true)
+            dashboard.checkForOnboarding()
+        }
+        
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }

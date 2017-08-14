@@ -64,7 +64,7 @@ extension ProfilesController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0
         {
-            let profile = UserDataService.emptyProfile()
+            let profile = UserDataService.shared().emptyProfile()
             UserDataService.shared().userProfiles.append(profile)
             tableView.reloadData()
         }else{

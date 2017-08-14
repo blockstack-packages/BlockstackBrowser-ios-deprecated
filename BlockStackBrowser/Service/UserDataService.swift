@@ -35,6 +35,17 @@ class UserDataService
         loadProfiles()
     }
     
+    //reset all data on logout
+    public func logout()
+    {
+        userProfiles = []
+        privateKey = nil
+        
+        UserDefaults.standard.set(nil, forKey: UserDataService.UserProfilesKey)
+        UserDefaults.standard.set(nil, forKey: UserDataService.PrivateKey)
+        UserDefaults.standard.synchronize()
+    }
+    
 }
 
 //MARK: Private / Public Keys
@@ -81,13 +92,14 @@ extension UserDataService
     //MARK: Profile methods
     private func loadProfiles()
     {
-        if let profileData = UserDefaults.standard.object(forKey: "USER_PROFILES") as? Data,
+        if let profileData = UserDefaults.standard.object(forKey: UserDataService.UserProfilesKey) as? Data,
             let profiles = Profile.deserializeArray(from: profileData)
         {
             userProfiles = profiles
         }else{
             
-            userProfiles = [UserDataService.emptyProfile()]
+            userProfiles = []
+            userProfiles.append(emptyProfile())
             
             saveProfiles()
         }
@@ -104,7 +116,7 @@ extension UserDataService
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(userProfiles)
         {
-            UserDefaults.standard.set(data, forKey: "USER_PROFILES")
+            UserDefaults.standard.set(data, forKey: UserDataService.UserProfilesKey)
             UserDefaults.standard.synchronize()
         }
     }
@@ -119,11 +131,12 @@ extension UserDataService
 //MARK: Test Data methods
 extension UserDataService
 {
-    static func emptyProfile() -> Profile
+    func emptyProfile() -> Profile
     {
+        let random = arc4random() % 1000
         var userProfile = Profile()
         userProfile.givenName = "Test"
-        userProfile.familyName = "User \(UserDataService.shared().userProfiles.count)"
+        userProfile.familyName = "User \(random)"
         userProfile.name = "\(userProfile.givenName!) \(userProfile.familyName!)"
         userProfile.description = "This is my test profile"
         
