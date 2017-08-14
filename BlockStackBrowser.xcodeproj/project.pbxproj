@@ -27,6 +27,7 @@
 		005044241F3E301600683509 /* OnboardingEmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005044231F3E301600683509 /* OnboardingEmailController.swift */; };
 		005044261F3E310F00683509 /* OnboardingProviderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005044251F3E310F00683509 /* OnboardingProviderController.swift */; };
 		005044281F3E321D00683509 /* OnboardingRestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005044271F3E321D00683509 /* OnboardingRestoreController.swift */; };
+		0050442A1F42059B00683509 /* FormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005044291F4204E600683509 /* FormatHelper.swift */; };
 		0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053ED001F014F6D00E039E1 /* AppDelegate.swift */; };
 		0053ED061F014F6D00E039E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0053ED041F014F6D00E039E1 /* Main.storyboard */; };
 		0053ED081F014F6D00E039E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0053ED071F014F6D00E039E1 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		005044231F3E301600683509 /* OnboardingEmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEmailController.swift; sourceTree = "<group>"; };
 		005044251F3E310F00683509 /* OnboardingProviderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProviderController.swift; sourceTree = "<group>"; };
 		005044271F3E321D00683509 /* OnboardingRestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRestoreController.swift; sourceTree = "<group>"; };
+		005044291F4204E600683509 /* FormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatHelper.swift; sourceTree = "<group>"; };
 		0053ECFD1F014F6D00E039E1 /* Blockstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0053ED001F014F6D00E039E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0053ED051F014F6D00E039E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		00EC5FB31F06A198002D1950 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				005044291F4204E600683509 /* FormatHelper.swift */,
 				00EC5FB41F06A1B7002D1950 /* String+QRCode.swift */,
 				004A455D1F26376300244E43 /* String+Subscript.swift */,
 				004A45671F2646CD00244E43 /* RoundedView.swift */,
@@ -452,6 +455,7 @@
 				000F5ABE1F30F21400D6807A /* UserDataService.swift in Sources */,
 				005044281F3E321D00683509 /* OnboardingRestoreController.swift in Sources */,
 				00B4189C1F27A93900F0032A /* AmazonCloudDriveService.swift in Sources */,
+				0050442A1F42059B00683509 /* FormatHelper.swift in Sources */,
 				005044221F3E2EE600683509 /* OnboardingPassphraseController.swift in Sources */,
 				0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */,
 				000F5ABC1F2FBACD00D6807A /* ExternalAuthorizationService.swift in Sources */,

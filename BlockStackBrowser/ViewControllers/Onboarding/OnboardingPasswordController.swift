@@ -9,7 +9,10 @@
 import UIKit
 
 class OnboardingPasswordController: UIViewController {
-
+    
+    @IBOutlet var passwordText : UITextField!
+    @IBOutlet var confirmationText : UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +24,27 @@ class OnboardingPasswordController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
+    @IBAction func continuePressed()
+    {
+        if let pass = passwordText.text, pass.characters.count > 0, pass == confirmationText.text
+        {
+            performSegue(withIdentifier: "continue", sender: nil)
+        }else
+        {
+                UIAlertController.showAlert(withTitle: "Invalid Entry", andMessage: "You must enter a valid password", from: self)
+        }
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? OnboardingPassphraseController, let pw = passwordText.text
+        {
+            vc.password = pw
+        }
     }
-    */
+ 
 
 }

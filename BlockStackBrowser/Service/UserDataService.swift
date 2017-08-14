@@ -41,6 +41,11 @@ class UserDataService
         userProfiles = []
         privateKey = nil
         
+        //logout all cloud providers
+        DropboxService.shared().logout()
+        AmazonCloudDriveService.shared().logout()
+        GoogleDriveService.shared().logout()
+        
         UserDefaults.standard.set(nil, forKey: UserDataService.UserProfilesKey)
         UserDefaults.standard.set(nil, forKey: UserDataService.PrivateKey)
         UserDefaults.standard.synchronize()
@@ -57,31 +62,42 @@ extension UserDataService
         privateKey = UserDefaults.standard.string(forKey: UserDataService.PrivateKey)
     }
     
-    public func generateAndSavePrivateKey(password: String)
+    public func generatePrivateKey() -> String
     {
-        let privateKey = JWTUtils.shared().makeECPrivateKey()
+        return JWTUtils.shared().makeECPrivateKey()
+    }
+    
+    public func savePrivateKey(_ privateKey : String, with password: String)
+    {
         self.privateKey = privateKey
         UserDefaults.standard.set(privateKey, forKey: UserDataService.PrivateKey)
     }
     
     public func passphraseFromPrivateKey(_ pk : String) -> String
     {
-        return pk
+        //TODO: Implement
+        return "One Two Three Four Five Six Seven Eight"
     }
     
     public func publicKeyFromPrivateKey(_ pk : String) -> String
     {
-        return pk
+        return JWTUtils.shared().derivePublicKey(privateKey: pk)
     }
     
-    public func privateKeyFromPassphrase(_ phrase : String) -> String
+    public func privateKeyFromPassphrase(_ phrase : String) -> String?
     {
-        return phrase
+        //TODO: Implement
+        return generatePrivateKey()
     }
     
     public func publicKey() -> String?
     {
-        return nil
+        if let pk = publicKey()
+        {
+            return publicKeyFromPrivateKey(pk)
+        }else{
+            return nil
+        }
     }
 }
 
@@ -126,6 +142,7 @@ extension UserDataService
         userProfiles.append(profile)
         saveProfiles()
     }
+
 }
 
 //MARK: Test Data methods

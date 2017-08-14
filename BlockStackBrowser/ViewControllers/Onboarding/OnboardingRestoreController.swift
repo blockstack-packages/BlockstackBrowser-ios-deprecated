@@ -9,7 +9,11 @@
 import UIKit
 
 class OnboardingRestoreController: UIViewController {
-
+    
+    @IBOutlet var passwordText : UITextField!
+    @IBOutlet var confirmationText : UITextField!
+    @IBOutlet var passphraseText : UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,14 +26,28 @@ class OnboardingRestoreController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func backPressed()
+    {
+        navigationController!.popViewController(animated: true)
     }
-    */
+    
+    @IBAction func continuePressed()
+    {
+        if let pass = passwordText.text, pass.characters.count > 0, pass == confirmationText.text
+        {
+            if let passphrase = passphraseText.text, let pk = UserDataService.shared().privateKeyFromPassphrase(passphrase)
+            {
+                UserDataService.shared().savePrivateKey(pk, with: pass)
+                dismiss(animated: true, completion: nil)
+            }else{
+                UIAlertController.showAlert(withTitle: "Invalid Entry", andMessage: "You must enter a valid passphrase", from: self)
+            }
+            
+        }else
+        {
+            UIAlertController.showAlert(withTitle: "Invalid Entry", andMessage: "You must enter a valid password", from: self)
+        }
+        
+    }
 
 }

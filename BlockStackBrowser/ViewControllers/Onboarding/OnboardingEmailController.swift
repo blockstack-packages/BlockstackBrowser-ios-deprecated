@@ -9,7 +9,9 @@
 import UIKit
 
 class OnboardingEmailController: UIViewController {
-
+    
+    @IBOutlet var emailText : UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,16 @@ class OnboardingEmailController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func continuePressed()
+    {
+        if FormatHelper.isValidEmail(email: emailText.text)
+        {
+            performSegue(withIdentifier: "continue", sender: nil)
+        }else
+        {
+            UIAlertController.showAlert(withTitle: "Invalid Entry", andMessage: "You must enter your email address", from: self)
+        }
+    }
 
     /*
     // MARK: - Navigation
