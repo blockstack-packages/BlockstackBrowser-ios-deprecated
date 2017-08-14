@@ -14,7 +14,7 @@ public typealias GenericCompletionHandler<T> = (_ object: T?, _ error: Error?) -
 class UserDataService
 {
     private static let UserProfilesKey = "USER_PROFILES"
-    private static let PrivateKey = "BSK_PRIVATE_KEY"
+    private static let PrivateKeyPassphrase = "BSK_PRIVATE_KEY_PASSPHRASE"
     
     //a temporary static variable until actual persistence exists
     public var userProfiles : [Profile] = []
@@ -47,7 +47,7 @@ class UserDataService
         GoogleDriveService.shared().logout()
         
         UserDefaults.standard.set(nil, forKey: UserDataService.UserProfilesKey)
-        UserDefaults.standard.set(nil, forKey: UserDataService.PrivateKey)
+        UserDefaults.standard.set(nil, forKey: UserDataService.PrivateKeyPassphrase)
         UserDefaults.standard.synchronize()
     }
     
@@ -59,35 +59,32 @@ extension UserDataService
 {
     private func loadPrivateKey()
     {
-        privateKey = UserDefaults.standard.string(forKey: UserDataService.PrivateKey)
+        if let passphrase = UserDefaults.standard.string(forKey: UserDataService.PrivateKeyPassphrase)
+        {
+            self.privateKey = CryptoUtils.shared().privateKey(from: passphrase)
+        }
     }
     
-    public func generatePrivateKey() -> String
+    
+    public func generatePassphrase() -> String
     {
-        return JWTUtils.shared().makeECPrivateKey()
+        return CryptoUtils.shared().generatePassphrase()
     }
     
-    public func savePrivateKey(_ privateKey : String, with password: String)
+    public func savePrivateKeyPhrase(_ privateKeyPhrase : String, with password: String)
     {
-        self.privateKey = privateKey
-        UserDefaults.standard.set(privateKey, forKey: UserDataService.PrivateKey)
-    }
-    
-    public func passphraseFromPrivateKey(_ pk : String) -> String
-    {
-        //TODO: Implement
-        return "One Two Three Four Five Six Seven Eight"
+       self.privateKey = CryptoUtils.shared().privateKey(from: privateKeyPhrase)
+        UserDefaults.standard.set(privateKey, forKey: UserDataService.PrivateKeyPassphrase)
     }
     
     public func publicKeyFromPrivateKey(_ pk : String) -> String
     {
-        return JWTUtils.shared().derivePublicKey(privateKey: pk)
+        return CryptoUtils.shared().derivePublicKey(privateKey: pk)
     }
     
     public func privateKeyFromPassphrase(_ phrase : String) -> String?
     {
-        //TODO: Implement
-        return generatePrivateKey()
+        return CryptoUtils.shared().privateKey(from: phrase)
     }
     
     public func publicKey() -> String?

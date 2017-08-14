@@ -12,7 +12,10 @@ target 'BlockStackBrowser' do
     
     #OR build with your local pod during development
     #pod 'BlockstackCoreApi-iOS', :path => '../BlockstackCoreApi'
-
+    
+    #for bip91
+    #pod 'CoreBitcoin', :podspec => 'https://raw.github.com/oleganza/CoreBitcoin/master/CoreBitcoin.podspec'
+    
     #QR Code scanner
     pod 'CDZQRScanningViewController'
     

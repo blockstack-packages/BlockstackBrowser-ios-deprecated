@@ -165,13 +165,6 @@ Use apps that put you in control.</string>
                                     <action selector="continuePressed" destination="4Mw-Hr-Fgq" eventType="touchUpInside" id="0uN-pL-aXL"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yu-U5-uEf">
-                                <rect key="frame" x="16" y="279" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50S-eY-AY3">
                                 <rect key="frame" x="136" y="534" width="102" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -180,13 +173,21 @@ Use apps that put you in control.</string>
                                     <action selector="backPressed" destination="4Mw-Hr-Fgq" eventType="touchUpInside" id="bt6-7w-2qX"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fAc-qc-wUJ">
+                                <rect key="frame" x="22" y="239" width="331" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="50S-eY-AY3" id="3or-E5-pTg"/>
                         <outlet property="continueButton" destination="dWx-cG-gbh" id="Npy-W7-wFy"/>
-                        <outlet property="passphraseText" destination="3yu-U5-uEf" id="zns-32-KBl"/>
+                        <outlet property="passphraseText" destination="fAc-qc-wUJ" id="unn-ke-9lo"/>
                         <outlet property="titleLabel" destination="7Hf-R8-MIX" id="jaj-4o-fcz"/>
                         <segue destination="5jQ-Oq-dDr" kind="show" identifier="continue" id="0wI-70-aLv"/>
                     </connections>

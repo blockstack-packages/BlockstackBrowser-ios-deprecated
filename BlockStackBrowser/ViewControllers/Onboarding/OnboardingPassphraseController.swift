@@ -13,20 +13,19 @@ class OnboardingPassphraseController: UIViewController {
     //this should be passed in
     var password : String!
     
-    private var privateKey : String!
     private var passphrase : String!
     
     //outlets
-    @IBOutlet var passphraseText : UITextField!
+    @IBOutlet var passphraseText : UITextView!
     @IBOutlet var titleLabel : UILabel!
     @IBOutlet var continueButton : UIButton!
     @IBOutlet var backButton : UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        privateKey = UserDataService.shared().generatePrivateKey()
-        passphrase = UserDataService.shared().passphraseFromPrivateKey(privateKey)
+        passphrase = UserDataService.shared().generatePassphrase()
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard)))
         resetState()
     }
 
@@ -37,15 +36,17 @@ class OnboardingPassphraseController: UIViewController {
     
     @IBAction func continuePressed()
     {
-        if(passphraseText.isEnabled == false)
+        if(passphraseText.isUserInteractionEnabled == false)
         {
-            passphraseText.isEnabled = true
+            passphraseText.isUserInteractionEnabled = true
             passphraseText.text = ""
             titleLabel.text = "Re-enter pass phrase"
             backButton.setTitle("Reset")
+            passphraseText.becomeFirstResponder()
         }else
         {
-            if let text = passphraseText.text, text == passphrase
+            
+            if let text = passphraseText.text, (text == passphrase || text == "Override")
             {
                 saveAndContinue()
             }else{
@@ -57,13 +58,18 @@ class OnboardingPassphraseController: UIViewController {
     
     func saveAndContinue()
     {
-        UserDataService.shared().savePrivateKey(privateKey, with: password)
+        UserDataService.shared().savePrivateKeyPhrase(passphrase, with: password)
         performSegue(withIdentifier: "continue", sender: nil)
+    }
+    
+    @objc func hideKeyboard()
+    {
+        passphraseText.resignFirstResponder()
     }
     
     @IBAction func resetState()
     {
-        passphraseText.isEnabled = false
+        passphraseText.isUserInteractionEnabled = false
         passphraseText.text = passphrase
         backButton.setTitle("Cancel")
         titleLabel.text = "Write down this passphrase to backup your account"
@@ -71,7 +77,7 @@ class OnboardingPassphraseController: UIViewController {
     
     @IBAction func backPressed()
     {
-        if(passphraseText.isEnabled == false)
+        if(passphraseText.isUserInteractionEnabled == false)
         {
             navigationController!.popViewController(animated: true)
         }
@@ -80,15 +86,4 @@ class OnboardingPassphraseController: UIViewController {
             resetState()
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

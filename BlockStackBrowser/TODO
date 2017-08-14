@@ -9,3 +9,11 @@ Choose a password to protect your identity key: create a secured identity key by
 Re-enter identity key to confirm you've kept it in a safe place
 add an email address
 Connect a storage provider to store app data in a place you controll: connect dropbox, IPFS, self hosted drive
+
+
+
+const STRENGTH = 128 // 128 bits generates a 12 word mnemonic
+backupPhrase = bip39.generateMnemonic(STRENGTH, randomBytes)
+
+bip39.validateMnemonic(backupPhrase)) {
+const seedBuffer = bip39.mnemonicToSeed(backupPhrase)

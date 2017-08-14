@@ -31,7 +31,7 @@ class OnboardingPasswordController: UIViewController {
             performSegue(withIdentifier: "continue", sender: nil)
         }else
         {
-                UIAlertController.showAlert(withTitle: "Invalid Entry", andMessage: "You must enter a valid password", from: self)
+            UIAlertController.showAlert(withTitle: "Invalid Entry", andMessage: "You must enter a valid password", from: self)
         }
     }
     
