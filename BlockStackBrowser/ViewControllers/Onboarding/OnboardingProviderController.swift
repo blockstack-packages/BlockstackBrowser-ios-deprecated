@@ -31,5 +31,14 @@ class OnboardingProviderController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func close()
+    {
+        //TODO: Remove this
+        UserDataService.shared().generateAndSavePrivateKey(password: "Password")
+        
+        
+        dismiss(animated: true, completion: nil)
+    }
 
 }

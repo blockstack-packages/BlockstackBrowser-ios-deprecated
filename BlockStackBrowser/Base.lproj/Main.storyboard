@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Onboarding-->
+        <scene sceneID="0TZ-Df-uOm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Onboarding" id="3uN-UF-R4A" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4B-O3-LZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="1269"/>
+        </scene>
         <!--Dashboard-->
         <scene sceneID="M7F-fD-MmC">
             <objects>
@@ -64,6 +72,7 @@
                         <segue destination="Uzg-YZ-Xeq" kind="show" identifier="showStorage" id="dC4-bq-eVu"/>
                         <segue destination="OqE-AG-i9u" kind="show" identifier="showWallet" id="Jol-uX-LBd"/>
                         <segue destination="vrK-fa-TM7" kind="show" identifier="showAccount" id="4VS-Mk-zlC"/>
+                        <segue destination="3uN-UF-R4A" kind="presentation" identifier="showOnboarding" id="e4j-Xe-THT"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jd1-ir-wvK" userLabel="First Responder" sceneMemberID="firstResponder"/>

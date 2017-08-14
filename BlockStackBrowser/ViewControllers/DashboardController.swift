@@ -23,10 +23,10 @@ class DashboardController: UICollectionViewController {
         //if we have no private key, launch onboarding
         if UserDataService.shared().privateKey == nil
         {
-            
+            performSegue(withIdentifier: "showOnboarding", sender: nil)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

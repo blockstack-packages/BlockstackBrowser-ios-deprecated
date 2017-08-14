@@ -43,12 +43,14 @@ extension UserDataService
 {
     private func loadPrivateKey()
     {
-        
+        privateKey = UserDefaults.standard.string(forKey: UserDataService.PrivateKey)
     }
     
     public func generateAndSavePrivateKey(password: String)
     {
-        
+        let privateKey = JWTUtils.shared().makeECPrivateKey()
+        self.privateKey = privateKey
+        UserDefaults.standard.set(privateKey, forKey: UserDataService.PrivateKey)
     }
     
     public func passphraseFromPrivateKey(_ pk : String) -> String
