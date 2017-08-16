@@ -55,6 +55,15 @@ class UserDataService
     {
         return privateKeyPassphrase != nil
     }
+}
+
+//MARK: BTC balance
+extension UserDataService
+{
+    public func btcBalance() -> Float
+    {
+        return 1
+    }
     
 }
 

@@ -18,6 +18,7 @@ class WalletController: UIViewController {
     @IBOutlet var codeText : UITextField!
     @IBOutlet var usdValueLabel : UILabel!
     @IBOutlet var codeLabel : UILabel!
+    @IBOutlet var btcValueLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +27,15 @@ class WalletController: UIViewController {
         codeLabel.text = UserDataService.shared().publicKey()
         sendToCode.image = codeLabel.text?.toQRCode()
         
+        let balance = UserDataService.shared().btcBalance()
+        btcValueLabel.text = String(format: "%.2f BTC", balance)
+        
         //calculate and display the value of USD
         self.usdValueLabel.text = ""
         BitcoinPriceService.currentBitcoinPrice { (price) -> (Void) in
             if let price = price
             {
-                self.usdValueLabel.text = "= $" + String(describing: price)
+                self.usdValueLabel.text = "= $" + String(describing: balance * price.floatValue)
             }
         }
         
