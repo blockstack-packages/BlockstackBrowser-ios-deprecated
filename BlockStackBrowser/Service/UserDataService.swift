@@ -19,7 +19,7 @@ class UserDataService
     //a temporary static variable until actual persistence exists
     public var userProfiles : [Profile] = []
     
-    public var privateKey : String?
+    private var privateKeyPassphrase : String?
     
     // shared instance
     class func shared() -> UserDataService {
@@ -31,7 +31,7 @@ class UserDataService
     
     init()
     {
-        loadPrivateKey()
+        loadPrivateKeyPassphrase()
         loadProfiles()
     }
     
@@ -39,7 +39,7 @@ class UserDataService
     public func logout()
     {
         userProfiles = []
-        privateKey = nil
+        privateKeyPassphrase = nil
         
         //logout all cloud providers
         DropboxService.shared().logout()
@@ -51,17 +51,22 @@ class UserDataService
         UserDefaults.standard.synchronize()
     }
     
+    public func loggedIn() -> Bool
+    {
+        return privateKeyPassphrase != nil
+    }
+    
 }
 
 //MARK: Private / Public Keys
 //TODO: Implement methods
 extension UserDataService
 {
-    private func loadPrivateKey()
+    private func loadPrivateKeyPassphrase()
     {
         if let passphrase = UserDefaults.standard.string(forKey: UserDataService.PrivateKeyPassphrase)
         {
-            self.privateKey = CryptoUtils.shared().privateKey(from: passphrase)
+            self.privateKeyPassphrase = passphrase
         }
     }
     
@@ -73,8 +78,9 @@ extension UserDataService
     
     public func savePrivateKeyPhrase(_ privateKeyPhrase : String, with password: String)
     {
-       self.privateKey = CryptoUtils.shared().privateKey(from: privateKeyPhrase)
-        UserDefaults.standard.set(privateKey, forKey: UserDataService.PrivateKeyPassphrase)
+        UserDefaults.standard.set(privateKeyPhrase, forKey: UserDataService.PrivateKeyPassphrase)
+        UserDefaults.standard.synchronize()
+        loadPrivateKeyPassphrase()
     }
     
     public func publicKeyFromPrivateKey(_ pk : String) -> String
@@ -82,19 +88,29 @@ extension UserDataService
         return CryptoUtils.shared().derivePublicKey(privateKey: pk)
     }
     
-    public func privateKeyFromPassphrase(_ phrase : String) -> String?
+    private func privateKeyFromPassphrase(_ phrase : String) -> String?
     {
-        return CryptoUtils.shared().privateKey(from: phrase)
+        return CryptoUtils.shared().makeECPrivateKey()
+        //return CryptoUtils.shared().privateKey(from: phrase)
     }
     
     public func publicKey() -> String?
     {
-        if let pk = publicKey()
+        if let pk = privateKey()
         {
             return publicKeyFromPrivateKey(pk)
         }else{
             return nil
         }
+    }
+    
+    public func privateKey() -> String?
+    {
+        if let phrase = privateKeyPassphrase
+        {
+            return privateKeyFromPassphrase(phrase)
+        }
+        return nil
     }
 }
 
@@ -102,6 +118,11 @@ extension UserDataService
 //MARK: Profiles
 extension UserDataService
 {
+    public func setUserNotificationEmail(_ email : String)
+    {
+        //TODO: implement
+    }
+    
     //MARK: Profile methods
     private func loadProfiles()
     {

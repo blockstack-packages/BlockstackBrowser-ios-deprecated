@@ -27,21 +27,12 @@ class OnboardingEmailController: UIViewController {
     {
         if FormatHelper.isValidEmail(email: emailText.text)
         {
+            UserDataService.shared().setUserNotificationEmail(emailText.text!)
             performSegue(withIdentifier: "continue", sender: nil)
         }else
         {
             UIAlertController.showAlert(withTitle: "Invalid Entry", andMessage: "You must enter your email address", from: self)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

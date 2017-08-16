@@ -26,7 +26,7 @@ class DashboardController: UICollectionViewController {
     func checkForOnboarding()
     {
         //if we have no private key, launch onboarding
-        if UserDataService.shared().privateKey == nil
+        if UserDataService.shared().loggedIn() == false
         {
             performSegue(withIdentifier: "showOnboarding", sender: nil)
         }

@@ -23,7 +23,8 @@ class WalletController: UIViewController {
         super.viewDidLoad()
         
         //show a QR Code
-        sendToCode.image = "23r1234jklasjf".toQRCode()
+        codeLabel.text = UserDataService.shared().publicKey()
+        sendToCode.image = codeLabel.text?.toQRCode()
         
         //calculate and display the value of USD
         self.usdValueLabel.text = ""
@@ -77,14 +78,4 @@ class WalletController: UIViewController {
         UIPasteboard.general.string = codeLabel.text
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -19,8 +19,6 @@
 		004A456E1F26AE4C00244E43 /* DropboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A456D1F26A83000244E43 /* DropboxService.swift */; };
 		004D475D1F21431800263866 /* BitcoinPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D475C1F21431800263866 /* BitcoinPriceService.swift */; };
 		005044171F3DF51700683509 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005044161F3DF51700683509 /* Onboarding.storyboard */; };
-		0050441A1F3DF7DB00683509 /* intro1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005044191F3DF7DA00683509 /* intro1.png */; };
-		0050441C1F3DFAD000683509 /* bs-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 0050441B1F3DFACF00683509 /* bs-white.png */; };
 		0050441E1F3E2EA200683509 /* OnboardingIntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050441D1F3E2EA200683509 /* OnboardingIntroController.swift */; };
 		005044201F3E2ED100683509 /* OnboardingPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050441F1F3E2ED100683509 /* OnboardingPasswordController.swift */; };
 		005044221F3E2EE600683509 /* OnboardingPassphraseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005044211F3E2EE600683509 /* OnboardingPassphraseController.swift */; };
@@ -66,8 +64,6 @@
 		004A456D1F26A83000244E43 /* DropboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropboxService.swift; sourceTree = "<group>"; };
 		004D475C1F21431800263866 /* BitcoinPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceService.swift; sourceTree = "<group>"; };
 		005044161F3DF51700683509 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
-		005044191F3DF7DA00683509 /* intro1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = intro1.png; path = ../../../../../../Desktop/intro1.png; sourceTree = "<group>"; };
-		0050441B1F3DFACF00683509 /* bs-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bs-white.png"; path = "../../../../../../Desktop/bs-white.png"; sourceTree = "<group>"; };
 		0050441D1F3E2EA200683509 /* OnboardingIntroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroController.swift; sourceTree = "<group>"; };
 		0050441F1F3E2ED100683509 /* OnboardingPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPasswordController.swift; sourceTree = "<group>"; };
 		005044211F3E2EE600683509 /* OnboardingPassphraseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPassphraseController.swift; sourceTree = "<group>"; };
@@ -99,6 +95,7 @@
 		0097B5711F2237FA005A2E24 /* GoogleDriveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDriveService.swift; sourceTree = "<group>"; };
 		0097B5731F225395005A2E24 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		009DC0D61F03F99D001A4D8F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		00AA602F1F43366400C31C7A /* bs-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bs-white.png"; sourceTree = "<group>"; };
 		00B4189E1F27ABE700F0032A /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		00D02E561F040A9300DC7599 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		00EC5FB41F06A1B7002D1950 /* String+QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
@@ -240,11 +237,10 @@
 		008A13491F03FEBB00C46D5F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0050441B1F3DFACF00683509 /* bs-white.png */,
-				005044191F3DF7DA00683509 /* intro1.png */,
 				000F5ABA1F2FB9F100D6807A /* avatar.png */,
 				004A45611F26461A00244E43 /* github.png */,
 				004A45621F26461A00244E43 /* twitter.png */,
+				00AA602F1F43366400C31C7A /* bs-white.png */,
 				004A45631F26461A00244E43 /* fb.png */,
 				0053ED071F014F6D00E039E1 /* Assets.xcassets */,
 				008A13451F03FEA800C46D5F /* bs-background.png */,
@@ -348,8 +344,6 @@
 			files = (
 				004A45641F26461A00244E43 /* github.png in Resources */,
 				005044171F3DF51700683509 /* Onboarding.storyboard in Resources */,
-				0050441C1F3DFAD000683509 /* bs-white.png in Resources */,
-				0050441A1F3DF7DB00683509 /* intro1.png in Resources */,
 				006D02F11F069B450098F069 /* TODO in Resources */,
 				0053ED0B1F014F6D00E039E1 /* LaunchScreen.storyboard in Resources */,
 				008A13471F03FEA800C46D5F /* bs-background.png in Resources */,

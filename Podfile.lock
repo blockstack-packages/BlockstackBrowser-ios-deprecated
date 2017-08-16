@@ -51,7 +51,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift4`)
-  - BlockstackCoreApi-iOS (from `../BlockstackCoreApi`)
+  - BlockstackCoreApi-iOS
   - CDZQRScanningViewController
   - Google/SignIn
   - GoogleAPIClientForREST/Drive (~> 1.2.1)
@@ -63,8 +63,6 @@ EXTERNAL SOURCES:
   Alamofire:
     :branch: swift4
     :git: https://github.com/Alamofire/Alamofire.git
-  BlockstackCoreApi-iOS:
-    :path: ../BlockstackCoreApi
   SwiftyDropbox:
     :git: https://github.com/dropbox/SwiftyDropbox.git
 
@@ -78,7 +76,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 4c2bf7fa03c4a626163606de0a417568c270575e
-  BlockstackCoreApi-iOS: 169f25990915dd91d15ba1f582bf0f6850e263ad
+  BlockstackCoreApi-iOS: 9896da784e7053a16a0cbc7615164d6126826119
   CDZQRScanningViewController: bec2f94f0378876e44a64db156d92f11d2825d95
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
@@ -94,6 +92,6 @@ SPEC CHECKSUMS:
   SeaseAssist: 7871e3971bce74e53f12fc59b76e0ce44be73f0b
   SwiftyDropbox: 11faf37e3429e46f01a6c17683a38bb15b066a2f
 
-PODFILE CHECKSUM: 5b7c890afb2c23f6785526954013438566136f7c
+PODFILE CHECKSUM: d5c75220214d0d51bf1da549dd2fb2dd1a66af96
 
 COCOAPODS: 1.3.0.beta.2
