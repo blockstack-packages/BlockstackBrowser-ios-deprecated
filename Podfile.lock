@@ -1,6 +1,28 @@
 PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - Alamofire (4.4.0)
-  - BlockstackCoreApi-iOS (0.1.26)
+  - BlockstackCoreApi-iOS (0.1.27):
+    - AFNetworking (~> 2.3)
   - CDZQRScanningViewController (1.0.7)
   - FirebaseAnalytics (3.9.0):
     - FirebaseCore (~> 3.6)
@@ -75,8 +97,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/dropbox/SwiftyDropbox.git
 
 SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Alamofire: 4c2bf7fa03c4a626163606de0a417568c270575e
-  BlockstackCoreApi-iOS: 9896da784e7053a16a0cbc7615164d6126826119
+  BlockstackCoreApi-iOS: 2c9cd2f2d412bc4edb75d3baeaa8fcd0d78d49bb
   CDZQRScanningViewController: bec2f94f0378876e44a64db156d92f11d2825d95
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
@@ -92,6 +115,6 @@ SPEC CHECKSUMS:
   SeaseAssist: 7871e3971bce74e53f12fc59b76e0ce44be73f0b
   SwiftyDropbox: 11faf37e3429e46f01a6c17683a38bb15b066a2f
 
-PODFILE CHECKSUM: d5c75220214d0d51bf1da549dd2fb2dd1a66af96
+PODFILE CHECKSUM: 138dbf89ef40e421b01b9d08a3996e92cb16280c
 
 COCOAPODS: 1.3.0.beta.2

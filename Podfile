@@ -1,10 +1,11 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '10.0'
+platform :ios, '10.0'
+
 
 target 'BlockStackBrowser' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for BlockStackBrowser.
   
     #build from the public version
@@ -12,7 +13,7 @@ target 'BlockStackBrowser' do
     
     #OR build with your local pod during development
     #pod 'BlockstackCoreApi-iOS', :path => '../BlockstackCoreApi'
-
+    
     #QR Code scanner
     pod 'CDZQRScanningViewController'
     
@@ -31,4 +32,6 @@ target 'BlockStackBrowser' do
     
     #Helper functions and methods--- stuff like rounded network image views
     pod 'SeaseAssist'
+    
+    
 end

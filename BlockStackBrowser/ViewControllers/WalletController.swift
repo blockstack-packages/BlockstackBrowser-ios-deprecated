@@ -24,7 +24,7 @@ class WalletController: UIViewController {
         super.viewDidLoad()
         
         //show a QR Code
-        codeLabel.text = UserDataService.shared().publicKey()
+        codeLabel.text = UserDataService.shared().address()
         sendToCode.image = codeLabel.text?.toQRCode()
         
         let balance = UserDataService.shared().btcBalance()

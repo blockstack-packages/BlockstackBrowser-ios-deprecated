@@ -68,7 +68,6 @@ extension UserDataService
 }
 
 //MARK: Private / Public Keys
-//TODO: Implement methods
 extension UserDataService
 {
     private func loadPrivateKeyPassphrase()
@@ -99,8 +98,7 @@ extension UserDataService
     
     private func privateKeyFromPassphrase(_ phrase : String) -> String?
     {
-        return CryptoUtils.shared().makeECPrivateKey()
-        //return CryptoUtils.shared().privateKey(from: phrase)
+        return CryptoUtils.shared().privateKey(from: phrase)
     }
     
     public func publicKey() -> String?
@@ -118,6 +116,15 @@ extension UserDataService
         if let phrase = privateKeyPassphrase
         {
             return privateKeyFromPassphrase(phrase)
+        }
+        return nil
+    }
+    
+    public func address() -> String?
+    {
+        if let pub = publicKey()
+        {
+            return CryptoUtils.shared().address(from: pub)
         }
         return nil
     }
