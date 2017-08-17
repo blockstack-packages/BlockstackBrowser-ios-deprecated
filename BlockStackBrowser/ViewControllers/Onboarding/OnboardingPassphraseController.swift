@@ -46,7 +46,7 @@ class OnboardingPassphraseController: UIViewController {
         }else
         {
             
-            if let text = passphraseText.text, (text == passphrase || text == "Override")
+            if let text = passphraseText.text, (text == passphrase )// || text == "Override")
             {
                 saveAndContinue()
             }else{

@@ -12,17 +12,23 @@ class OnboardingRestoreController: UIViewController {
     
     @IBOutlet var passwordText : UITextField!
     @IBOutlet var confirmationText : UITextField!
-    @IBOutlet var passphraseText : UITextField!
+    @IBOutlet var passphraseText : UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard)))
+        passphraseText.text = ""
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func hideKeyboard()
+    {
+        passphraseText.resignFirstResponder()
     }
     
 

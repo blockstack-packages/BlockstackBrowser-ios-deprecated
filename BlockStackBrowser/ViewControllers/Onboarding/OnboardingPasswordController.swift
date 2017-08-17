@@ -15,10 +15,16 @@ class OnboardingPasswordController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard)))
         // Do any additional setup after loading the view.
     }
-
+    @objc func hideKeyboard()
+    {
+        passwordText.resignFirstResponder()
+        confirmationText.resignFirstResponder()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
