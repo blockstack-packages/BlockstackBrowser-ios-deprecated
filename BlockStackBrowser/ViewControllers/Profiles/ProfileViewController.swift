@@ -16,7 +16,8 @@ class ProfileViewController: UIViewController {
     var username : String?
     var isOwned = false
     
-    private var profile : Profile!
+    //set this only if the profile is not owned by the user. otherwise use profile index
+    var profile : Profile!
     
     //outlets
     @IBOutlet var nameLabel : UILabel!
@@ -74,7 +75,10 @@ extension ProfileViewController
 {
     func showProfile()
     {
-        profile = UserDataService.shared().userProfiles[profileIndex]
+        if(isOwned == true)
+        {
+            profile = UserDataService.shared().userProfiles[profileIndex]
+        }
         
         addressLabel.text = profile.bitcoinAddress()
         nameLabel.text = profile.name

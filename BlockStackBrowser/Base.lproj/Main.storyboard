@@ -447,7 +447,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4C-9l-fRH">
-                                <rect key="frame" x="42" y="204.5" width="291" height="258"/>
+                                <rect key="frame" x="42" y="244.5" width="291" height="178"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4V0-Ii-aU0">
                                         <rect key="frame" x="119.5" y="8" width="53.5" height="16"/>
@@ -462,10 +462,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jOt-fx-bOf">
-                                        <rect key="frame" x="56" y="58" width="180" height="180"/>
+                                        <rect key="frame" x="96" y="58" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="QZo-r8-46O"/>
-                                            <constraint firstAttribute="height" constant="180" id="qIZ-xr-joZ"/>
+                                            <constraint firstAttribute="width" constant="100" id="QZo-r8-46O"/>
+                                            <constraint firstAttribute="height" constant="100" id="qIZ-xr-joZ"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -474,7 +474,7 @@
                                     <constraint firstItem="TjN-xS-xvJ" firstAttribute="centerX" secondItem="M4C-9l-fRH" secondAttribute="centerX" id="2Yc-B4-8h5"/>
                                     <constraint firstItem="4V0-Ii-aU0" firstAttribute="centerX" secondItem="M4C-9l-fRH" secondAttribute="centerX" id="Nb7-xf-g4r"/>
                                     <constraint firstAttribute="trailing" secondItem="TjN-xS-xvJ" secondAttribute="trailing" constant="2" id="dbJ-U0-lkb"/>
-                                    <constraint firstItem="jOt-fx-bOf" firstAttribute="centerX" secondItem="M4C-9l-fRH" secondAttribute="centerX" id="dng-GM-Gue"/>
+                                    <constraint firstItem="jOt-fx-bOf" firstAttribute="centerX" secondItem="M4C-9l-fRH" secondAttribute="centerX" priority="750" id="dng-GM-Gue"/>
                                     <constraint firstItem="4V0-Ii-aU0" firstAttribute="top" secondItem="M4C-9l-fRH" secondAttribute="top" constant="8" id="gUu-Sr-uyn"/>
                                     <constraint firstAttribute="bottom" secondItem="jOt-fx-bOf" secondAttribute="bottom" constant="20" id="l6p-Oa-uqa"/>
                                     <constraint firstItem="TjN-xS-xvJ" firstAttribute="top" secondItem="4V0-Ii-aU0" secondAttribute="bottom" constant="6" id="qn6-zW-7et"/>
@@ -482,7 +482,7 @@
                                     <constraint firstItem="TjN-xS-xvJ" firstAttribute="leading" secondItem="M4C-9l-fRH" secondAttribute="leading" constant="2" id="yRG-u0-YkT"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj7-z2-acg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj7-z2-acg">
                                 <rect key="frame" x="16" y="183" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

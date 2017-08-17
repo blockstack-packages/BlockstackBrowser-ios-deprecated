@@ -67,7 +67,7 @@ PODS:
   - QwikHttp (1.7.11.3):
     - QwikJson
   - QwikJson (1.0.19)
-  - SeaseAssist (0.0.55)
+  - SeaseAssist (0.0.58)
   - SwiftyDropbox (4.1.2):
     - Alamofire (~> 4.4.0)
 
@@ -112,7 +112,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   QwikHttp: 5596cc1a1e7e5f54ac44c6bdb8876ba7fc8b20ea
   QwikJson: 4da1128475b28e3c57a3e35baf9c3435f9d2b059
-  SeaseAssist: 7871e3971bce74e53f12fc59b76e0ce44be73f0b
+  SeaseAssist: 428de47565f744f8091a7938dd7c8dd07088d100
   SwiftyDropbox: 11faf37e3429e46f01a6c17683a38bb15b066a2f
 
 PODFILE CHECKSUM: 138dbf89ef40e421b01b9d08a3996e92cb16280c

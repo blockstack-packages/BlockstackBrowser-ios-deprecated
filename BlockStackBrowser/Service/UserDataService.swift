@@ -193,7 +193,10 @@ extension UserDataService
         
         var btcAccount = Account()
         btcAccount.service = Account.ServiceType.bitcoin.rawValue
-        btcAccount.identifier = UUID.init().uuidString[0...24]
+        let phrase = CryptoUtils.shared().makeECPrivateKey()
+        let pubKey = CryptoUtils.shared().derivePublicKey(privateKey: phrase)
+        let address = CryptoUtils.shared().address(from: pubKey)
+        btcAccount.identifier = address
         userProfile.account = [btcAccount]
         
         return userProfile
