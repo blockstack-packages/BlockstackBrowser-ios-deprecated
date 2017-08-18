@@ -41,6 +41,11 @@ class OnboardingPasswordController: UIViewController {
         }
     }
     
+    @IBAction func cancelPressed()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     // MARK: - Navigation
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BlockstackCoreApi_iOS
 
 class OnboardingRestoreController: UIViewController {
     
@@ -41,7 +42,7 @@ class OnboardingRestoreController: UIViewController {
     {
         if let pass = passwordText.text, pass.characters.count > 0, pass == confirmationText.text
         {
-            if let passphrase = passphraseText.text
+            if let passphrase = passphraseText.text, CryptoUtils.shared().validatePassphrase(passphrase) == true
             {
                 UserDataService.shared().savePrivateKeyPhrase(passphrase, with: pass)
                 dismiss(animated: true, completion: nil)
