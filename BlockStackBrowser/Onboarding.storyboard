@@ -356,8 +356,8 @@ Use apps that put you in control.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a provider to store your data:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saw-Wn-FUF">
-                                <rect key="frame" x="46" y="150" width="284" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect a storage provider to store app data in a place you control:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saw-Wn-FUF">
+                                <rect key="frame" x="16" y="150" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -386,10 +386,11 @@ Use apps that put you in control.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Saw-Wn-FUF" firstAttribute="leading" secondItem="Qzh-dc-7qf" secondAttribute="leadingMargin" id="55h-uS-gh1"/>
                             <constraint firstItem="5kE-sh-TUC" firstAttribute="centerX" secondItem="Qzh-dc-7qf" secondAttribute="centerX" id="H9w-jB-g8S"/>
-                            <constraint firstItem="Saw-Wn-FUF" firstAttribute="centerX" secondItem="Qzh-dc-7qf" secondAttribute="centerX" id="IcF-m5-ZRL"/>
                             <constraint firstItem="cIV-Jl-hDp" firstAttribute="centerX" secondItem="Qzh-dc-7qf" secondAttribute="centerX" id="K3x-iB-faZ"/>
                             <constraint firstItem="Saw-Wn-FUF" firstAttribute="top" secondItem="fu7-W4-nMJ" secondAttribute="bottom" constant="130" id="arB-IE-RC3"/>
+                            <constraint firstItem="Saw-Wn-FUF" firstAttribute="trailing" secondItem="Qzh-dc-7qf" secondAttribute="trailingMargin" id="cCj-ps-7NE"/>
                             <constraint firstItem="cIV-Jl-hDp" firstAttribute="centerY" secondItem="Qzh-dc-7qf" secondAttribute="centerY" id="cJw-ck-6hl"/>
                             <constraint firstItem="h5J-Vh-mEJ" firstAttribute="top" secondItem="5kE-sh-TUC" secondAttribute="bottom" constant="98" id="wAS-8M-cCg"/>
                         </constraints>

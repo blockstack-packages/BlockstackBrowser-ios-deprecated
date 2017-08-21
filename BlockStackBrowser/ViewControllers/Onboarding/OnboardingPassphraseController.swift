@@ -43,6 +43,7 @@ class OnboardingPassphraseController: UIViewController {
             titleLabel.text = "Re-enter pass phrase"
             backButton.setTitle("Reset")
             passphraseText.becomeFirstResponder()
+            continueButton.setTitle("Continue")
         }else
         {
             
@@ -73,6 +74,7 @@ class OnboardingPassphraseController: UIViewController {
         passphraseText.text = passphrase
         backButton.setTitle("Cancel")
         titleLabel.text = "Write down this passphrase to backup your account"
+        continueButton.setTitle("I've written it down")
     }
     
     @IBAction func backPressed()
