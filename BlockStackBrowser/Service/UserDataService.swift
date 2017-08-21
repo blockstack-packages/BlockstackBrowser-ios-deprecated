@@ -8,6 +8,7 @@
 
 import Foundation
 import BlockstackCoreApi_iOS
+import SwiftKeychainWrapper
 
 public typealias GenericCompletionHandler<T> = (_ object: T?, _ error: Error?) -> Void
 
@@ -47,8 +48,9 @@ class UserDataService
         GoogleDriveService.shared().logout()
         
         UserDefaults.standard.set(nil, forKey: UserDataService.UserProfilesKey)
-        UserDefaults.standard.set(nil, forKey: UserDataService.PrivateKeyPassphrase)
         UserDefaults.standard.synchronize()
+        
+        KeychainWrapper.standard.removeObject(forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
     }
     
     public func loggedIn() -> Bool
@@ -72,7 +74,7 @@ extension UserDataService
 {
     private func loadPrivateKeyPassphrase()
     {
-        if let passphrase = UserDefaults.standard.string(forKey: UserDataService.PrivateKeyPassphrase)
+        if let passphrase = KeychainWrapper.standard.string(forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
         {
             self.privateKeyPassphrase = passphrase
         }
@@ -86,8 +88,7 @@ extension UserDataService
     
     public func savePrivateKeyPhrase(_ privateKeyPhrase : String, with password: String)
     {
-        UserDefaults.standard.set(privateKeyPhrase, forKey: UserDataService.PrivateKeyPassphrase)
-        UserDefaults.standard.synchronize()
+        KeychainWrapper.standard.set(privateKeyPhrase, forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
         loadPrivateKeyPassphrase()
     }
     

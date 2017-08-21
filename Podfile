@@ -33,5 +33,7 @@ target 'BlockStackBrowser' do
     #Helper functions and methods--- stuff like rounded network image views
     pod 'SeaseAssist'
     
+    #keychain access
+    pod 'SwiftKeychainWrapper'
     
 end
