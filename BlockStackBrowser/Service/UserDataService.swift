@@ -187,10 +187,10 @@ extension UserDataService
     {
         let random = arc4random() % 1000
         var userProfile = Profile()
-        userProfile.givenName = "Test"
-        userProfile.familyName = "User \(random)"
+        userProfile.givenName =  "User \(random)"
+        userProfile.familyName = ""
         userProfile.name = "\(userProfile.givenName!) \(userProfile.familyName!)"
-        userProfile.description = "This is my test profile"
+        userProfile.description = ""
         
         var btcAccount = Account()
         btcAccount.service = Account.ServiceType.bitcoin.rawValue

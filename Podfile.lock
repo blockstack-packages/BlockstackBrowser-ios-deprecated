@@ -64,6 +64,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.11)
   - GTMSessionFetcher/Full (1.1.11):
     - GTMSessionFetcher/Core (= 1.1.11)
+  - IQKeyboardManager (4.0.12)
   - QwikHttp (1.7.11.3):
     - QwikJson
   - QwikJson (1.0.19)
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - CDZQRScanningViewController
   - Google/SignIn
   - GoogleAPIClientForREST/Drive (~> 1.2.1)
+  - IQKeyboardManager
   - QwikHttp
   - SeaseAssist
   - SwiftKeychainWrapper
@@ -112,12 +114,13 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
+  IQKeyboardManager: feb4562ba22266c179801a76228017f7a3c0d111
   QwikHttp: 5596cc1a1e7e5f54ac44c6bdb8876ba7fc8b20ea
   QwikJson: 4da1128475b28e3c57a3e35baf9c3435f9d2b059
   SeaseAssist: 428de47565f744f8091a7938dd7c8dd07088d100
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
   SwiftyDropbox: 11faf37e3429e46f01a6c17683a38bb15b066a2f
 
-PODFILE CHECKSUM: c6ce2c5ee61f8a8e7b82bd8fc706d4c2e683036c
+PODFILE CHECKSUM: d405df6b34ffac32c3bc333d08642bdb61b2463a
 
 COCOAPODS: 1.3.0.beta.2

@@ -20,8 +20,14 @@ class WalletController: UIViewController {
     @IBOutlet var codeLabel : UILabel!
     @IBOutlet var btcValueLabel : UILabel!
     
+    @IBOutlet var amountText : UITextField!
+    @IBOutlet var passwordText : UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //hide keyboard on tap
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard)))
         
         //show a QR Code
         codeLabel.text = UserDataService.shared().address()
@@ -38,12 +44,18 @@ class WalletController: UIViewController {
                 self.usdValueLabel.text = "= $" + String(describing: balance * price.floatValue)
             }
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func hideKeyboard()
+    {
+        self.amountText.resignFirstResponder()
+        passwordText.resignFirstResponder()
+        codeText.resignFirstResponder()
     }
     
     @IBAction func segmentPressed()
@@ -80,6 +92,11 @@ class WalletController: UIViewController {
     @IBAction func copyCode()
     {
         UIPasteboard.general.string = codeLabel.text
+    }
+    
+    @IBAction func sendPressed()
+    {
+        //TODO: implement
     }
     
 }

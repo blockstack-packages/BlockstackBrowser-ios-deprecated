@@ -36,4 +36,6 @@ target 'BlockStackBrowser' do
     #keychain access
     pod 'SwiftKeychainWrapper'
     
+    pod 'IQKeyboardManager' #manages keyboard scrolling over textfields
+    
 end
