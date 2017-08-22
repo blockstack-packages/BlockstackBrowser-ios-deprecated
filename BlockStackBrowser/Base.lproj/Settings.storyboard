@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,6 +60,10 @@
                     <connections>
                         <outlet property="tableView" destination="hwf-T5-z3c" id="kTW-Pv-ltb"/>
                         <segue destination="PWe-Ca-K8m" kind="show" identifier="changePassword" id="7R6-b6-Rqf"/>
+                        <segue destination="yIn-97-dA4" kind="show" identifier="deleteAccount" id="QI3-8s-eIa"/>
+                        <segue destination="kpm-f9-KvF" kind="show" identifier="backupAccount" id="dBB-Et-tLO"/>
+                        <segue destination="LaL-G2-I0c" kind="show" identifier="restoreAccount" id="aXh-Sh-LMW"/>
+                        <segue destination="RNA-5Q-Wfa" kind="show" identifier="apiSettings" id="d7A-mC-DA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WpY-Sn-uIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,7 +157,145 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKK-tL-AJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185" y="1160"/>
+            <point key="canvasLocation" x="2074" y="72"/>
+        </scene>
+        <!--Delete Account-->
+        <scene sceneID="gkx-f7-VId">
+            <objects>
+                <viewController id="yIn-97-dA4" customClass="DeleteAccountController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TpX-1l-hoM"/>
+                        <viewControllerLayoutGuide type="bottom" id="W7b-oM-wCF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XKi-9s-mVE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your password to remove this account from your device." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cl-6r-XRC">
+                                <rect key="frame" x="22" y="106" width="331" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="67l-hh-GjK">
+                                <rect key="frame" x="70" y="175" width="235" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="bC4-CW-GkT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahb-0c-DCL" customClass="CleanButton">
+                                <rect key="frame" x="70" y="251" width="235" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="wKA-4W-Awn"/>
+                                </constraints>
+                                <state key="normal" title="Delete Account"/>
+                                <connections>
+                                    <action selector="actionPressed" destination="yIn-97-dA4" eventType="touchUpInside" id="s4n-Rg-TaN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ahb-0c-DCL" firstAttribute="trailing" secondItem="67l-hh-GjK" secondAttribute="trailing" id="5pB-eC-H5z"/>
+                            <constraint firstItem="67l-hh-GjK" firstAttribute="top" secondItem="9Cl-6r-XRC" secondAttribute="bottom" constant="28" id="ABs-lK-gH1"/>
+                            <constraint firstItem="67l-hh-GjK" firstAttribute="centerX" secondItem="XKi-9s-mVE" secondAttribute="centerX" id="IFx-Su-NEb"/>
+                            <constraint firstItem="ahb-0c-DCL" firstAttribute="leading" secondItem="67l-hh-GjK" secondAttribute="leading" id="JUH-h4-7rw"/>
+                            <constraint firstItem="9Cl-6r-XRC" firstAttribute="leading" secondItem="XKi-9s-mVE" secondAttribute="leadingMargin" constant="6" id="e3c-1t-LMX"/>
+                            <constraint firstItem="ahb-0c-DCL" firstAttribute="top" secondItem="67l-hh-GjK" secondAttribute="bottom" constant="46" id="eaU-xR-31c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Cl-6r-XRC" secondAttribute="trailing" constant="6" id="fCW-ZE-7B3"/>
+                            <constraint firstItem="9Cl-6r-XRC" firstAttribute="top" secondItem="TpX-1l-hoM" secondAttribute="bottom" constant="42" id="v8p-kU-SJv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Delete Account" id="Ofz-Mo-kt1"/>
+                    <connections>
+                        <outlet property="passwordText" destination="67l-hh-GjK" id="YkO-Hk-7EP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BP2-Fs-ZW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2176.8000000000002" y="809.14542728635683"/>
+        </scene>
+        <!--Backup Account-->
+        <scene sceneID="Z6M-yO-ESl">
+            <objects>
+                <viewController id="kpm-f9-KvF" customClass="BackupAccountController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hiO-Wd-saM"/>
+                        <viewControllerLayoutGuide type="bottom" id="KTH-BA-pBd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="99z-li-pvo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your password to view your backup phrase and backup your account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zx-QM-QMq">
+                                <rect key="frame" x="28" y="98" width="319" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXC-uq-7ir">
+                                <rect key="frame" x="70" y="167" width="235" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="tsB-Za-5p4"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAk-W5-l90" customClass="CleanButton">
+                                <rect key="frame" x="70" y="243" width="235" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="nbV-Rl-YWf"/>
+                                </constraints>
+                                <state key="normal" title="Decrypt Backup Phrase"/>
+                                <connections>
+                                    <action selector="actionPressed" destination="kpm-f9-KvF" eventType="touchUpInside" id="mDK-Zp-z3z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fAk-W5-l90" firstAttribute="centerX" secondItem="99z-li-pvo" secondAttribute="centerX" id="3TJ-bQ-Paa"/>
+                            <constraint firstItem="7zx-QM-QMq" firstAttribute="top" secondItem="hiO-Wd-saM" secondAttribute="bottom" constant="34" id="Mm4-iB-b09"/>
+                            <constraint firstItem="vXC-uq-7ir" firstAttribute="centerX" secondItem="99z-li-pvo" secondAttribute="centerX" id="PIw-3J-2cG"/>
+                            <constraint firstItem="fAk-W5-l90" firstAttribute="top" secondItem="vXC-uq-7ir" secondAttribute="bottom" constant="46" id="Pd3-93-QWi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7zx-QM-QMq" secondAttribute="trailing" constant="12" id="UUb-Fw-A25"/>
+                            <constraint firstItem="fAk-W5-l90" firstAttribute="leading" secondItem="vXC-uq-7ir" secondAttribute="leading" id="dxh-sf-EvO"/>
+                            <constraint firstItem="7zx-QM-QMq" firstAttribute="leading" secondItem="99z-li-pvo" secondAttribute="leadingMargin" constant="12" id="tRM-h0-a4k"/>
+                            <constraint firstItem="fAk-W5-l90" firstAttribute="trailing" secondItem="vXC-uq-7ir" secondAttribute="trailing" id="zKs-O0-MFU"/>
+                            <constraint firstItem="vXC-uq-7ir" firstAttribute="top" secondItem="7zx-QM-QMq" secondAttribute="bottom" constant="28" id="zzh-we-fp7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Backup Account" id="ARK-kY-wYc"/>
+                    <connections>
+                        <outlet property="passwordText" destination="vXC-uq-7ir" id="PJJ-wz-b3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NwD-Hf-BZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2176.8000000000002" y="1554.872563718141"/>
+        </scene>
+        <!--Api Settings-->
+        <scene sceneID="7Tt-Ny-kPN">
+            <objects>
+                <viewController id="RNA-5Q-Wfa" customClass="ApiSettingsController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1qR-G5-0Zb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q0o-I5-sCC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B64-bI-feX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Api Settings" id="Zjc-CF-T5S"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgM-Df-Ltp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="2316"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y7l-8s-U1o">
@@ -171,6 +314,104 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cn3-TG-QSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1310" y="1160"/>
+        </scene>
+        <!--Restore Account-->
+        <scene sceneID="R8Q-of-IHk">
+            <objects>
+                <viewController id="LaL-G2-I0c" customClass="RestoreAccountController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0jk-UT-goB"/>
+                        <viewControllerLayoutGuide type="bottom" id="KPV-9a-g1y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Jf-FZ-OCR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwx-RV-Dpf">
+                                <rect key="frame" x="114" y="268" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOA-vF-2gD">
+                                <rect key="frame" x="77" y="502" width="220" height="51"/>
+                                <color key="backgroundColor" red="0.51163786550000001" green="0.52536088199999997" blue="0.52046372380000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="R6s-SI-daI"/>
+                                    <constraint firstAttribute="height" constant="51" id="hxh-CS-ia6"/>
+                                </constraints>
+                                <state key="normal" title="Restore">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="continuePressed" destination="LaL-G2-I0c" eventType="touchUpInside" id="yyV-ix-dlp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBB-8t-3fz">
+                                <rect key="frame" x="77" y="354" width="220.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiB-sW-gHi">
+                                <rect key="frame" x="77" y="316" width="220" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJJ-xO-QVv">
+                                <rect key="frame" x="36" y="88" width="303" height="43"/>
+                                <string key="text">Enter your backup phrase and choose a new password to restore your account. 
+This will delete your current account.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bE8-1U-bcc">
+                                <rect key="frame" x="36" y="139" width="303" height="70"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="qqm-yJ-VVQ"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bE8-1U-bcc" firstAttribute="top" secondItem="eJJ-xO-QVv" secondAttribute="bottom" constant="8" id="Dbd-D4-BEn"/>
+                            <constraint firstItem="eJJ-xO-QVv" firstAttribute="centerX" secondItem="6Jf-FZ-OCR" secondAttribute="centerX" id="DcQ-1o-L4v"/>
+                            <constraint firstItem="RBB-8t-3fz" firstAttribute="centerX" secondItem="6Jf-FZ-OCR" secondAttribute="centerX" id="GsL-5e-WjI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eJJ-xO-QVv" secondAttribute="trailing" constant="20" id="Hn6-3F-pQi"/>
+                            <constraint firstItem="eJJ-xO-QVv" firstAttribute="top" secondItem="0jk-UT-goB" secondAttribute="bottom" constant="24" id="IJA-I2-9n3"/>
+                            <constraint firstItem="RBB-8t-3fz" firstAttribute="leading" secondItem="bOA-vF-2gD" secondAttribute="leading" id="NMx-iU-FES"/>
+                            <constraint firstItem="eJJ-xO-QVv" firstAttribute="leading" secondItem="6Jf-FZ-OCR" secondAttribute="leadingMargin" constant="20" id="NgU-2c-8pP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bE8-1U-bcc" secondAttribute="trailing" constant="20" id="SOS-yP-d2v"/>
+                            <constraint firstItem="bE8-1U-bcc" firstAttribute="centerX" secondItem="6Jf-FZ-OCR" secondAttribute="centerX" id="a5c-ka-7Rb"/>
+                            <constraint firstItem="xwx-RV-Dpf" firstAttribute="centerX" secondItem="6Jf-FZ-OCR" secondAttribute="centerX" id="bo3-QR-1uR"/>
+                            <constraint firstItem="KPV-9a-g1y" firstAttribute="top" secondItem="bOA-vF-2gD" secondAttribute="bottom" constant="114" id="btT-iL-UuJ"/>
+                            <constraint firstItem="RBB-8t-3fz" firstAttribute="top" secondItem="QiB-sW-gHi" secondAttribute="bottom" constant="8.5" id="dHV-ab-uvP"/>
+                            <constraint firstItem="QiB-sW-gHi" firstAttribute="centerX" secondItem="6Jf-FZ-OCR" secondAttribute="centerX" id="iHX-bK-V4p"/>
+                            <constraint firstItem="RBB-8t-3fz" firstAttribute="trailing" secondItem="bOA-vF-2gD" secondAttribute="trailing" id="mFJ-V5-Cqz"/>
+                            <constraint firstItem="bOA-vF-2gD" firstAttribute="centerX" secondItem="6Jf-FZ-OCR" secondAttribute="centerX" id="noC-BN-cb0"/>
+                            <constraint firstItem="QiB-sW-gHi" firstAttribute="trailing" secondItem="RBB-8t-3fz" secondAttribute="trailing" id="tiQ-wH-IXN"/>
+                            <constraint firstItem="QiB-sW-gHi" firstAttribute="top" secondItem="xwx-RV-Dpf" secondAttribute="bottom" constant="27" id="vav-1Y-H5L"/>
+                            <constraint firstItem="bE8-1U-bcc" firstAttribute="leading" secondItem="6Jf-FZ-OCR" secondAttribute="leadingMargin" constant="20" id="w0j-0O-2BX"/>
+                            <constraint firstItem="xwx-RV-Dpf" firstAttribute="top" secondItem="bE8-1U-bcc" secondAttribute="bottom" constant="59" id="wtS-K0-a90"/>
+                            <constraint firstItem="QiB-sW-gHi" firstAttribute="leading" secondItem="RBB-8t-3fz" secondAttribute="leading" id="zUG-Ey-vln"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Restore Account" id="x9g-w1-OoV"/>
+                    <connections>
+                        <outlet property="confirmationText" destination="RBB-8t-3fz" id="bsW-1n-hgM"/>
+                        <outlet property="passphraseText" destination="bE8-1U-bcc" id="WOE-iI-ttr"/>
+                        <outlet property="passwordText" destination="QiB-sW-gHi" id="otF-iY-Oax"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Det-4e-eWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1501.5999999999999" y="2315.8920539730138"/>
         </scene>
     </scenes>
 </document>

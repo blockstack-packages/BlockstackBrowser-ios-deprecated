@@ -12,7 +12,7 @@ class AccountController: UIViewController {
     
     enum AccountRows : Int
     {
-        case password = 0, logout
+        case password = 0, backup, restore, delete, settings
     }
     
      @IBOutlet var tableView : UITableView!
@@ -37,7 +37,7 @@ extension AccountController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 5
     }
     
     
@@ -47,9 +47,18 @@ extension AccountController : UITableViewDelegate, UITableViewDataSource
         if indexPath.row == AccountRows.password.rawValue
         {
             cell.textLabel?.text = "Change Password"
-        }else if indexPath.row == AccountRows.logout.rawValue
+        }else if indexPath.row == AccountRows.delete.rawValue
         {
-            cell.textLabel?.text = "Log Out"
+            cell.textLabel?.text = "Delete Account"
+        }else if indexPath.row == AccountRows.restore.rawValue
+        {
+            cell.textLabel?.text = "Restore Account"
+        }else if indexPath.row == AccountRows.backup.rawValue
+        {
+            cell.textLabel?.text = "Backup Account"
+        }else if indexPath.row == AccountRows.settings.rawValue
+        {
+            cell.textLabel?.text = "Api Settings"
         }
         
         return cell
@@ -58,17 +67,30 @@ extension AccountController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //on logout clear all data and show the onboarding VC
-        if(indexPath.row == AccountRows.logout.rawValue)
+        if(indexPath.row == AccountRows.delete.rawValue)
         {
-            UserDataService.shared().logout()
-            
-            let dashboard = navigationController!.viewControllers.first as! DashboardController
-            navigationController!.popToRootViewController(animated: true)
-            dashboard.checkForOnboarding()
+//            UserDataService.shared().logout()
+//
+//            let dashboard = navigationController!.viewControllers.first as! DashboardController
+//            navigationController!.popToRootViewController(animated: true)
+//            dashboard.checkForOnboarding()
+            performSegue(withIdentifier: "deleteAccount", sender: nil)
         }
         else if indexPath.row == AccountRows.password.rawValue
         {
             performSegue(withIdentifier: "changePassword", sender: nil)
+        }
+        else if indexPath.row == AccountRows.backup.rawValue
+        {
+            performSegue(withIdentifier: "backupAccount", sender: nil)
+        }
+        else if indexPath.row == AccountRows.restore.rawValue
+        {
+            performSegue(withIdentifier: "restoreAccount", sender: nil)
+        }
+        else if indexPath.row == AccountRows.settings.rawValue
+        {
+            performSegue(withIdentifier: "apiSettings", sender: nil)
         }
         
         tableView.deselectRow(at: indexPath, animated: false)

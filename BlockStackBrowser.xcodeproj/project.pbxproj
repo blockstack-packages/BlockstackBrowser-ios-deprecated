@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0008B5DE1F4CAF6700AC0093 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0008B5DC1F4CAF6700AC0093 /* Settings.storyboard */; };
 		0008B5E11F4CAFB500AC0093 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008B5E01F4CAFB500AC0093 /* ChangePasswordController.swift */; };
+		0008B5E31F4CBD7800AC0093 /* DeleteAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008B5E21F4CBD7800AC0093 /* DeleteAccountController.swift */; };
+		0008B5E51F4CBD8700AC0093 /* BackupAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008B5E41F4CBD8700AC0093 /* BackupAccountController.swift */; };
+		0008B5E71F4CBDA200AC0093 /* RestoreAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008B5E61F4CBDA200AC0093 /* RestoreAccountController.swift */; };
+		0008B5E91F4CBDB600AC0093 /* ApiSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008B5E81F4CBDB600AC0093 /* ApiSettingsController.swift */; };
 		000F5ABC1F2FBACD00D6807A /* ExternalAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F5ABB1F2FBACD00D6807A /* ExternalAuthorizationService.swift */; };
 		000F5ABE1F30F21400D6807A /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F5ABD1F30F21400D6807A /* UserDataService.swift */; };
 		000F5AC11F3263AB00D6807A /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F5AC01F3263AB00D6807A /* ProfileEditController.swift */; };
@@ -56,6 +60,10 @@
 /* Begin PBXFileReference section */
 		0008B5DD1F4CAF6700AC0093 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		0008B5E01F4CAFB500AC0093 /* ChangePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordController.swift; sourceTree = "<group>"; };
+		0008B5E21F4CBD7800AC0093 /* DeleteAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountController.swift; sourceTree = "<group>"; };
+		0008B5E41F4CBD8700AC0093 /* BackupAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupAccountController.swift; sourceTree = "<group>"; };
+		0008B5E61F4CBDA200AC0093 /* RestoreAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreAccountController.swift; sourceTree = "<group>"; };
+		0008B5E81F4CBDB600AC0093 /* ApiSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSettingsController.swift; sourceTree = "<group>"; };
 		000F5ABA1F2FB9F100D6807A /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		000F5ABB1F2FBACD00D6807A /* ExternalAuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalAuthorizationService.swift; sourceTree = "<group>"; };
 		000F5ABD1F30F21400D6807A /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
@@ -128,6 +136,10 @@
 			children = (
 				008A13421F03FB5600C46D5F /* AccountController.swift */,
 				0008B5E01F4CAFB500AC0093 /* ChangePasswordController.swift */,
+				0008B5E21F4CBD7800AC0093 /* DeleteAccountController.swift */,
+				0008B5E41F4CBD8700AC0093 /* BackupAccountController.swift */,
+				0008B5E61F4CBDA200AC0093 /* RestoreAccountController.swift */,
+				0008B5E81F4CBDB600AC0093 /* ApiSettingsController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -470,6 +482,7 @@
 				0053ED131F014FA100E039E1 /* DashboardController.swift in Sources */,
 				004D475D1F21431800263866 /* BitcoinPriceService.swift in Sources */,
 				0053ED151F014FD900E039E1 /* ImageCollectionViewCell.swift in Sources */,
+				0008B5E51F4CBD8700AC0093 /* BackupAccountController.swift in Sources */,
 				005C5D2A1F01892C00EC6808 /* ProfileSearchController.swift in Sources */,
 				005044261F3E310F00683509 /* OnboardingProviderController.swift in Sources */,
 				008A13431F03FB5600C46D5F /* AccountController.swift in Sources */,
@@ -479,6 +492,7 @@
 				0008B5E11F4CAFB500AC0093 /* ChangePasswordController.swift in Sources */,
 				0050442A1F42059B00683509 /* FormatHelper.swift in Sources */,
 				005044221F3E2EE600683509 /* OnboardingPassphraseController.swift in Sources */,
+				0008B5E71F4CBDA200AC0093 /* RestoreAccountController.swift in Sources */,
 				0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */,
 				000F5ABC1F2FBACD00D6807A /* ExternalAuthorizationService.swift in Sources */,
 				0097B5721F2237FA005A2E24 /* GoogleDriveService.swift in Sources */,
@@ -494,6 +508,8 @@
 				005C5D281F01890200EC6808 /* ProfilesController.swift in Sources */,
 				004A455E1F26376300244E43 /* String+Subscript.swift in Sources */,
 				004A456E1F26AE4C00244E43 /* DropboxService.swift in Sources */,
+				0008B5E31F4CBD7800AC0093 /* DeleteAccountController.swift in Sources */,
+				0008B5E91F4CBDB600AC0093 /* ApiSettingsController.swift in Sources */,
 				008A133F1F03FB3600C46D5F /* StorageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

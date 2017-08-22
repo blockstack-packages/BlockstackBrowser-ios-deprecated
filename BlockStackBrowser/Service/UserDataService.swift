@@ -120,7 +120,7 @@ extension UserDataService
     
     public func passwordCorrect(_ password : String?) -> Bool
     {
-        guard let password = password else
+        guard let password = password, password.characters.count > 0 else
         {
             return false
         }
@@ -140,6 +140,19 @@ extension UserDataService
             return savePrivateKeyPhrase(phrase, with: new)
         }
         return false
+    }
+    
+    public func privateKeyPassphrase(password: String) -> String?
+    {
+        if let encrypted =  KeychainWrapper.standard.data(forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly),
+            let phrase = decrypt(encrypted, with: password)
+        {
+            if CryptoUtils.shared().validatePassphrase(phrase) == true
+            {
+                return phrase
+            }
+        }
+        return nil
     }
 }
 
@@ -180,18 +193,7 @@ extension UserDataService
         publicKey = UserDefaults.standard.string(forKey: UserDataService.PublicKey)
     }
     
-    private func privateKeyPassphrase(password: String) -> String?
-    {
-        if let encrypted =  KeychainWrapper.standard.data(forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly),
-            let phrase = decrypt(encrypted, with: password)
-        {
-            if CryptoUtils.shared().validatePassphrase(phrase) == true
-            {
-                return phrase
-            }
-        }
-        return nil
-    }
+    
 }
 
 
