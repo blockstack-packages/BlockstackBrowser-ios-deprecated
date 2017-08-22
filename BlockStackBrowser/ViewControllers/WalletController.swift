@@ -97,6 +97,14 @@ class WalletController: UIViewController {
     @IBAction func sendPressed()
     {
         //TODO: implement
+        //for now, validate the password was correct by trying to load the private key
+        if UserDataService.shared().passwordCorrect(passwordText.text)
+        {
+            UIAlertController.showAlert(withTitle: "Success", andMessage: "Sending btc with loaded private key", from: self)
+        }else{
+            UIAlertController.showAlert(withTitle: "Invalid password", andMessage: "The password you entered was invalid.", from: self)
+            passwordText.text = ""
+        }
     }
     
 }
