@@ -15,12 +15,13 @@ public typealias GenericCompletionHandler<T> = (_ object: T?, _ error: Error?) -
 class UserDataService
 {
     private static let UserProfilesKey = "USER_PROFILES"
+    private static let PublicKey = "BSK_PUBLIC_KEY"
     private static let PrivateKeyPassphrase = "BSK_PRIVATE_KEY_PASSPHRASE"
     
     //a temporary static variable until actual persistence exists
     public var userProfiles : [Profile] = []
+    public var publicKey : String?
     
-    private var privateKeyPassphrase : String?
     
     // shared instance
     class func shared() -> UserDataService {
@@ -32,7 +33,7 @@ class UserDataService
     
     init()
     {
-        loadPrivateKeyPassphrase()
+        loadPublicKey()
         loadProfiles()
     }
     
@@ -40,7 +41,7 @@ class UserDataService
     public func logout()
     {
         userProfiles = []
-        privateKeyPassphrase = nil
+        publicKey = nil
         
         //logout all cloud providers
         DropboxService.shared().logout()
@@ -48,6 +49,7 @@ class UserDataService
         GoogleDriveService.shared().logout()
         
         UserDefaults.standard.set(nil, forKey: UserDataService.UserProfilesKey)
+        UserDefaults.standard.set(nil, forKey: UserDataService.PublicKey)
         UserDefaults.standard.synchronize()
         
         KeychainWrapper.standard.removeObject(forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
@@ -55,7 +57,7 @@ class UserDataService
     
     public func loggedIn() -> Bool
     {
-        return privateKeyPassphrase != nil
+        return publicKey != nil
     }
 }
 
@@ -72,15 +74,6 @@ extension UserDataService
 //MARK: Private / Public Keys
 extension UserDataService
 {
-    private func loadPrivateKeyPassphrase()
-    {
-        if let passphrase = KeychainWrapper.standard.string(forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
-        {
-            self.privateKeyPassphrase = passphrase
-        }
-    }
-    
-    
     public func generatePassphrase() -> String
     {
         return CryptoUtils.shared().generatePassphrase()
@@ -88,33 +81,22 @@ extension UserDataService
     
     public func savePrivateKeyPhrase(_ privateKeyPhrase : String, with password: String)
     {
-        KeychainWrapper.standard.set(privateKeyPhrase, forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
-        loadPrivateKeyPassphrase()
-    }
-    
-    public func publicKeyFromPrivateKey(_ pk : String) -> String
-    {
-        return CryptoUtils.shared().derivePublicKey(privateKey: pk)
-    }
-    
-    private func privateKeyFromPassphrase(_ phrase : String) -> String?
-    {
-        return CryptoUtils.shared().privateKey(from: phrase)
-    }
-    
-    public func publicKey() -> String?
-    {
-        if let pk = privateKey()
-        {
-            return publicKeyFromPrivateKey(pk)
-        }else{
-            return nil
+        let encrypted = self.encrypt(privateKeyPhrase, with: password)
+        
+        KeychainWrapper.standard.set(encrypted, forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
+        
+        //derive the public key and save that to the user defaults
+        if let pk = privateKeyFromPassphrase(privateKeyPhrase){
+            UserDefaults.standard.set(publicKeyFromPrivateKey(pk), forKey: UserDataService.PublicKey)
+            UserDefaults.standard.synchronize()
         }
+        
+        loadPublicKey()
     }
     
-    public func privateKey() -> String?
+    public func privateKey(password: String) -> String?
     {
-        if let phrase = privateKeyPassphrase
+        if let phrase = privateKeyPassphrase(password: password)
         {
             return privateKeyFromPassphrase(phrase)
         }
@@ -123,9 +105,53 @@ extension UserDataService
     
     public func address() -> String?
     {
-        if let pub = publicKey()
+        if let pub = publicKey
         {
             return CryptoUtils.shared().address(from: pub)
+        }
+        return nil
+    }
+}
+
+//MARK: Helper methods
+extension UserDataService
+{
+    private func encrypt(_ value : String, with password: String) -> String
+    {
+        //TODO: Implement
+        return value
+    }
+    
+    private func decrypt(_ value : String, with password: String) -> String
+    {
+        //TODO: Implement
+        return value
+    }
+    
+    private func privateKeyFromPassphrase(_ phrase : String) -> String?
+    {
+        return CryptoUtils.shared().privateKey(from: phrase)
+    }
+    
+    private func publicKeyFromPrivateKey(_ pk : String) -> String
+    {
+        return CryptoUtils.shared().derivePublicKey(privateKey: pk)
+    }
+    
+    private func loadPublicKey()
+    {
+        publicKey = UserDefaults.standard.string(forKey: UserDataService.PublicKey)
+    }
+    
+    private func privateKeyPassphrase(password: String) -> String?
+    {
+        if let encrypted =  KeychainWrapper.standard.string(forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
+        {
+            let phrase = decrypt(encrypted, with: password)
+            if CryptoUtils.shared().validatePassphrase(phrase) == true
+            {
+                return phrase
+            }
         }
         return nil
     }
