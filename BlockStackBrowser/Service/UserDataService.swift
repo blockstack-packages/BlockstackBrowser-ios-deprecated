@@ -9,6 +9,7 @@
 import Foundation
 import BlockstackCoreApi_iOS
 import SwiftKeychainWrapper
+import RNCryptor
 
 public typealias GenericCompletionHandler<T> = (_ object: T?, _ error: Error?) -> Void
 
@@ -79,19 +80,24 @@ extension UserDataService
         return CryptoUtils.shared().generatePassphrase()
     }
     
-    public func savePrivateKeyPhrase(_ privateKeyPhrase : String, with password: String)
+    public func savePrivateKeyPhrase(_ privateKeyPhrase : String, with password: String) -> Bool
     {
-        let encrypted = self.encrypt(privateKeyPhrase, with: password)
-        
-        KeychainWrapper.standard.set(encrypted, forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
-        
-        //derive the public key and save that to the user defaults
-        if let pk = privateKeyFromPassphrase(privateKeyPhrase){
-            UserDefaults.standard.set(publicKeyFromPrivateKey(pk), forKey: UserDataService.PublicKey)
-            UserDefaults.standard.synchronize()
+        if let encrypted = self.encrypt(privateKeyPhrase, with: password)
+        {
+            KeychainWrapper.standard.set(encrypted, forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
+            
+            //derive the public key and save that to the user defaults
+            if let pk = privateKeyFromPassphrase(privateKeyPhrase){
+                UIAlertController.showAlert(withTitle: "pk", andMessage: pk, from: UIViewController.top())
+                UserDefaults.standard.set(publicKeyFromPrivateKey(pk), forKey: UserDataService.PublicKey)
+                UserDefaults.standard.synchronize()
+            }
+            
+            loadPublicKey()
+            
+            return true
         }
-        
-        loadPublicKey()
+        return false
     }
     
     public func privateKey(password: String) -> String?
@@ -111,21 +117,43 @@ extension UserDataService
         }
         return nil
     }
+    
+    public func passwordCorrect(_ password : String?) -> Bool
+    {
+        guard let password = password else
+        {
+            return false
+        }
+        
+        if let _ = UserDataService.shared().privateKey(password: password)
+        {
+            return true
+        }else{
+            return false
+        }
+    }
 }
 
 //MARK: Helper methods
 extension UserDataService
 {
-    private func encrypt(_ value : String, with password: String) -> String
+    private func encrypt(_ value : String, with password: String) -> Data?
     {
-        //TODO: Implement
-        return value
+        if let data = value.data(using: .utf8)
+        {
+            return RNCryptor.encrypt(data: data, withPassword: password)
+        }
+        return nil
     }
     
-    private func decrypt(_ value : String, with password: String) -> String
+    private func decrypt(_ value : Data, with password: String) -> String?
     {
-        //TODO: Implement
-        return value
+            if let decryptedData = try? RNCryptor.decrypt(data: value, withPassword: password)
+            {
+                return String(data: decryptedData, encoding: .utf8)
+            }
+        
+        return nil
     }
     
     private func privateKeyFromPassphrase(_ phrase : String) -> String?
@@ -145,9 +173,9 @@ extension UserDataService
     
     private func privateKeyPassphrase(password: String) -> String?
     {
-        if let encrypted =  KeychainWrapper.standard.string(forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
-        {
+        if let encrypted =  KeychainWrapper.standard.data(forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly),
             let phrase = decrypt(encrypted, with: password)
+        {
             if CryptoUtils.shared().validatePassphrase(phrase) == true
             {
                 return phrase

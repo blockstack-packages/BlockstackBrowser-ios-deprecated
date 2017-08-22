@@ -251,17 +251,9 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		00AA60301F449E8400C31C7A /* Bitcoin */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Bitcoin;
-			sourceTree = "<group>";
-		};
 		00EC5FB31F06A198002D1950 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				00AA60301F449E8400C31C7A /* Bitcoin */,
 				005044291F4204E600683509 /* FormatHelper.swift */,
 				00EC5FB41F06A1B7002D1950 /* String+QRCode.swift */,
 				004A455D1F26376300244E43 /* String+Subscript.swift */,
@@ -388,6 +380,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/QwikHttp/QwikHttp.framework",
 				"${BUILT_PRODUCTS_DIR}/QwikJson/QwikJson.framework",
+				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/SeaseAssist/SeaseAssist.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyDropbox/SwiftyDropbox.framework",
@@ -405,6 +398,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QwikHttp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QwikJson.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SeaseAssist.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyDropbox.framework",

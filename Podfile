@@ -33,8 +33,10 @@ target 'BlockStackBrowser' do
     #Helper functions and methods--- stuff like rounded network image views
     pod 'SeaseAssist'
     
-    #keychain access
+    #keychain access, for storing and encrypting pass phrases
     pod 'SwiftKeychainWrapper'
+    #pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :branch => 'swift4'
+    pod 'RNCryptor', '~> 5.0'
     
     pod 'IQKeyboardManager' #manages keyboard scrolling over textfields
     

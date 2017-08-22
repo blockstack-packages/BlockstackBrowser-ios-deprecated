@@ -68,6 +68,7 @@ PODS:
   - QwikHttp (1.7.11.3):
     - QwikJson
   - QwikJson (1.0.19)
+  - RNCryptor (5.0.1)
   - SeaseAssist (0.0.58)
   - SwiftKeychainWrapper (3.0.1)
   - SwiftyDropbox (4.1.2):
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - GoogleAPIClientForREST/Drive (~> 1.2.1)
   - IQKeyboardManager
   - QwikHttp
+  - RNCryptor (~> 5.0)
   - SeaseAssist
   - SwiftKeychainWrapper
   - SwiftyDropbox (from `https://github.com/dropbox/SwiftyDropbox.git`)
@@ -117,10 +119,11 @@ SPEC CHECKSUMS:
   IQKeyboardManager: feb4562ba22266c179801a76228017f7a3c0d111
   QwikHttp: 5596cc1a1e7e5f54ac44c6bdb8876ba7fc8b20ea
   QwikJson: 4da1128475b28e3c57a3e35baf9c3435f9d2b059
+  RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
   SeaseAssist: 428de47565f744f8091a7938dd7c8dd07088d100
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
   SwiftyDropbox: 11faf37e3429e46f01a6c17683a38bb15b066a2f
 
-PODFILE CHECKSUM: d405df6b34ffac32c3bc333d08642bdb61b2463a
+PODFILE CHECKSUM: 641618d67613ae1465ee5371fb49615d1a6572b8
 
 COCOAPODS: 1.3.0.beta.2

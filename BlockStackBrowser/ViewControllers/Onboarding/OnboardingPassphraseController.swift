@@ -59,8 +59,14 @@ class OnboardingPassphraseController: UIViewController {
     
     func saveAndContinue()
     {
-        UserDataService.shared().savePrivateKeyPhrase(passphrase, with: password)
-        performSegue(withIdentifier: "continue", sender: nil)
+        if UserDataService.shared().savePrivateKeyPhrase(passphrase, with: password) == true
+        {
+            performSegue(withIdentifier: "continue", sender: nil)
+        }else{
+            UIAlertController.showAlert(withTitle: "Error", andMessage: "We were unable to save your private key.", from: self)
+            self.navigationController!.popToRootViewController(animated: true)
+        }
+        
     }
     
     @objc func hideKeyboard()
