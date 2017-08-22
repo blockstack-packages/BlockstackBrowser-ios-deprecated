@@ -82,7 +82,7 @@
                         <segue destination="O7n-0q-Pk3" kind="show" identifier="showProfiles" id="nRK-cn-VlA"/>
                         <segue destination="Uzg-YZ-Xeq" kind="show" identifier="showStorage" id="dC4-bq-eVu"/>
                         <segue destination="OqE-AG-i9u" kind="show" identifier="showWallet" id="Jol-uX-LBd"/>
-                        <segue destination="vrK-fa-TM7" kind="show" identifier="showAccount" id="4VS-Mk-zlC"/>
+                        <segue destination="wvv-cQ-Zru" kind="show" identifier="showAccount" id="4VS-Mk-zlC"/>
                         <segue destination="3uN-UF-R4A" kind="presentation" identifier="showOnboarding" id="e4j-Xe-THT"/>
                     </connections>
                 </collectionViewController>
@@ -178,7 +178,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nbV-DG-PnL">
-                                <rect key="frame" x="50" y="179" width="276" height="29"/>
+                                <rect key="frame" x="50" y="124" width="276" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="276" id="cmB-ec-iW4"/>
                                 </constraints>
@@ -191,7 +191,7 @@
                                 </connections>
                             </segmentedControl>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nx-HW-eel" customClass="RoundedView" customModule="Blockstack" customModuleProvider="target">
-                                <rect key="frame" x="16" y="220" width="343" height="390"/>
+                                <rect key="frame" x="16" y="162" width="343" height="390"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZc-cu-v0s">
                                         <rect key="frame" x="8" y="61" width="23.5" height="21"/>
@@ -273,7 +273,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6g-DB-dH1" customClass="RoundedView" customModule="Blockstack" customModuleProvider="target">
-                                <rect key="frame" x="16" y="220" width="343" height="390"/>
+                                <rect key="frame" x="16" y="162" width="343" height="390"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send at least .01 btc to the address below to register a username." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-h4-A1g">
                                         <rect key="frame" x="8" y="28" width="327" height="36"/>
@@ -327,14 +327,15 @@
                             <constraint firstItem="bzg-N8-X0b" firstAttribute="leading" secondItem="V9m-cm-bzr" secondAttribute="leadingMargin" id="6QN-7h-fXb"/>
                             <constraint firstItem="bzg-N8-X0b" firstAttribute="top" secondItem="snP-U8-foX" secondAttribute="bottom" constant="17" id="7ic-cx-gTC"/>
                             <constraint firstItem="V6g-DB-dH1" firstAttribute="trailing" secondItem="V9m-cm-bzr" secondAttribute="trailingMargin" id="9jV-l7-jYP"/>
+                            <constraint firstItem="6nx-HW-eel" firstAttribute="top" secondItem="V6g-DB-dH1" secondAttribute="top" id="AnP-dS-5X3"/>
                             <constraint firstItem="o8T-A9-i1q" firstAttribute="leading" secondItem="NXl-1E-7gU" secondAttribute="trailing" constant="42.5" id="Fcb-G9-N7u"/>
                             <constraint firstItem="6nx-HW-eel" firstAttribute="trailing" secondItem="V9m-cm-bzr" secondAttribute="trailingMargin" id="FdO-CL-Iot"/>
-                            <constraint firstItem="Ckw-KM-X5i" firstAttribute="top" secondItem="V6g-DB-dH1" secondAttribute="bottom" constant="57" id="Ljw-qT-eit"/>
                             <constraint firstItem="NXl-1E-7gU" firstAttribute="centerY" secondItem="bzg-N8-X0b" secondAttribute="centerY" id="Mmv-M0-c8t"/>
-                            <constraint firstItem="6nx-HW-eel" firstAttribute="top" secondItem="nbV-DG-PnL" secondAttribute="bottom" constant="13" id="Mpm-Tq-LT2"/>
-                            <constraint firstItem="Ckw-KM-X5i" firstAttribute="top" secondItem="6nx-HW-eel" secondAttribute="bottom" constant="57" id="T3l-mQ-3G3"/>
+                            <constraint firstItem="V6g-DB-dH1" firstAttribute="centerY" secondItem="V9m-cm-bzr" secondAttribute="centerY" priority="750" id="NAx-yf-Rk8"/>
+                            <constraint firstItem="V6g-DB-dH1" firstAttribute="top" secondItem="nbV-DG-PnL" secondAttribute="bottom" constant="10" id="W32-IO-qzb"/>
                             <constraint firstItem="V6g-DB-dH1" firstAttribute="leading" secondItem="V9m-cm-bzr" secondAttribute="leadingMargin" id="aN4-1q-R56"/>
                             <constraint firstItem="nbV-DG-PnL" firstAttribute="centerX" secondItem="V9m-cm-bzr" secondAttribute="centerX" id="chR-b5-Eww"/>
+                            <constraint firstItem="nbV-DG-PnL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bzg-N8-X0b" secondAttribute="bottom" constant="25" id="nLV-QI-oeo"/>
                             <constraint firstItem="NXl-1E-7gU" firstAttribute="leading" secondItem="bzg-N8-X0b" secondAttribute="trailing" constant="10.5" id="sDL-NX-R19"/>
                             <constraint firstItem="o8T-A9-i1q" firstAttribute="centerY" secondItem="NXl-1E-7gU" secondAttribute="centerY" id="uJf-ZV-Mp7"/>
                             <constraint firstItem="6nx-HW-eel" firstAttribute="leading" secondItem="V9m-cm-bzr" secondAttribute="leadingMargin" id="vpy-aE-XML"/>
@@ -357,58 +358,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkd-GN-XYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2088.8000000000002" y="624.73763118440786"/>
-        </scene>
-        <!--Account-->
-        <scene sceneID="g6M-Ia-fx6">
-            <objects>
-                <viewController storyboardIdentifier="AccountController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vrK-fa-TM7" customClass="AccountController" customModule="Blockstack" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YuT-Ic-rOT"/>
-                        <viewControllerLayoutGuide type="bottom" id="fEO-Gi-zxI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a31-Bf-mgp" customClass="ADBannerView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwf-T5-z3c">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="UDe-LV-5kW" rowHeight="71" style="IBUITableViewCellStyleDefault" id="leo-jp-HkQ">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="71"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="leo-jp-HkQ" id="Ams-w4-LKs">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UDe-LV-5kW">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="70.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="vrK-fa-TM7" id="pTw-ac-gpe"/>
-                                    <outlet property="delegate" destination="vrK-fa-TM7" id="S8m-cG-KfT"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Account" id="cil-Rr-Dba"/>
-                    <connections>
-                        <outlet property="tableView" destination="hwf-T5-z3c" id="kTW-Pv-ltb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WpY-Sn-uIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="968.79999999999995" y="1159.9700149925038"/>
         </scene>
         <!--Profiles-->
         <scene sceneID="Pc3-or-I0f">
@@ -868,6 +817,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Te4-Yr-tp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4260.8000000000002" y="-1672.2638680659672"/>
+        </scene>
+        <!--AccountController-->
+        <scene sceneID="e1Z-a5-ICf">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AccountController" storyboardName="Settings" referencedIdentifier="AccountController" id="wvv-cQ-Zru" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fBK-vS-5sZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.79999999999995" y="1159.9700149925038"/>
         </scene>
     </scenes>
     <resources>

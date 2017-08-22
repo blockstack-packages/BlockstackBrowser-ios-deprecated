@@ -66,6 +66,10 @@ extension AccountController : UITableViewDelegate, UITableViewDataSource
             navigationController!.popToRootViewController(animated: true)
             dashboard.checkForOnboarding()
         }
+        else if indexPath.row == AccountRows.password.rawValue
+        {
+            performSegue(withIdentifier: "changePassword", sender: nil)
+        }
         
         tableView.deselectRow(at: indexPath, animated: false)
     }
