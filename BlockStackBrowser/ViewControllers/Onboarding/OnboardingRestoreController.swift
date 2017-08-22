@@ -42,10 +42,13 @@ class OnboardingRestoreController: UIViewController {
     {
         if let pass = passwordText.text, pass.characters.count > 0, pass == confirmationText.text
         {
-            if let passphrase = passphraseText.text, CryptoUtils.shared().validatePassphrase(passphrase) == true
+            //clear any old data before we save the new
+            UserDataService.shared().logout()
+            
+            if let passphrase = passphraseText.text, CryptoUtils.shared().validatePassphrase(passphrase) == true,
+                UserDataService.shared().savePrivateKeyPhrase(passphrase, with: pass) == true
             {
-                UserDataService.shared().savePrivateKeyPhrase(passphrase, with: pass)
-                dismiss(animated: true, completion: nil)
+                accountRestored()
             }else{
                 UIAlertController.showAlert(withTitle: "Invalid Entry", andMessage: "You must enter a valid passphrase", from: self)
             }
@@ -55,6 +58,11 @@ class OnboardingRestoreController: UIViewController {
             UIAlertController.showAlert(withTitle: "Invalid Entry", andMessage: "You must enter a valid password", from: self)
         }
         
+    }
+    
+    func accountRestored()
+    {
+        dismiss(animated: true, completion: nil)
     }
 
 }
