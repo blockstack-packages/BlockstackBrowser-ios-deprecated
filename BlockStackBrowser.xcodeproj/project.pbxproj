@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0008B5DE1F4CAF6700AC0093 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0008B5DC1F4CAF6700AC0093 /* Settings.storyboard */; };
+		0008B5E11F4CAFB500AC0093 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008B5E01F4CAFB500AC0093 /* ChangePasswordController.swift */; };
 		000F5ABC1F2FBACD00D6807A /* ExternalAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F5ABB1F2FBACD00D6807A /* ExternalAuthorizationService.swift */; };
 		000F5ABE1F30F21400D6807A /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F5ABD1F30F21400D6807A /* UserDataService.swift */; };
 		000F5AC11F3263AB00D6807A /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F5AC01F3263AB00D6807A /* ProfileEditController.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0008B5DD1F4CAF6700AC0093 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		0008B5E01F4CAFB500AC0093 /* ChangePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordController.swift; sourceTree = "<group>"; };
 		000F5ABA1F2FB9F100D6807A /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		000F5ABB1F2FBACD00D6807A /* ExternalAuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalAuthorizationService.swift; sourceTree = "<group>"; };
 		000F5ABD1F30F21400D6807A /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
@@ -119,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0008B5DF1F4CAF9400AC0093 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				008A13421F03FB5600C46D5F /* AccountController.swift */,
+				0008B5E01F4CAFB500AC0093 /* ChangePasswordController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		000F5ABF1F32638D00D6807A /* Profiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +206,7 @@
 				005C5D251F0188CB00EC6808 /* ViewControllers */,
 				0053ED001F014F6D00E039E1 /* AppDelegate.swift */,
 				0053ED041F014F6D00E039E1 /* Main.storyboard */,
+				0008B5DC1F4CAF6700AC0093 /* Settings.storyboard */,
 				0053ED091F014F6D00E039E1 /* LaunchScreen.storyboard */,
 				005044161F3DF51700683509 /* Onboarding.storyboard */,
 				008A13481F03FEB200C46D5F /* Resources */,
@@ -210,12 +224,12 @@
 		005C5D251F0188CB00EC6808 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0008B5DF1F4CAF9400AC0093 /* Settings */,
 				005044181F3DF6EF00683509 /* Onboarding */,
 				000F5ABF1F32638D00D6807A /* Profiles */,
 				0053ED121F014FA100E039E1 /* DashboardController.swift */,
 				008A13401F03FB4900C46D5F /* WalletController.swift */,
 				008A133E1F03FB3600C46D5F /* StorageController.swift */,
-				008A13421F03FB5600C46D5F /* AccountController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -355,6 +369,7 @@
 				004A45651F26461A00244E43 /* twitter.png in Resources */,
 				0053ED081F014F6D00E039E1 /* Assets.xcassets in Resources */,
 				0053ED061F014F6D00E039E1 /* Main.storyboard in Resources */,
+				0008B5DE1F4CAF6700AC0093 /* Settings.storyboard in Resources */,
 				00FEA2521F4600750082FCC1 /* avatar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +476,7 @@
 				000F5ABE1F30F21400D6807A /* UserDataService.swift in Sources */,
 				005044281F3E321D00683509 /* OnboardingRestoreController.swift in Sources */,
 				00B4189C1F27A93900F0032A /* AmazonCloudDriveService.swift in Sources */,
+				0008B5E11F4CAFB500AC0093 /* ChangePasswordController.swift in Sources */,
 				0050442A1F42059B00683509 /* FormatHelper.swift in Sources */,
 				005044221F3E2EE600683509 /* OnboardingPassphraseController.swift in Sources */,
 				0053ED011F014F6D00E039E1 /* AppDelegate.swift in Sources */,
@@ -485,6 +501,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0008B5DC1F4CAF6700AC0093 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0008B5DD1F4CAF6700AC0093 /* Base */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
 		0053ED041F014F6D00E039E1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

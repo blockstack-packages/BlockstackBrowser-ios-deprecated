@@ -84,11 +84,11 @@ extension UserDataService
     {
         if let encrypted = self.encrypt(privateKeyPhrase, with: password)
         {
-            KeychainWrapper.standard.set(encrypted, forKey: UserDataService.PrivateKeyPassphrase, withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
+            KeychainWrapper.standard.set(encrypted, forKey: UserDataService.PrivateKeyPassphrase,
+                                         withAccessibility: KeychainItemAccessibility.whenUnlockedThisDeviceOnly)
             
             //derive the public key and save that to the user defaults
             if let pk = privateKeyFromPassphrase(privateKeyPhrase){
-                UIAlertController.showAlert(withTitle: "pk", andMessage: pk, from: UIViewController.top())
                 UserDefaults.standard.set(publicKeyFromPrivateKey(pk), forKey: UserDataService.PublicKey)
                 UserDefaults.standard.synchronize()
             }
@@ -131,6 +131,15 @@ extension UserDataService
         }else{
             return false
         }
+    }
+    
+    public func changePassword(original : String, new : String) -> Bool
+    {
+        if let phrase = privateKeyPassphrase(password: original)
+        {
+            return savePrivateKeyPhrase(phrase, with: new)
+        }
+        return false
     }
 }
 
