@@ -22,7 +22,7 @@ class RoundedView : UIView
     
     func customSetup()
     {
-        self.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.8)
+        self.backgroundColor  = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 6
