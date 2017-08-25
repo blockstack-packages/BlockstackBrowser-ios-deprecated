@@ -21,8 +21,9 @@ target 'BlockStackBrowser' do
     pod 'QwikHttp'
     
     #Using pre-release version of dropbox SDK for xcode 9. remove :git => ... after xcode 9 out of beta
+    #replace with version => 5+
     #this is used by swiftydropbox
-    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift4'
+    #pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
     
     #storage apis
     pod 'SwiftyDropbox', :git => 'https://github.com/dropbox/SwiftyDropbox.git'

@@ -29,3 +29,14 @@ An alpha version of the full native blockstack browser for iOS. This version of 
 ## XCode 9 warning
 
 This app is written in Swift 4 and must be run with Xcode 9+ (currently in beta see developer.apple.com/ios to download)
+
+## Alamofire build error
+
+Because the dropbox sdk references a specific version of alamofire that is not compatible with swift 4, we must make a small change after running our pod install to get past a compile error in Alamofire's sdk.
+
+- After running pod install and installing pods, open BlockstackBrowser.xcworkspace in Xcode9
+- From the Project / File explorer on the left pane, select the Pods project, this will reveal all of the Pod targets, which are all of the pod libraries installed in the Browser.
+- we need to customize the build seeings for the Alamofire library and get it to compile it with Swift 3.2, a backwards compatible version of swift 4. Start by selecting the AlamoFire library target.
+- then select the build settings tab and use the search bar below it to search for the swift language version setting. Set it to Swift 3.2
+
+

@@ -64,18 +64,17 @@ PODS:
   - GTMSessionFetcher/Core (1.1.11)
   - GTMSessionFetcher/Full (1.1.11):
     - GTMSessionFetcher/Core (= 1.1.11)
-  - IQKeyboardManager (4.0.12)
+  - IQKeyboardManager (4.0.13)
   - QwikHttp (1.7.11.3):
     - QwikJson
   - QwikJson (1.0.19)
   - RNCryptor (5.0.1)
-  - SeaseAssist (0.0.58)
+  - SeaseAssist (0.0.60)
   - SwiftKeychainWrapper (3.0.1)
   - SwiftyDropbox (4.1.2):
     - Alamofire (~> 4.4.0)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift4`)
   - BlockstackCoreApi-iOS
   - CDZQRScanningViewController
   - Google/SignIn
@@ -88,23 +87,17 @@ DEPENDENCIES:
   - SwiftyDropbox (from `https://github.com/dropbox/SwiftyDropbox.git`)
 
 EXTERNAL SOURCES:
-  Alamofire:
-    :branch: swift4
-    :git: https://github.com/Alamofire/Alamofire.git
   SwiftyDropbox:
     :git: https://github.com/dropbox/SwiftyDropbox.git
 
 CHECKOUT OPTIONS:
-  Alamofire:
-    :commit: 9d6d16316edfb8ece47abebe1621d05ee6b0e6ed
-    :git: https://github.com/Alamofire/Alamofire.git
   SwiftyDropbox:
     :commit: f0cdded352417682c13655fdba631ccbf51ce3e6
     :git: https://github.com/dropbox/SwiftyDropbox.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  Alamofire: 4c2bf7fa03c4a626163606de0a417568c270575e
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   BlockstackCoreApi-iOS: 54e2c1a7d143d753900b88601b754ae9b9e25ecc
   CDZQRScanningViewController: bec2f94f0378876e44a64db156d92f11d2825d95
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
@@ -116,14 +109,14 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
-  IQKeyboardManager: feb4562ba22266c179801a76228017f7a3c0d111
+  IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
   QwikHttp: 5596cc1a1e7e5f54ac44c6bdb8876ba7fc8b20ea
   QwikJson: 4da1128475b28e3c57a3e35baf9c3435f9d2b059
   RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
-  SeaseAssist: 428de47565f744f8091a7938dd7c8dd07088d100
+  SeaseAssist: 354c274c059ff3db1f321049880879b2b7b09737
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
   SwiftyDropbox: 11faf37e3429e46f01a6c17683a38bb15b066a2f
 
-PODFILE CHECKSUM: 641618d67613ae1465ee5371fb49615d1a6572b8
+PODFILE CHECKSUM: 89ba82728d4b3c286f9e293e62b2430d63bb9812
 
 COCOAPODS: 1.3.0.beta.2
