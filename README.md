@@ -1,6 +1,6 @@
 # BlockstackBrowser-ios
 
-** This package is deprecated and will no longer work with the modern Blockstack platform. **
+**This package is deprecated and will no longer work with the modern Blockstack platform.**
 
 Please use the [official Blockstack iOS SDK](https://github.com/blockstack/blockstack-ios).
 
