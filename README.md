@@ -1,5 +1,9 @@
 # BlockstackBrowser-ios
 
+** This package is deprecated and will no longer work with the modern Blockstack platform. **
+
+Please use the [official Blockstack iOS SDK](https://github.com/blockstack/blockstack-ios).
+
 An alpha version of the full native blockstack browser for iOS. This version of the browser incorporates most of the functionality from the web version of blockstack browser. The big difference between this version and the web is that data is persisted locally rather than on-chain.
 
 ## What works:
